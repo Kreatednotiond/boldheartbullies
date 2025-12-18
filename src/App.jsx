@@ -13,7 +13,7 @@ function Nav({route,setRoute}){
     <div className="nav">
       <div className="nav-inner">
         <a className="brand" href="#/" onClick={()=>setRoute("/")}>
-          <img src="/assets/logo.png" alt="Bold Heart Bullies logo" />
+          <img src="./assets/logo.png" alt="Bold Heart Bullies logo" />
           <span>{brand.name}</span>
         </a>
         <div className="links">

@@ -22,10 +22,10 @@ export const SITE_DATA = {
       "height": "15.5 in",
       "weight": "80 lbs",
       "studFee": "$1,000",
-      "hero": "/assets/turbo.jpg",
-      "dna": "/assets/turbo_dna.png",
+      "hero": "./assets/turbo.jpg",
+      "dna": "./assets/turbo_dna.png",
       "gallery": [
-        "/assets/turbo.jpg"
+        "./assets/turbo.jpg"
       ]
     }
   ],
@@ -39,8 +39,8 @@ export const SITE_DATA = {
       "dob": "2024-07-28",
       "color": "Lilac Tri",
       "owner": "Bold Heart Bullies",
-      "hero": "/assets/dolla.jpg",
-      "dna": "/assets/dolla_geronimo_dna.png",
+      "hero": "./assets/dolla.jpg",
+      "dna": "./assets/dolla_geronimo_dna.png",
       "status": "Proven Producer",
       "pastLitter": {
         "sire": "CLB\u2019s Geronimo (Outside Stud \u2014 not owned by BHB)",
@@ -48,14 +48,14 @@ export const SITE_DATA = {
         "males": 3,
         "females": 5,
         "gallery": [
-          "/assets/dolla_litter_boy1_1.jpg",
-          "/assets/dolla_litter_boy1_2.jpg",
-          "/assets/dolla_litter_boy3_1.jpg",
-          "/assets/dolla_litter_girl1_1.jpg",
-          "/assets/dolla_litter_girl2_1.jpg",
-          "/assets/dolla_litter_girl3_1.jpg",
-          "/assets/dolla_litter_girl4_1.jpg",
-          "/assets/dolla_litter_girl5_2.jpg"
+          "./assets/dolla_litter_boy1_1.jpg",
+          "./assets/dolla_litter_boy1_2.jpg",
+          "./assets/dolla_litter_boy3_1.jpg",
+          "./assets/dolla_litter_girl1_1.jpg",
+          "./assets/dolla_litter_girl2_1.jpg",
+          "./assets/dolla_litter_girl3_1.jpg",
+          "./assets/dolla_litter_girl4_1.jpg",
+          "./assets/dolla_litter_girl5_2.jpg"
         ]
       },
       "plannedBreeding": {
@@ -73,14 +73,14 @@ export const SITE_DATA = {
       "dob": "2025-03-13",
       "color": "Blue Tri",
       "owner": "Bold Heart Bullies",
-      "hero": "/assets/remi.jpg",
-      "dna": "/assets/remi_dna.png",
+      "hero": "./assets/remi.jpg",
+      "dna": "./assets/remi_dna.png",
       "status": "Future Breeding Prospect",
       "plannedBreeding": {
         "stud": "Hokie (Outside Stud \u2014 not owned by BHB)",
         "timing": "Mid\u2013Late 2026",
-        "studHero": "/assets/hokie.jpg",
-        "studDna": "/assets/hokie_dna.png",
+        "studHero": "./assets/hokie.jpg",
+        "studDna": "./assets/hokie_dna.png",
         "note": "Planned pairing when Remi is of age."
       }
     },
@@ -93,8 +93,8 @@ export const SITE_DATA = {
       "dob": "2025-03-17",
       "color": "Blue Tri",
       "owner": "Bold Heart Bullies",
-      "hero": "/assets/espie.jpg",
-      "dna": "/assets/espie_pedigree.png",
+      "hero": "./assets/espie.jpg",
+      "dna": "./assets/espie_pedigree.png",
       "status": "Future Breeding \u2014 Stud TBD",
       "note": "No stud selected yet. BHB is actively evaluating options for when Espie is of age.",
       "parents": "BHB Dolla \u00d7 CLB\u2019s Geronimo"
@@ -108,16 +108,16 @@ export const SITE_DATA = {
       "dob": "2023-04-28",
       "color": "",
       "owner": "Bold Heart Bullies",
-      "hero": "/assets/lotty.jpg",
+      "hero": "./assets/lotty.jpg",
       "status": "Proven Dam",
       "pastLitter": {
         "count": 8,
         "males": 2,
         "females": 6,
         "gallery": [
-          "/assets/lotty_litter_3.jpg",
-          "/assets/lotty_litter_5.jpg",
-          "/assets/lotty_litter_7.jpg"
+          "./assets/lotty_litter_3.jpg",
+          "./assets/lotty_litter_5.jpg",
+          "./assets/lotty_litter_7.jpg"
         ]
       },
       "pendingBreeding": {
@@ -128,7 +128,7 @@ export const SITE_DATA = {
           "2025-12-16"
         ],
         "status": "Awaiting confirmation",
-        "studHero": "/assets/rango.jpg"
+        "studHero": "./assets/rango.jpg"
       }
     },
     {
@@ -138,10 +138,10 @@ export const SITE_DATA = {
       "registry": "AKC",
       "dob": "2025-08-14",
       "owner": "Bold Heart Bullies",
-      "hero": "/assets/stromi_1.jpg",
+      "hero": "./assets/stromi_1.jpg",
       "gallery": [
-        "/assets/stromi_1.jpg",
-        "/assets/stromi_2.jpg"
+        "./assets/stromi_1.jpg",
+        "./assets/stromi_2.jpg"
       ],
       "status": "Too young to breed",
       "note": "Future plans to be determined."
