@@ -59,7 +59,7 @@ export const SITE_DATA = {
         ]
       },
       "plannedBreeding": {
-        "stud": "CLB\u2019s Tyson (Outside Stud \u2014 not owned by BHB)",
+        "stud": "CLB\u2019s Tyson (Outside Stud \u2014 owned by Cel's Legacy Bullies)",
         "timing": "Early\u2013Mid 2026",
         "note": "Planned pairing. No stud page (outside stud)."
       }
