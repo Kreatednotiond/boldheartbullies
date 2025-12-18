@@ -157,13 +157,22 @@ function Detail({dog, extraTop, children}){
   );
 }
 
-function ImageGrid({items}){
-  if(!items?.length) return null;
+function ImageGrid({ items, setLightboxSrc }) {
+  if (!items?.length) return null;
+
   return (
-    <div className="grid" style={{marginTop:12}}>
-      {items.map((src,idx)=>(
-        <div key={idx} style={{gridColumn:"span 3"}}>
-          <Card><img className="thumb" src={src} alt={`photo ${idx+1}`} /></Card>
+    <div className="grid" style={{ marginTop: 12 }}>
+      {items.map((src, idx) => (
+        <div key={idx} style={{ gridColumn: "span 3" }}>
+          <Card>
+            <img
+              className="thumb"
+              src={src}
+              alt={`photo ${idx + 1}`}
+              style={{ cursor: "pointer" }}
+              onClick={() => setLightboxSrc?.(src)}
+            />
+          </Card>
         </div>
       ))}
     </div>
@@ -184,7 +193,7 @@ function BreedingBlock({title, data}){
         {data.dates && <><b style={{color:"var(--text)"}}>Dates:</b> {data.dates.map(d=>fmtDate(d)).join(", ")}<br/></>}
         {data.note && <><b style={{color:"var(--text)"}}>Notes:</b> {data.note}</>}
       </p>
-      {data.studHero && <ImageGrid items={[data.studHero]} />}
+      {data.studHero && <ImageGrid items={[data.studHero]} setLightboxSrc={setLightboxSrc} />
     </>
   );
 }
@@ -218,7 +227,7 @@ function Studs({route,setRoute}){
         <DNASection dna={dog.dna} title="Turbo DNA / Pedigree" />
         <hr />
         <div className="badge">Gallery</div>
-        <ImageGrid items={dog.gallery} />
+        <ImageGrid items={dog.gallery} setLightboxSrc={setLightboxSrc} />
       </Detail>
     );
   }
@@ -260,7 +269,7 @@ function Dams({route,setRoute}){
         {dog.gallery && dog.gallery.length>1 && (
           <>
             <hr /><div className="badge">Gallery</div>
-            <ImageGrid items={dog.gallery} />
+            <ImageGrid items={dog.gallery} setLightboxSrc={setLightboxSrc} />
           </>
         )}
       </Detail>
@@ -358,7 +367,7 @@ function PastLitters(){
               {d.pastLitter.sire ? <>Sire: {d.pastLitter.sire}<br/></> : null}
               Litter size: {d.pastLitter.count} ({d.pastLitter.males} males, {d.pastLitter.females} females)
             </p>
-            <ImageGrid items={d.pastLitter.gallery} />
+            <ImageGrid items={d.pastLitter.gallery} setLightboxSrc={setLightboxSrc} />
           </div>
         </Card>
       ))}
@@ -445,85 +454,21 @@ function Terms(){
 }
 
 export default function App(){
-  const [lightboxSrc, setLightboxSrc] = useState(null);
-  React.useEffect(() => {
-    const onKeyDown = (e) => {
-      if (e.key === "Escape") {
-        setLightboxSrc(null);
-      }
-    };
+  return (
+  <>
+    <Nav route={page} setRoute={setR} />
 
-  window.addEventListener("keydown", onKeyDown);
-  return () => window.removeEventListener("keydown", onKeyDown);
-}, []);
-  const [route, setRoute] = React.useState(window.location.hash.replace("#","") || "/");
-  React.useEffect(()=>{
-    const onHash = ()=> setRoute(window.location.hash.replace("#","") || "/");
-    window.addEventListener("hashchange", onHash);
-    return ()=> window.removeEventListener("hashchange", onHash);
-  },[]);
-  const page = useMemo(()=>route.split("?")[0], [route]);
-  const setR = (r)=>{ window.location.hash = "#" + r; setRoute(r); };
-
-  return ({lightboxSrc && (
-  <div
-    style={{
-      position: "fixed",
-      inset: 0,
-      background: "rgba(0,0,0,0.9)",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      zIndex: 9999,
-      padding: 20,
-    }}
-    onClick={() => setLightboxSrc(null)}
-  >
-    <img
-      src={lightboxSrc}
-      alt="Enlarged"
-      style={{
-        maxWidth: "95vw",
-        maxHeight: "90vh",
-        borderRadius: 14,
-      }}
-      onClick={(e) => e.stopPropagation()}
-    />
-
-    <button
-      onClick={(e) => {
-        e.stopPropagation();
-        setLightboxSrc(null);
-      }}
-      style={{
-        position: "fixed",
-        top: 16,
-        right: 16,
-        fontSize: 28,
-        background: "transparent",
-        color: "white",
-        border: "none",
-        cursor: "pointer",
-      }}
-      aria-label="Close"
-    >
-      ×
-    </button>
-  </div>
-)}
-    <>
-      <Nav route={page} setRoute={setR}/>
-      {page === "/" && <Home setRoute={setR} />}
-      {page.startsWith("/studs") && <Studs route={page} setRoute={setR} />}
-      {page.startsWith("/dams") && <Dams route={page} setRoute={setR} />}
-      {page === "/breedings" && <Breedings />}
-      {page === "/past-litters" && <PastLitters />}
-      {page === "/contracts" && <Contracts />}
-      {page === "/contact" && <Contact />}
-      {page === "/privacy" && <Privacy />}
+    {page === "/" && <Home setRoute={setR} />}
+    {page.startsWith("/studs") && <Studs route={page} setRoute={setR} />}
+    {page.startsWith("/dams") && <Dams route={page} setRoute={setR} />}
+    {page === "/breedings" && <Breedings />}
+    {page === "/past-litters" && <PastLitters />}
+    {page === "/contracts" && <Contracts />}
+    {page === "/contact" && <Contact />}
+    {page === "/privacy" && <Privacy />}
     {page === "/terms" && <Terms />}
 
-    {/* 🔽 LIGHTBOX GOES HERE */}
+    {/* ✅ LIGHTBOX GOES HERE (ONLY ONCE) */}
     {lightboxSrc && (
       <div
         style={{
@@ -570,5 +515,5 @@ export default function App(){
         </button>
       </div>
     )}
-  </div>
+  </>
 );
