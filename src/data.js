@@ -77,7 +77,7 @@ export const SITE_DATA = {
       "dna": "./assets/remi_dna.png",
       "status": "Future Breeding Prospect",
       "plannedBreeding": {
-        "stud": "Hokie (Outside Stud \u2014 not owned by BHB)",
+        "stud": "Hokie (Outside Stud \u2014 owned by Oceanside Bullies)",
         "timing": "Mid\u2013Late 2026",
         "studHero": "./assets/hokie.jpg",
         "studDna": "./assets/hokie_dna.png",
@@ -121,7 +121,7 @@ export const SITE_DATA = {
         ]
       },
       "pendingBreeding": {
-        "stud": "Rango (Outside Stud \u2014 not owned by BHB)",
+        "stud": "Rango (Outside Stud \u2014 owned by Crabbs Incredibulls)",
         "method": "AI",
         "dates": [
           "2025-12-14",
