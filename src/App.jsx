@@ -92,8 +92,7 @@ function Home({setRoute}){
         <h2>Featured Stud</h2>
         <div className="grid">
           <div style={{gridColumn:"span 12"}}>
-            <DogCard dog={{...featuredStud, registry: featuredStud.registries?.join(" / ")}} onOpen={()=>setRoute(`/studs/${featuredStud.id}`)} />
-            setLightboxSrc={setLightboxSrc}
+            <DogCard dog={{...featuredStud, registry: featuredStud.registries?.join(" / ")}} onOpen={()=>setRoute(`/studs/${featuredStud.id}`)}setLightboxSrc={setLightboxSrc} />
           </div>
         </div>
       </div>
@@ -103,8 +102,7 @@ function Home({setRoute}){
         <div className="grid">
           {featuredDams.map(d=>(
             <div key={d.id} style={{gridColumn:"span 4"}}>
-              <DogCard dog={d} onOpen={()=>setRoute(`/dams/${d.id}`)} />
-              setLightboxSrc={setLightboxSrc}
+              <DogCard dog={d} onOpen={()=>setRoute(`/dams/${d.id}`)}setLightboxSrc={setLightboxSrc} />
             </div>
           ))}
         </div>
@@ -230,8 +228,7 @@ function Studs({route,setRoute}){
       <div className="grid" style={{marginTop:14}}>
         {studs.map(s=>(
           <div key={s.id} style={{gridColumn:"span 4"}}>
-            <DogCard dog={s} onOpen={()=>setRoute(`/studs/${s.id}`)} />
-            setLightboxSrc={setLightboxSrc}
+            <DogCard dog={s} onOpen={()=>setRoute(`/studs/${s.id}`)}setLightboxSrc={setLightboxSrc}/>
           </div>
         ))}
       </div>
@@ -280,8 +277,7 @@ function Dams({route,setRoute}){
       <div className="grid">
         {bullies.map(d=>(
           <div key={d.id} style={{gridColumn:"span 4"}}>
-            <DogCard dog={d} onOpen={()=>setRoute(`/dams/${d.id}`)} />
-            setLightboxSrc={setLightboxSrc}
+            <DogCard dog={d} onOpen={()=>setRoute(`/dams/${d.id}`)}setLightboxSrc={setLightboxSrc} />
           </div>
         ))}
       </div>
@@ -290,8 +286,7 @@ function Dams({route,setRoute}){
       <div className="grid">
         {frenchies.map(d=>(
           <div key={d.id} style={{gridColumn:"span 4"}}>
-            <DogCard dog={d} onOpen={()=>setRoute(`/dams/${d.id}`)} />
-            setLightboxSrc={setLightboxSrc}
+            <DogCard dog={d} onOpen={()=>setRoute(`/dams/${d.id}`)}setLightboxSrc={setLightboxSrc} />
           </div>
         ))}
       </div>
@@ -470,7 +465,52 @@ export default function App(){
   const page = useMemo(()=>route.split("?")[0], [route]);
   const setR = (r)=>{ window.location.hash = "#" + r; setRoute(r); };
 
-  return (
+  return ({lightboxSrc && (
+  <div
+    style={{
+      position: "fixed",
+      inset: 0,
+      background: "rgba(0,0,0,0.9)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      zIndex: 9999,
+      padding: 20,
+    }}
+    onClick={() => setLightboxSrc(null)}
+  >
+    <img
+      src={lightboxSrc}
+      alt="Enlarged"
+      style={{
+        maxWidth: "95vw",
+        maxHeight: "90vh",
+        borderRadius: 14,
+      }}
+      onClick={(e) => e.stopPropagation()}
+    />
+
+    <button
+      onClick={(e) => {
+        e.stopPropagation();
+        setLightboxSrc(null);
+      }}
+      style={{
+        position: "fixed",
+        top: 16,
+        right: 16,
+        fontSize: 28,
+        background: "transparent",
+        color: "white",
+        border: "none",
+        cursor: "pointer",
+      }}
+      aria-label="Close"
+    >
+      ×
+    </button>
+  </div>
+)}
     <>
       <Nav route={page} setRoute={setR}/>
       {page === "/" && <Home setRoute={setR} />}
@@ -481,10 +521,54 @@ export default function App(){
       {page === "/contracts" && <Contracts />}
       {page === "/contact" && <Contact />}
       {page === "/privacy" && <Privacy />}
-      {page === "/terms" && <Terms />}
-      {!["/","/breedings","/past-litters","/contracts","/contact","/privacy","/terms"].some(p=>page===p || page.startsWith(p+"/")) && !page.startsWith("/studs") && !page.startsWith("/dams") && (
-        <div className="container">Page not found.</div>
-      )}
-    </>
-  );
-}
+    {page === "/terms" && <Terms />}
+
+    {/* 🔽 LIGHTBOX GOES HERE */}
+    {lightboxSrc && (
+      <div
+        style={{
+          position: "fixed",
+          inset: 0,
+          background: "rgba(0,0,0,0.9)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          zIndex: 9999,
+          padding: 20,
+        }}
+        onClick={() => setLightboxSrc(null)}
+      >
+        <img
+          src={lightboxSrc}
+          alt="Enlarged"
+          style={{
+            maxWidth: "95vw",
+            maxHeight: "90vh",
+            borderRadius: 14,
+          }}
+          onClick={(e) => e.stopPropagation()}
+        />
+
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            setLightboxSrc(null);
+          }}
+          style={{
+            position: "fixed",
+            top: 16,
+            right: 16,
+            fontSize: 28,
+            background: "transparent",
+            color: "white",
+            border: "none",
+            cursor: "pointer",
+          }}
+          aria-label="Close"
+        >
+          ×
+        </button>
+      </div>
+    )}
+  </div>
+);
