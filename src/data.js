@@ -43,7 +43,7 @@ export const SITE_DATA = {
       "dna": "./assets/dolla_geronimo_dna.png",
       "status": "Proven Producer",
       "pastLitter": {
-        "sire": "CLB\u2019s Geronimo (Outside Stud \u2014 not owned by BHB)",
+        "sire": "CLB\u2019s Geronimo (Outside Stud \u2014 owned by Cel's Legacy Bullies)",
         "count": 8,
         "males": 3,
         "females": 5,
