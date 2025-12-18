@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from 'react';
 import { SITE_DATA } from "./data.js";
 
 function fmtDate(iso){
@@ -33,10 +33,16 @@ function Nav({route,setRoute}){
 
 function Card({children}){ return <div className="card">{children}</div>; }
 
-function DogCard({dog, onOpen}){
+function DogCard({ dog, onOpen, setLightboxSrc }) {
   return (
     <Card>
-      <img className="thumb" src={dog.hero} alt={dog.name} />
+      <img
+        className="thumb"
+        src={dog.hero}
+        alt={dog.name}
+        onClick={() => setLightboxSrc(dog.hero)}
+        style={{ cursor: "pointer" }}
+      />
       <div className="pad">
         <div className="row" style={{justifyContent:"space-between",alignItems:"center"}}>
           <div>
@@ -87,6 +93,7 @@ function Home({setRoute}){
         <div className="grid">
           <div style={{gridColumn:"span 12"}}>
             <DogCard dog={{...featuredStud, registry: featuredStud.registries?.join(" / ")}} onOpen={()=>setRoute(`/studs/${featuredStud.id}`)} />
+            setLightboxSrc={setLightboxSrc}
           </div>
         </div>
       </div>
@@ -97,6 +104,7 @@ function Home({setRoute}){
           {featuredDams.map(d=>(
             <div key={d.id} style={{gridColumn:"span 4"}}>
               <DogCard dog={d} onOpen={()=>setRoute(`/dams/${d.id}`)} />
+              setLightboxSrc={setLightboxSrc}
             </div>
           ))}
         </div>
@@ -223,6 +231,7 @@ function Studs({route,setRoute}){
         {studs.map(s=>(
           <div key={s.id} style={{gridColumn:"span 4"}}>
             <DogCard dog={s} onOpen={()=>setRoute(`/studs/${s.id}`)} />
+            setLightboxSrc={setLightboxSrc}
           </div>
         ))}
       </div>
@@ -272,6 +281,7 @@ function Dams({route,setRoute}){
         {bullies.map(d=>(
           <div key={d.id} style={{gridColumn:"span 4"}}>
             <DogCard dog={d} onOpen={()=>setRoute(`/dams/${d.id}`)} />
+            setLightboxSrc={setLightboxSrc}
           </div>
         ))}
       </div>
@@ -281,6 +291,7 @@ function Dams({route,setRoute}){
         {frenchies.map(d=>(
           <div key={d.id} style={{gridColumn:"span 4"}}>
             <DogCard dog={d} onOpen={()=>setRoute(`/dams/${d.id}`)} />
+            setLightboxSrc={setLightboxSrc}
           </div>
         ))}
       </div>
@@ -439,6 +450,8 @@ function Terms(){
 }
 
 export default function App(){
+  const [lightboxSrc, setLightboxSrc] = useState(null);
+  
   const [route, setRoute] = React.useState(window.location.hash.replace("#","") || "/");
   React.useEffect(()=>{
     const onHash = ()=> setRoute(window.location.hash.replace("#","") || "/");
