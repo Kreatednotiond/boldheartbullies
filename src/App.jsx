@@ -164,7 +164,7 @@ function Detail({ dog, extraTop, children, setLightboxSrc }){
 }
 
 function ImageGrid({ items, setLightboxSrc }) {
-  if (!items?.length) return null;
+  if (!items || !items.length) return null;
 
   return (
     <div className="grid" style={{ marginTop: 12 }}>
@@ -175,8 +175,10 @@ function ImageGrid({ items, setLightboxSrc }) {
               className="thumb"
               src={src}
               alt={`photo ${idx + 1}`}
-              style={{ cursor: "pointer" }}
-              onClick={() => setLightboxSrc?.(src)}
+              style={{ cursor: setLightboxSrc ? "pointer" : "default" }}
+              onClick={() => {
+                if (setLightboxSrc) setLightboxSrc(src);
+              }}
             />
           </Card>
         </div>
@@ -266,7 +268,7 @@ function Dams({ route, setRoute, setLightboxSrc }){
               stud: dog.pastLitter.sire,
               note: `${dog.pastLitter.count} puppies (${dog.pastLitter.males} males, ${dog.pastLitter.females} females).`
             }} />
-            <ImageGrid items={dog.pastLitter.gallery} />
+            <ImageGrid items={dog.pastLitter.gallery} setLightboxSrc={setLightboxSrc} />
           </>
         )}
         {dog.pendingBreeding && <BreedingBlock title="Pending Breeding" data={dog.pendingBreeding} />}
