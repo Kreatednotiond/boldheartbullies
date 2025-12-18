@@ -71,7 +71,7 @@ function OwnershipNote(){
   );
 }
 
-function Home({setRoute}){
+function Home({ setRoute, setLightboxSrc }){
   const { brand, ownedStuds, dams } = SITE_DATA;
   const featuredStud = ownedStuds[0];
   const featuredDams = dams.slice(0,3);
@@ -120,13 +120,19 @@ function Home({setRoute}){
   );
 }
 
-function Detail({dog, extraTop, children}){
+function Detail({ dog, extraTop, children, setLightboxSrc }){
   return (
     <div className="container">
       <div className="grid">
         <div style={{gridColumn:"span 5"}}>
           <Card>
-            <img className="thumb" src={dog.hero} alt={dog.name} />
+            <img
+              className="thumb"
+              src={dog.hero}
+              alt={dog.name}
+              style={{ cursor: "pointer" }}
+              onClick={() => setLightboxSrc(dog.hero)}
+            />
             <div className="pad">
               <div style={{fontSize:20,fontWeight:900}}>{dog.name}</div>
               <small>{dog.breed}{dog.class?` • ${dog.class}`:""}{dog.registry?` • ${dog.registry}`:""}</small>
@@ -193,7 +199,7 @@ function BreedingBlock({title, data}){
         {data.dates && <><b style={{color:"var(--text)"}}>Dates:</b> {data.dates.map(d=>fmtDate(d)).join(", ")}<br/></>}
         {data.note && <><b style={{color:"var(--text)"}}>Notes:</b> {data.note}</>}
       </p>
-      {data.studHero && <ImageGrid items={[data.studHero]} setLightboxSrc={setLightboxSrc} />
+      {data.studHero && <ImageGrid items={[data.studHero]} setLightboxSrc={setLightboxSrc} />}
     </>
   );
 }
@@ -213,14 +219,14 @@ function DNASection({dna, title="DNA / Pedigree"}){
   );
 }
 
-function Studs({route,setRoute}){
+function Studs({ route, setRoute, setLightboxSrc }){
   const studs = SITE_DATA.ownedStuds.map(s=>({...s, registry: s.registries?.join(" / ")}));
   if(route.startsWith("/studs/")){
     const id = route.split("/")[2];
     const dog = studs.find(s=>s.id===id);
     if(!dog) return <div className="container">Not found.</div>;
     return (
-      <Detail dog={dog} extraTop={<div style={{marginTop:10}} className="badge">Owned & Standing Stud</div>}>
+      <Detail dog={dog} extraTop={<div style={{marginTop:10}} className="badge">Owned & Standing Stud</div>} setLightboxSrc={setLightboxSrc}>
         <p style={{color:"var(--muted)",lineHeight:1.6,marginTop:12}}>
           Turbo is the only owned and standing stud at Bold Heart Bullies. Stud services are offered to approved females only and require a signed contract.
         </p>
@@ -245,7 +251,7 @@ function Studs({route,setRoute}){
   );
 }
 
-function Dams({route,setRoute}){
+function Dams({ route, setRoute, setLightboxSrc }){
   const dams = SITE_DATA.dams;
   if(route.startsWith("/dams/")){
     const id = route.split("/")[2];
@@ -269,7 +275,7 @@ function Dams({route,setRoute}){
         {dog.gallery && dog.gallery.length>1 && (
           <>
             <hr /><div className="badge">Gallery</div>
-            <ImageGrid items={dog.gallery} setLightboxSrc={setLightboxSrc} />
+            ImageGrid items={dog.gallery} setLightboxSrc={setLightboxSrc} />
           </>
         )}
       </Detail>
@@ -303,7 +309,7 @@ function Dams({route,setRoute}){
   );
 }
 
-function Breedings(){
+function Breedings({ setLightboxSrc }){
   const dams = SITE_DATA.dams;
   const pending = dams.filter(d=>d.pendingBreeding);
   const planned = dams.filter(d=>d.plannedBreeding);
@@ -354,7 +360,7 @@ function Breedings(){
   );
 }
 
-function PastLitters(){
+function PastLitters({ setLightboxSrc }){
   const dams = SITE_DATA.dams.filter(d=>d.pastLitter);
   return (
     <div className="container">
@@ -458,11 +464,15 @@ export default function App(){
   <>
     <Nav route={page} setRoute={setR} />
 
-    {page === "/" && <Home setRoute={setR} />}
-    {page.startsWith("/studs") && <Studs route={page} setRoute={setR} />}
-    {page.startsWith("/dams") && <Dams route={page} setRoute={setR} />}
-    {page === "/breedings" && <Breedings />}
-    {page === "/past-litters" && <PastLitters />}
+    {page === "/" && <Home setRoute={setR} setLightboxSrc={setLightboxSrc} />}
+{page.startsWith("/studs") && (
+  <Studs route={page} setRoute={setR} setLightboxSrc={setLightboxSrc} />
+)}
+{page.startsWith("/dams") && (
+  <Dams route={page} setRoute={setR} setLightboxSrc={setLightboxSrc} />
+)}
+{page === "/breedings" && <Breedings setLightboxSrc={setLightboxSrc} />}
+{page === "/past-litters" && <PastLitters setLightboxSrc={setLightboxSrc} />}
     {page === "/contracts" && <Contracts />}
     {page === "/contact" && <Contact />}
     {page === "/privacy" && <Privacy />}
