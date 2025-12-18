@@ -129,7 +129,7 @@ export const SITE_DATA = {
           "2025-12-16"
         ],
         "status": "Awaiting confirmation",
-        "studHero": "./assets/Rango1.jpg"
+        "studHero": "./assets/rango.jpg"
       }
     },
     {
