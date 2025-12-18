@@ -451,7 +451,16 @@ function Terms(){
 
 export default function App(){
   const [lightboxSrc, setLightboxSrc] = useState(null);
-  
+  React.useEffect(() => {
+    const onKeyDown = (e) => {
+      if (e.key === "Escape") {
+        setLightboxSrc(null);
+      }
+    };
+
+  window.addEventListener("keydown", onKeyDown);
+  return () => window.removeEventListener("keydown", onKeyDown);
+}, []);
   const [route, setRoute] = React.useState(window.location.hash.replace("#","") || "/");
   React.useEffect(()=>{
     const onHash = ()=> setRoute(window.location.hash.replace("#","") || "/");
