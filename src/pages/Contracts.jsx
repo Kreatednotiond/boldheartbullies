@@ -30,7 +30,6 @@ export default function Contracts({ onImage }) {
         </div>
       </div>
 
-      <div className="footer"><small>Add PDF files later by dropping them into <b>public/assets/contracts</b> and updating <b>src/data/siteData.js</b>.</small></div>
     </div>
   );
 }
