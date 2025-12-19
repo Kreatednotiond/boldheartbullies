@@ -21,9 +21,9 @@ export const SITE_DATA = {
       weight: "80 lbs",
       studFee: "$1,000",
       owner: "Bold Heart Bullies",
-      hero: "/boldheartbullies/assets/dogs/studs/turbo/hero.jpg",
-      dna: "/boldheartbullies/assets/dogs/studs/turbo/dna.png",
-      gallery: ["/boldheartbullies/assets/dogs/studs/turbo/hero.jpg"],
+      hero: "/assets/dogs/studs/turbo/hero.jpg",
+      dna: "/assets/dogs/studs/turbo/dna.png",
+      gallery: ["/assets/dogs/studs/turbo/hero.jpg"],
       status: "Owned & Standing Stud"
     }
   ],
@@ -39,30 +39,30 @@ export const SITE_DATA = {
       color: "Lilac Tri",
       owner: "Bold Heart Bullies",
       status: "Proven Producer",
-      hero: "/boldheartbullies/assets/dogs/dams/dolla/hero.jpg",
-      dna: "/boldheartbullies/assets/dogs/dams/dolla/dna.png",
-      gallery: ["/boldheartbullies/assets/dogs/dams/dolla/hero.jpg"],
+      hero: "/assets/dogs/dams/dolla/hero.jpg",
+      dna: "/assets/dogs/dams/dolla/dna.png",
+      gallery: ["/assets/dogs/dams/dolla/hero.jpg"],
       pastLitter: {
         title: "Dolla × CLB’s Geronimo",
         count: 8,
         males: 3,
         females: 5,
         gallery: [
-          "/boldheartbullies/assets/past_litters/dolla_geronimo_2025/1.jpg",
-          "/boldheartbullies/assets/past_litters/dolla_geronimo_2025/2.jpg",
-          "/boldheartbullies/assets/past_litters/dolla_geronimo_2025/3.jpg",
-          "/boldheartbullies/assets/past_litters/dolla_geronimo_2025/4.jpg",
-          "/boldheartbullies/assets/past_litters/dolla_geronimo_2025/5.jpg",
-          "/boldheartbullies/assets/past_litters/dolla_geronimo_2025/6.jpg",
-          "/boldheartbullies/assets/past_litters/dolla_geronimo_2025/7.jpg",
-          "/boldheartbullies/assets/past_litters/dolla_geronimo_2025/8.jpg",
-          "/boldheartbullies/assets/past_litters/dolla_geronimo_2025/9.jpg"
+          "/assets/past_litters/dolla_geronimo_2025/1.jpg",
+          "/assets/past_litters/dolla_geronimo_2025/2.jpg",
+          "/assets/past_litters/dolla_geronimo_2025/3.jpg",
+          "/assets/past_litters/dolla_geronimo_2025/4.jpg",
+          "/assets/past_litters/dolla_geronimo_2025/5.jpg",
+          "/assets/past_litters/dolla_geronimo_2025/6.jpg",
+          "/assets/past_litters/dolla_geronimo_2025/7.jpg",
+          "/assets/past_litters/dolla_geronimo_2025/8.jpg",
+          "/assets/past_litters/dolla_geronimo_2025/9.jpg"
         ]
       },
       plannedBreeding: {
         stud: "CLB’s Tyson (Outside Stud — owned by Cel's Legacy Bullies)",
         timing: "Early–Mid 2026",
-        studHero: "/boldheartbullies/assets/dogs/outside/tyson/hero.jpg",
+        studHero: "/assets/dogs/outside/tyson/hero.jpg",
         note: "Planned pairing. No stud page (outside stud)."
       }
     },
@@ -76,12 +76,12 @@ export const SITE_DATA = {
       color: "Blue Tri",
       owner: "Bold Heart Bullies",
       status: "Young Prospect",
-      hero: "/boldheartbullies/assets/dogs/dams/remi/hero.jpg",
-      dna: "/boldheartbullies/assets/dogs/dams/remi/dna.jpg",
+      hero: "/assets/dogs/dams/remi/hero.jpg",
+      dna: "/assets/dogs/dams/remi/dna.jpg",
       plannedBreeding: {
         stud: "Hokie (Outside Stud - owner by Oceanview Bullies)",
         timing: "Mid-Late 2026",
-        studHero: "/boldheartbullies/assets/dogs/outside/Hokie/hero.jpg",
+        studHero: "/assets/dogs/outside/Hokie/hero.jpg",
         note: "Planned pairing. No stud page (outside stud)."
       },
     },
@@ -95,9 +95,9 @@ export const SITE_DATA = {
       color: "Blue Tri",
       owner: "Bold Heart Bullies",
       status: "Young Prospect",
-      hero: "/boldheartbullies/assets/dogs/dams/espie/hero.jpg",
+      hero: "/assets/dogs/dams/espie/hero.jpg",
       note: "Espie does not have a stud selected yet. BHB is actively searching for the right match when she is of age.",
-      gallery: ["/boldheartbullies/assets/dogs/dams/espie/hero.jpg"]
+      gallery: ["/assets/dogs/dams/espie/hero.jpg"]
     },
     {
       id: "lotty",
@@ -107,13 +107,13 @@ export const SITE_DATA = {
       dob: "2023-04-28",
       owner: "Bold Heart Bullies",
       status: "Proven Dam",
-      hero: "/boldheartbullies/assets/dogs/dams/lotty/hero.jpg",
+      hero: "/assets/dogs/dams/lotty/hero.jpg",
       pendingBreeding: {
         stud: "Rango (Outside Stud — owned by Crabbs IncrediBulls)",
         method: "AI",
         dates: ["2025-12-14", "2025-12-16"],
         status: "Awaiting confirmation",
-        studHero: "/boldheartbullies/assets/dogs/outside/rango/hero.jpg"
+        studHero: "/assets/dogs/outside/rango/hero.jpg"
       },
       pastLitter: {
         title: "Lotty — Past Litter",
@@ -121,12 +121,12 @@ export const SITE_DATA = {
         males: 2,
         females: 6,
         gallery: [
-          "/boldheartbullies/assets/past_litters/lotty_litter_1/1.jpg",
-          "/boldheartbullies/assets/past_litters/lotty_litter_1/2.jpg",
-          "/boldheartbullies/assets/past_litters/lotty_litter_1/3.jpg"
+          "/assets/past_litters/lotty_litter_1/1.jpg",
+          "/assets/past_litters/lotty_litter_1/2.jpg",
+          "/assets/past_litters/lotty_litter_1/3.jpg"
         ]
       },
-      gallery: ["/boldheartbullies/assets/dogs/dams/lotty/hero.jpg"]
+      gallery: ["/assets/dogs/dams/lotty/hero.jpg"]
     },
     {
       id: "stromi",
@@ -136,15 +136,15 @@ export const SITE_DATA = {
       dob: "2025-08-14",
       owner: "Bold Heart Bullies",
       status: "Young Prospect",
-      hero: "/boldheartbullies/assets/dogs/dams/stromi/hero.jpg",
-      gallery: ["/boldheartbullies/assets/dogs/dams/stromi/hero.jpg"]
+      hero: "/assets/dogs/dams/stromi/hero.jpg",
+      gallery: ["/assets/dogs/dams/stromi/hero.jpg"]
     }
   ],
 
   puppies: [],
 
   contracts: [
-    { label: "Stud Contract (Image placeholder)", file: "/boldheartbullies/assets/contracts/BHB_Stud_Contract.png" }
+    { label: "Stud Contract (Image placeholder)", file: "/assets/contracts/BHB_Stud_Contract.png" }
   ],
 
   contractsImportant: [
