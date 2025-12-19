@@ -1,6 +1,10 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-export default defineConfig({
-  base: "/boldheartbullies/",
-  plugins: [react()],
-});
+npm run build
+
+rm -rf docs
+mkdir docs
+cp -r dist/* docs/
+cp docs/index.html docs/404.html
+
+git add .
+git commit -m "Fresh restart site"
+git push
