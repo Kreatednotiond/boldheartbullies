@@ -43,7 +43,9 @@ export const SITE_DATA = {
       dna: "/assets/dogs/dams/dolla/dna.png",
       gallery: ["/assets/dogs/dams/dolla/hero.jpg"],
       pastLitter: {
-        title: "Dolla × CLB’s Geronimo",
+        title: "Dolla × CLB’s Geronimo (Outside Stud — owned by Cel's Legacy Bullies)",
+        hero: "/assets/dogs/dams/dolla/hero.jpg",
+        hero: "/assets/past_litters/dolla_geronimo_2025/9.jpg",
         count: 8,
         males: 3,
         females: 5,
@@ -55,8 +57,7 @@ export const SITE_DATA = {
           "/assets/past_litters/dolla_geronimo_2025/5.jpg",
           "/assets/past_litters/dolla_geronimo_2025/6.jpg",
           "/assets/past_litters/dolla_geronimo_2025/7.jpg",
-          "/assets/past_litters/dolla_geronimo_2025/8.jpg",
-          "/assets/past_litters/dolla_geronimo_2025/9.jpg"
+          "/assets/past_litters/dolla_geronimo_2025/8.jpg"
         ]
       },
       plannedBreeding: {
