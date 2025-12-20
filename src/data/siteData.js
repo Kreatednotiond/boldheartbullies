@@ -68,7 +68,7 @@ export const SITE_DATA = {
       plannedBreeding: {
         stud: "CLB's Tyson (Outside Stud — owned by Cel’s Legacy Bullies)",
         timing: "Early/Mid 2026",
-        studHero: "/assets/dogs/outside/Tyson/hero.jpg",
+        studHero: "/assets/dogs/outside/tyson/hero.jpg",
         note: "Planned pairing. No stud page (outside stud).",
       },
     },
