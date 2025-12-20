@@ -5,7 +5,7 @@ export default function PastLitters({ onImage }) {
   const dams = SITE_DATA.dams.filter(d=>d.pastLitter);
   return (
     <div className="container">
-      <div className="section"><h2>Past Litters</h2><p style={{ color:"var(--muted)" }}>Archive only.</p></div>
+      <div className="section"><h2>Past Litters</h2></div>
       {dams.map(d=>(
         <div className="card" key={d.id} style={{ marginTop:14 }}>
           <div className="pad">
