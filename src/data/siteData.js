@@ -23,7 +23,7 @@ export const SITE_DATA = {
       owner: "Bold Heart Bullies",
       status: "Owned & Standing Stud",
       hero: "/assets/dogs/studs/turbo/hero.jpg",
-      dna: "/assets/dogs/studs/turbo/dna.png",
+      dna: "/assets/dogs/studs/turbo/dna.jpg",
       gallery: ["/assets/dogs/studs/turbo/hero.jpg"],
     },
   ],
