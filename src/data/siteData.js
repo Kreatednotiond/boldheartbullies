@@ -84,7 +84,7 @@ export const SITE_DATA = {
       owner: "Bold Heart Bullies",
       status: "Young Prospect",
       hero: "/assets/dogs/dams/remi/hero.jpg",
-      dna: "/assets/dogs/dams/remi/dna.png",
+      dna: "/assets/dogs/dams/remi/dna.jpg",
       gallery: ["/assets/dogs/dams/remi/hero.jpg"],
       plannedBreeding: {
         stud: "Hokie (Outside stud — owned by Oceanview Bullies)",
