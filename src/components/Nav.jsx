@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { SITE_DATA } from "../data/siteData.js";
 
 export default function Nav({ go }) {
   const { brand } = SITE_DATA;
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = React.useState(false);
 
-  const navigate = (path) => {
+  const navTo = (path) => {
     setOpen(false);
     go(path);
   };
@@ -13,12 +13,7 @@ export default function Nav({ go }) {
   return (
     <div className="nav">
       <div className="nav-inner">
-        {/* BRAND */}
-        <a
-          className="brand"
-          href="#/"
-          onClick={() => navigate("/")}
-        >
+        <a className="brand" href="#/" onClick={() => navTo("/")}>
           <img
             src="/assets/brand/logo.png"
             alt="Bold Heart Bullies logo"
@@ -27,43 +22,24 @@ export default function Nav({ go }) {
           <span>{brand.name}</span>
         </a>
 
-        {/* DESKTOP LINKS */}
-        <div className="links desktop">
-          <a onClick={() => navigate("/puppies")}>Available Puppies</a>
-          <a onClick={() => navigate("/breedings")}>Breedings</a>
-          <a onClick={() => navigate("/dams")}>Dams</a>
-          <a onClick={() => navigate("/studs")}>Studs (Owned)</a>
-          <a onClick={() => navigate("/past-litters")}>Past Litters</a>
-          <a onClick={() => navigate("/contracts")}>Contracts</a>
-          <a onClick={() => navigate("/contact")}>Contact</a>
-          <a onClick={() => navigate("/privacy")}>Privacy</a>
-          <a onClick={() => navigate("/terms")}>Terms</a>
-        </div>
-
         {/* MOBILE MENU BUTTON */}
-        <button
-          className="menu-btn"
-          onClick={() => setOpen(!open)}
-          aria-label="Open menu"
-        >
-          ☰
+        <button className="menu-btn" onClick={() => setOpen((v) => !v)} aria-label="Menu">
+          {open ? "✕" : "☰"}
         </button>
-      </div>
 
-      {/* MOBILE DROPDOWN */}
-      {open && (
-        <div className="mobile-menu">
-          <a onClick={() => navigate("/puppies")}>Available Puppies</a>
-          <a onClick={() => navigate("/breedings")}>Breedings</a>
-          <a onClick={() => navigate("/dams")}>Dams</a>
-          <a onClick={() => navigate("/studs")}>Studs (Owned)</a>
-          <a onClick={() => navigate("/past-litters")}>Past Litters</a>
-          <a onClick={() => navigate("/contracts")}>Contracts</a>
-          <a onClick={() => navigate("/contact")}>Contact</a>
-          <a onClick={() => navigate("/privacy")}>Privacy</a>
-          <a onClick={() => navigate("/terms")}>Terms</a>
+        {/* LINKS */}
+        <div className={`links ${open ? "open" : ""}`}>
+          <a href="#/puppies" onClick={() => navTo("/puppies")}>Available Puppies</a>
+          <a href="#/breedings" onClick={() => navTo("/breedings")}>Breedings</a>
+          <a href="#/dams" onClick={() => navTo("/dams")}>Dams</a>
+          <a href="#/studs" onClick={() => navTo("/studs")}>Studs (Owned)</a>
+          <a href="#/past-litters" onClick={() => navTo("/past-litters")}>Past Litters</a>
+          <a href="#/contracts" onClick={() => navTo("/contracts")}>Contracts</a>
+          <a href="#/contact" onClick={() => navTo("/contact")}>Contact</a>
+          <a href="#/privacy" onClick={() => navTo("/privacy")}>Privacy</a>
+          <a href="#/terms" onClick={() => navTo("/terms")}>Terms</a>
         </div>
-      )}
+      </div>
     </div>
   );
 }
