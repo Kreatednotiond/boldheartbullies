@@ -6,7 +6,7 @@ export default function Nav({ go }) {
     <div className="nav">
       <div className="nav-inner">
         <a className="brand" href="#/" onClick={() => go("/")}>
-          <img src="/boldheartbullies/assets/brand/logo.png" alt="Bold Heart Bullies logo" />
+          <img src="/assets/brand/logo.png" alt="Bold Heart Bullies logo" />
           <span>{brand.name}</span>
         </a>
         <div className="links">
