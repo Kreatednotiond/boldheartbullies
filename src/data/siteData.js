@@ -105,7 +105,7 @@ export const SITE_DATA = {
       owner: "Bold Heart Bullies",
       status: "Young Prospect",
       hero: "/assets/dogs/dams/espie/hero.jpg",
-      dna: "/assets/dogs/dams/espie/dna",
+      dna: "/assets/dogs/dams/espie/dna.png",
       note: "Espie does not have a stud selected yet. BHB is actively searching for the right match when she is of age.",
       gallery: ["/assets/dogs/dams/espie/hero.jpg"],
     },
