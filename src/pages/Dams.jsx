@@ -6,21 +6,42 @@ import ImageGrid from "../components/ImageGrid.jsx";
 function fmtDate(iso) {
   if (!iso) return "";
   const d = new Date(iso + "T00:00:00");
-  return d.toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
+  return d.toLocaleDateString(undefined, {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 }
 
 export default function Dams({ route, go, onImage }) {
   const dams = SITE_DATA.dams;
 
+  // ---------- DETAIL VIEW ----------
   if (route.startsWith("/dams/")) {
     const id = route.split("/")[2];
     const dog = dams.find((d) => d.id === id);
     if (!dog) return <div className="container">Not found.</div>;
 
+    // Normalize past litter heroes so ANY of these will work:
+    // - pastLitter.heroes (array) ✅ preferred
+    // - pastLitter.hero (array)   (your current Lotty)
+    // - pastLitter.studHero (string)
+    const pastLitterHeroes = (() => {
+      const pl = dog.pastLitter;
+      if (!pl) return [];
+      if (Array.isArray(pl.heroes) && pl.heroes.filter(Boolean).length)
+        return pl.heroes.filter(Boolean);
+      if (Array.isArray(pl.hero) && pl.hero.filter(Boolean).length)
+        return pl.hero.filter(Boolean);
+      if (typeof pl.studHero === "string" && pl.studHero.trim())
+        return [pl.studHero.trim()];
+      return [];
+    })();
+
     return (
       <div className="container">
         <div className="grid">
-          {/* LEFT: HERO CARD */}
+          {/* LEFT HERO CARD */}
           <div style={{ gridColumn: "span 5" }}>
             <div className="card">
               <img
@@ -32,7 +53,7 @@ export default function Dams({ route, go, onImage }) {
                 onError={() => console.warn("Dog hero failed:", dog.hero)}
               />
               <div className="pad">
-                <div style={{ fontSize: 20, fontWeight: 900 }}>{dog.name}</div>
+                <div style={{ fontSize: 26, fontWeight: 900 }}>{dog.name}</div>
                 <small style={{ color: "var(--muted)" }}>
                   {dog.breed}
                   {dog.class ? ` • ${dog.class}` : ""}
@@ -47,7 +68,7 @@ export default function Dams({ route, go, onImage }) {
             </div>
           </div>
 
-          {/* RIGHT: DETAILS */}
+          {/* RIGHT DETAILS */}
           <div style={{ gridColumn: "span 7" }}>
             <div className="card">
               <div className="pad">
@@ -73,7 +94,15 @@ export default function Dams({ route, go, onImage }) {
                   <>
                     <hr />
                     <div className="badge">Notes</div>
-                    <p style={{ color: "var(--muted)", lineHeight: 1.7, marginTop: 10 }}>{dog.note}</p>
+                    <p
+                      style={{
+                        color: "var(--muted)",
+                        lineHeight: 1.7,
+                        marginTop: 10,
+                      }}
+                    >
+                      {dog.note}
+                    </p>
                   </>
                 ) : null}
 
@@ -88,7 +117,7 @@ export default function Dams({ route, go, onImage }) {
                       <b style={{ color: "var(--text)" }}>Method:</b> {dog.pendingBreeding.method}
                       <br />
                       <b style={{ color: "var(--text)" }}>Dates:</b>{" "}
-                      {dog.pendingBreeding.dates?.map(fmtDate).join(", ")}
+                      {(dog.pendingBreeding.dates || []).map(fmtDate).join(", ")}
                       <br />
                       <b style={{ color: "var(--text)" }}>Status:</b> {dog.pendingBreeding.status}
                     </p>
@@ -98,16 +127,10 @@ export default function Dams({ route, go, onImage }) {
                         <div className="badge" style={{ marginTop: 10 }}>
                           Stud
                         </div>
-                        <div className="card">
-                          <img
-                            className="thumb"
-                            src={dog.pendingBreeding.studHero}
-                            alt="Stud hero"
-                            style={{ cursor: "pointer" }}
-                            onClick={() => onImage?.(dog.pendingBreeding.studHero)}
-                            onError={() => console.warn("Pending stud hero failed:", dog.pendingBreeding.studHero)}
-                          />
-                        </div>
+                        <ImageGrid
+                          items={[dog.pendingBreeding.studHero]}
+                          onImage={onImage}
+                        />
                         <div style={{ marginTop: 10 }} className="badge">
                           Outside stud — not owned by BHB
                         </div>
@@ -125,9 +148,9 @@ export default function Dams({ route, go, onImage }) {
                       <b style={{ color: "var(--text)" }}>Stud:</b> {dog.plannedBreeding.stud}
                       <br />
                       <b style={{ color: "var(--text)" }}>Timing:</b> {dog.plannedBreeding.timing}
-                      <br />
                       {dog.plannedBreeding.note ? (
                         <>
+                          <br />
                           <b style={{ color: "var(--text)" }}>Notes:</b> {dog.plannedBreeding.note}
                         </>
                       ) : null}
@@ -138,16 +161,10 @@ export default function Dams({ route, go, onImage }) {
                         <div className="badge" style={{ marginTop: 10 }}>
                           Stud
                         </div>
-                        <div className="card">
-                          <img
-                            className="thumb"
-                            src={dog.plannedBreeding.studHero}
-                            alt="Stud hero"
-                            style={{ cursor: "pointer" }}
-                            onClick={() => onImage?.(dog.plannedBreeding.studHero)}
-                            onError={() => console.warn("Planned stud hero failed:", dog.plannedBreeding.studHero)}
-                          />
-                        </div>
+                        <ImageGrid
+                          items={[dog.plannedBreeding.studHero]}
+                          onImage={onImage}
+                        />
                         <div style={{ marginTop: 10 }} className="badge">
                           Outside stud — not owned by BHB
                         </div>
@@ -156,14 +173,19 @@ export default function Dams({ route, go, onImage }) {
                   </>
                 ) : null}
 
-                {/* DNA */}
+                {/* DNA / PEDIGREE */}
                 {dog.dna ? (
                   <>
                     <hr />
                     <div className="badge">DNA / Pedigree</div>
                     <div style={{ marginTop: 12 }} className="card">
                       <img
-                        style={{ width: "100%", height: "auto", display: "block", cursor: "pointer" }}
+                        style={{
+                          width: "100%",
+                          height: "auto",
+                          display: "block",
+                          cursor: "pointer",
+                        }}
                         src={dog.dna}
                         alt="DNA"
                         onClick={() => onImage?.(dog.dna)}
@@ -189,52 +211,41 @@ export default function Dams({ route, go, onImage }) {
                     <div className="badge">Past Litter</div>
 
                     <p style={{ color: "var(--muted)", lineHeight: 1.7, marginTop: 10 }}>
-                      <span style={{ color: "var(--text)" }}>Pairing:</span> {dog.pastLitter.title}
+                      <span style={{ color: "var(--text)" }}>Pairing:</span>{" "}
+                      {dog.pastLitter.title}
                       <br />
-                      <span style={{ color: "var(--text)" }}>Litter size:</span> {dog.pastLitter.count} (
-                      {dog.pastLitter.males} males, {dog.pastLitter.females} females)
+                      <span style={{ color: "var(--text)" }}>Litter size:</span>{" "}
+                      {dog.pastLitter.count} ({dog.pastLitter.males} males,{" "}
+                      {dog.pastLitter.females} females)
                     </p>
 
-                    {/* ✅ This is the key fix: render studHero as a hero image card */}
-                    {dog.pastLitter.studHero ? (
+                    {/* ✅ THIS is the missing piece for Lotty */}
+                    {pastLitterHeroes.length ? (
                       <>
                         <div className="badge" style={{ marginTop: 10 }}>
-                          Stud
+                          Pairing Photos
                         </div>
-                        <div className="card">
-                          <img
-                            className="thumb"
-                            src={dog.pastLitter.studHero}
-                            alt="Past litter stud hero"
-                            style={{ cursor: "pointer" }}
-                            onClick={() => onImage?.(dog.pastLitter.studHero)}
-                            onError={() => console.warn("Past litter stud hero failed:", dog.pastLitter.studHero)}
-                          />
-                        </div>
-                        <div className="badge" style={{ marginTop: 10 }}>
-                          Outside stud — not owned by BHB
-                        </div>
+                        <ImageGrid items={pastLitterHeroes} onImage={onImage} />
                       </>
                     ) : null}
 
-                    {/* Puppy gallery */}
-                    {dog.pastLitter.gallery?.length ? (
+                    {dog.pastLitter.gallery ? (
                       <>
-                        <div className="badge" style={{ marginTop: 12 }}>
-                          Puppies
+                        <div className="badge" style={{ marginTop: 10 }}>
+                          Puppy Gallery
                         </div>
                         <ImageGrid items={dog.pastLitter.gallery} onImage={onImage} />
                       </>
                     ) : null}
                   </>
                 ) : null}
-              </div>
-            </div>
 
-            <div className="section">
-              <button className="btn" onClick={() => go("/dams")}>
-                ← Back
-              </button>
+                <div className="section">
+                  <button className="btn" onClick={() => go("/dams")}>
+                    ← Back
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -242,6 +253,7 @@ export default function Dams({ route, go, onImage }) {
     );
   }
 
+  // ---------- LIST VIEW ----------
   const bullies = dams.filter((d) => d.breed === "American Bully");
   const frenchies = dams.filter((d) => d.breed === "French Bulldog");
 

@@ -128,9 +128,9 @@ export const SITE_DATA = {
       },
       pastLitter: {
         title: "Lotty x Mr. Banks (Outside Stud)",
-        hero: [
+        heroes: [
           "/assets/dogs/dams/lotty/hero.jpg", // Lotty
-          "assets/dogs/outside/banks/hero.jpg", // Banks / litter hero
+          "/assets/dogs/outside/banks/hero.jpg", // Banks / litter hero
         ],
         count: 8,
         males: 2,
