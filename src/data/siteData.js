@@ -128,8 +128,10 @@ export const SITE_DATA = {
       },
       pastLitter: {
         title: "Lotty x Mr. Banks (Outside Stud)",
-        stud: "Mr. Banks (Outside stud - not owned by BHB)",
-        studHero: "/assets/dogs/outside/banks/hero.jpg",
+        hero: [
+          "/assets/dogs/dams/lotty/hero.jpg", // Lotty
+          "assets/dogs/outside/banks/hero.jpg", // Banks / litter hero
+        ],
         count: 8,
         males: 2,
         females: 6,
