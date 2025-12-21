@@ -127,7 +127,7 @@ export const SITE_DATA = {
         studHero: "/assets/dogs/outside/rango/hero.jpg",
       },
       pastLitter: {
-        title: "Lotty — Mr. Banks ",
+        title: "Lotty x Mr. Banks ",
         count: 8,
         males: 2,
         females: 6,
