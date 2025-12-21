@@ -81,14 +81,37 @@ export default function Dams({ route, go, onImage }) {
 
               {dog.pastLitter ? (
                 <>
-                  <hr /><div className="badge">Past Litter</div>
-                  <p style={{ color:"var(--muted)", lineHeight:1.7, marginTop:10 }}>
-                    <b style={{ color:"var(--text)" }}>Pairing:</b> {dog.pastLitter.title}<br/>
-                    <b style={{ color:"var(--text)" }}>Litter size:</b> {dog.pastLitter.count} ({dog.pastLitter.males} males, {dog.pastLitter.females} females)
+                  <hr />
+                  <div className="badge">Past Litter</div>
+
+                  <p style={{ color: "var(--muted)", lineHeight: 1.7, marginTop: 10 }}>
+                    <span style={{ color: "var(--text)" }}>Pairing:</span>{" "}
+                    {dog.pastLitter.title}
+                    <br />
+                    <span style={{ color: "var(--text)" }}>Litter size:</span>{" "}
+                    {dog.pastLitter.count} (
+                    {dog.pastLitter.males} males, {dog.pastLitter.females} females)
                   </p>
+
+                  {/* OUTSIDE STUD HERO (PAST LITTER) */}
+                  {dog.pastLitter.studHero ? (
+                    <>
+                      <ImageGrid
+                        items={[dog.pastLitter.studHero]}
+                        onImage={onImage}
+                      />
+                      <div style={{ marginTop: 10 }} className="badge">
+                        Outside stud — not owned by BHB
+                      </div>
+                    </>
+                  ) : null}
+
+                  {/* PUPPY GALLERY */}
                   <ImageGrid items={dog.pastLitter.gallery} onImage={onImage} />
                 </>
               ) : null}
+
+
             </div></div>
           </div>
         </div>
