@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function ImageGrid({ items, onImage }) {
-  const safeItems = Array.isArray(items) ? items.filter(Boolean) : [];
+  const safeItems = Array.isArray(items) ? items.filter(Boolean) : (items ? [items] : []);
   if (!safeItems.length) return null;
 
   return (
