@@ -96,15 +96,8 @@ export default function Dams({ route, go, onImage }) {
                   {/* OUTSIDE STUD HERO (PAST LITTER) */}
                   {dog.pastLitter?.studHero && (
                     <>
-                      <div className="badge" style={{ marginTop: 10 }}>
-                        Stud
-                      </div>
-
-                    <ImageGrid
-                      items={[dog.pastLitter.studHero]}
-                      onImage={onImage}
-                    />
-
+                      <div className="badge" style={{ marginTop: 10 }}>Stud</div>
+                    <ImageGrid items={[dog.pastLitter.studHero]} onImage={onImage} />
                     <div className="badge" style={{ marginTop: 10 }}>
                       Outside stud - not owned by BHB
                     </div>
