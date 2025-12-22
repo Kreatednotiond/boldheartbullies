@@ -5,7 +5,7 @@ export const SITE_DATA = {
     location: "Wichita, Kansas",
     phone: "316-288-3306",
     email: "boldheartbullies@gmail.com",
-    instagram: "https://instagram.com/bold_heart_bullies",
+    instagram: "https://instagram.com/boldheart_bullies",
   },
 
   ownedStuds: [
