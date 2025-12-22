@@ -162,16 +162,40 @@ export const SITE_DATA = {
     },
   ],
 
-  puppies: [],
-
+  puppies: [
+  {
+    id: "turbo-peaches-2025",
+    title: "Turbo x Peaches",
+    status: "Available",
+    price: "$4500",
+    description: "Male (Chocolate Tri Merle). Contact for deposit.",
+    gallery: [
+      "/assets/available_puppies/turbo_peaches/1.JPG"
+    ],
+    parents: {
+      sire: {
+        name: "Turbo",
+        hero: "/assets/dogs/studs/turbo/hero.jpg",
+      },
+      dam: {
+        name: "Peaches",
+        hero: "/assets/dogs/dams/peaches/hero.JPG",
+      },
+    },
+  },
+],
   contracts: [
-    { label: "Stud Contract (image placeholder)", file: "/assets/contracts/BHB_Stud_Contract.png" },
-  ],
+  {
+    label: "Stud Contract (image placeholder)",
+    file: "/assets/contracts/BHB_Stud_Contract.png",
+  },
+],
 
-  contractsImportant: [
-    "Deposits are non-refundable under any circumstances, but may be transferable to a future puppy’s deposit if the breeder agrees.",
-    "All sales and services are governed by signed contracts. Website content is informational and may change.",
-    "Outside studs referenced for planned/past breedings are not owned by Bold Heart Bullies and do not imply availability for stud services.",
-    "For purchases, payments, or contracts: please contact Bold Heart Bullies directly at the email/phone listed on the Contact page.",
-  ],
+contractsImportant: [
+  "Deposits are non-refundable under any circumstances, but may be transferable to a future puppy's deposit if the breeder agrees.",
+  "All sales and services are governed by signed contracts. Website content is informational and may change.",
+  "Outside studs referenced for planned/past breedings are not owned by Bold Heart Bullies and do not imply availability for stud services.",
+  "For purchases, payments, or contracts: please contact Bold Heart Bullies directly at the email/phone listed on the Contact page.",
+],
 };
+
