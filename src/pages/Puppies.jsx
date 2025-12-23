@@ -50,15 +50,15 @@ export default function Puppies({ onImage }) {
                     </div>
                   ) : null}
 
-                  {p.parents.dam?.hero ? (
-                    <div style={{ flex: 1 }}>
+                  {p.dna?.hero ? (
+                    <div style={{ marginTop: 12 }}>
                       <div style={{ fontWeight: 700, marginBottom: 6 }}>
-                        Dam: {p.parents.dam.name}
+                        {p.dna.name || "DNA"}
                       </div>
                       <img
-                        src={p.parents.dam.hero}
-                        alt="Dam"
-                        style={{ width: "100%", height: 220, objectFit: "cover", borderRadius: 14 }}
+                        src={p.dna.hero}
+                        alt="DNA"
+                        style={{ width: "100%", maxWidth: 520, borderRadius: 14 }}
                       />
                     </div>
                   ) : null}
