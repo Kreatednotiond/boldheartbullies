@@ -85,6 +85,25 @@ export default function Puppies({ onImage }) {
                 </div>
               </>
             )}
+            {pup.dna && (
+              <div className="card" style={{ marginTop: 14 }}>
+                <div className="pad">
+                  <div style={{ fontWeight: 700, marginBottom: 8 }}>
+                    {pup.dna.label}
+                  </div>
+                  <img
+                    src={pup.dna.image}
+                    alt="DNA Panel"
+                    style={{
+                      width:"100%",
+                      maxWidth: 420,
+                      borderRadius: 14,
+                      objectFit: "cover",
+                    }}
+                  />
+                </div>
+              </div>
+            )}
           </div>
         </div>
       ))}
