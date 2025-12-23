@@ -9,101 +9,75 @@ export default function Puppies({ onImage }) {
     <div className="container">
       <div className="section">
         <h2>Available Puppies</h2>
-
-        {pups.length === 0 && (
+        {!pups.length && (
           <p style={{ color: "var(--muted)" }}>
             No puppies listed as available right now.
           </p>
         )}
       </div>
 
-      {pups.map((pup) => (
-        <div className="card" key={pup.id} style={{ marginBottom: 20 }}>
+      {pups.map((p) => (
+        <div className="card" key={p.id} style={{ marginTop: 14 }}>
           <div className="pad">
-            <h3>{pup.title}</h3>
-
-            <p style={{ color: "var(--muted)" }}>
-              Status: <b>{pup.status}</b>
-              {pup.price && <> · Price: <b>{pup.price}</b></>}
+            <div style={{ fontWeight: 900 }}>{p.title}</div>
+            <p style={{ color: "var(--muted)", lineHeight: 1.7, marginTop: 6 }}>
+              Status: {p.status} · Price: {p.price}
+              <br />
+              {p.description}
             </p>
 
-            <p>{pup.description}</p>
+            {/* Puppy photos */}
+            {p.gallery?.length ? (
+              <ImageGrid items={p.gallery} onImage={onImage} />
+            ) : null}
 
-            {/* 🐶 PUPPY PHOTOS */}
-            {pup.gallery && (
-              <ImageGrid items={pup.gallery} onImage={onImage} />
-            )}
+            {/* Parents + DNA */}
+            {p.parents ? (
+              <div style={{ marginTop: 14 }}>
+                <div className="badge" style={{ marginBottom: 10 }}>Parents</div>
 
-            {/* 🧬 PARENTS */}
-            {pup.parents && (
-              <>
-                <hr />
-                <div className="badge">Parents</div>
-
-                <div className="row" style={{ gap: 16, marginTop: 12 }}>
-                  {/* SIRE */}
-                  {pup.parents.sire && (
+                <div className="row" style={{ gap: 12 }}>
+                  {p.parents.sire?.hero ? (
                     <div style={{ flex: 1 }}>
-                      <b>Sire: {pup.parents.sire.name}</b>
+                      <div style={{ fontWeight: 700, marginBottom: 6 }}>
+                        Sire: {p.parents.sire.name}
+                      </div>
                       <img
-                        src={pup.parents.sire.hero}
-                        alt={pup.parents.sire.name}
-                        className="thumb"
-                        style={{
-                          width: "100%",
-                          height: 220,
-                          objectFit: "cover",
-                          borderRadius: 14,
-                          marginTop: 6,
-                          cursor: "pointer",
-                        }}
-                        onClick={() => onImage?.(pup.parents.sire.hero)}
+                        src={p.parents.sire.hero}
+                        alt="Sire"
+                        style={{ width: "100%", height: 220, objectFit: "cover", borderRadius: 14 }}
                       />
                     </div>
-                  )}
+                  ) : null}
 
-                  {/* DAM */}
-                  {pup.parents.dam && (
+                  {p.parents.dam?.hero ? (
                     <div style={{ flex: 1 }}>
-                      <b>Dam: {pup.parents.dam.name}</b>
+                      <div style={{ fontWeight: 700, marginBottom: 6 }}>
+                        Dam: {p.parents.dam.name}
+                      </div>
                       <img
-                        src={pup.parents.dam.hero}
-                        alt={pup.parents.dam.name}
-                        className="thumb"
-                        style={{
-                          width: "100%",
-                          height: 220,
-                          objectFit: "cover",
-                          borderRadius: 14,
-                          marginTop: 6,
-                          cursor: "pointer",
-                        }}
-                        onClick={() => onImage?.(pup.parents.dam.hero)}
+                        src={p.parents.dam.hero}
+                        alt="Dam"
+                        style={{ width: "100%", height: 220, objectFit: "cover", borderRadius: 14 }}
                       />
                     </div>
-                  )}
+                  ) : null}
                 </div>
-              </>
-            )}
-            {pup.dna && (
-              <div className="card" style={{ marginTop: 14 }}>
-                <div className="pad">
-                  <div style={{ fontWeight: 700, marginBottom: 8 }}>
-                    {pup.dna.label}
+
+                {p.parents.dna?.hero ? (
+                  <div style={{ marginTop: 12 }}>
+                    <div style={{ fontWeight: 700, marginBottom: 6 }}>
+                      {p.parents.dna.name || "DNA"}
+                    </div>
+                    <img
+                      src={p.parents.dna.hero}
+                      alt="DNA"
+                      style={{ width: "100%", maxWidth: 520, borderRadius: 14 }}
+                    />
                   </div>
-                  <img
-                    src={pup.dna.image}
-                    alt="DNA Panel"
-                    style={{
-                      width:"100%",
-                      maxWidth: 420,
-                      borderRadius: 14,
-                      objectFit: "cover",
-                    }}
-                  />
-                </div>
+                ) : null}
               </div>
-            )}
+            ) : null}
           </div>
         </div>
       ))}
