@@ -177,7 +177,7 @@ export const SITE_DATA = {
       dam:  { name: "Peaches", hero: "/assets/dogs/dams/peaches/hero.JPG" },
     },
     dna: { 
-      name: "DNA Panel",
+      name: "Pedigree",
       hero: "/assets/available_puppies/turbo_peaches/2.png"
      },
   }
