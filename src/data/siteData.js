@@ -182,7 +182,7 @@ export const SITE_DATA = {
         hero: "/assets/dogs/dams/peaches/hero.JPG",
       },
     },
-    dna: "/assets/available_puppies/turbo_peaches/2.png",
+    dna: { name: "DNA Panel", hero: "/assets/available_puppies/turbo_peaches/2.png" },
   }
 ],
   contracts: [
