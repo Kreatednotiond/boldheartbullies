@@ -173,14 +173,8 @@ export const SITE_DATA = {
       "/assets/available_puppies/turbo_peaches/1.JPG"
     ],
     parents: {
-      sire: {
-        name: "Turbo",
-        hero: "/assets/dogs/studs/turbo/hero.jpg",
-      },
-      dam: {
-        name: "Peaches",
-        hero: "/assets/dogs/dams/peaches/hero.JPG",
-      },
+      sire: { name: "Turbo", hero: "/assets/dogs/studs/turbo/hero.jpg" },
+      dam:  { name: "Peaches", hero: "/assets/dogs/dams/peaches/hero.JPG" },
     },
     dna: { 
       name: "DNA Panel",

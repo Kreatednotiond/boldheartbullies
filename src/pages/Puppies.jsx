@@ -45,11 +45,24 @@ export default function Puppies({ onImage }) {
                       <img
                         src={p.parents.sire.hero}
                         alt="Sire"
-                        style={{ width: "100%", height: 220, objectFit: "cover", borderRadius: 14 }}
+                        style={{ width: "100%", height: 220, objectFit: "cover", borderRadius: 14, cursor: "pointer" }}
+                        onClick={() => onImage?.(p.parents.sire.hero)}
                       />
                     </div>
                   ) : null}
-
+                    {p.parents.dam?.hero ? (
+                    <div style={{ flex: 1 }}>
+                      <div style={{ fontWeight: 700, marginBottom: 6 }}>
+                        Dam: {p.parents.dam.name}
+                      </div>
+                      <img
+                        src={p.parents.dam.hero}
+                        alt="Dam"
+                        style={{ width: "100%", height: 220, objectFit: "cover", borderRadius: 14, cursor: "pointer" }}
+                        onClick={() => onImage?.(p.parents.dam.hero)}
+                      />
+                    </div>
+                  ) : null}
                   {p.dna?.hero ? (
                     <div style={{ marginTop: 12 }}>
                       <div style={{ fontWeight: 700, marginBottom: 6 }}>
@@ -58,7 +71,8 @@ export default function Puppies({ onImage }) {
                       <img
                         src={p.dna.hero}
                         alt="DNA"
-                        style={{ width: "100%", maxWidth: 520, borderRadius: 14 }}
+                        style={{ width: "100%", maxWidth: 520, borderRadius: 14, cursor: "pointer" }}
+                        onClick={() => onImage?.(p.dna.hero)}
                       />
                     </div>
                   ) : null}
