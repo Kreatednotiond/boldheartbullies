@@ -154,7 +154,7 @@ export const SITE_DATA = {
       name: "BHB Stormi",
       breed: "French Bulldog",
       registry: "AKC",
-      dob: "2023-08-04",
+      dob: "2025-08-13",
       owner: "Bold Heart Bullies",
       status: "Young Prospect",
       hero: "/assets/dogs/dams/stromi/hero.jpg",
