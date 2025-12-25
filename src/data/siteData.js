@@ -100,7 +100,7 @@ export const SITE_DATA = {
       breed: "American Bully",
       class: "Pocket",
       registry: "ABKC",
-      dob: "2025-??-??",
+      dob: "2025-03-17",
       color: "Blue Tri",
       owner: "Bold Heart Bullies",
       status: "Young Prospect",
