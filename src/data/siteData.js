@@ -184,8 +184,12 @@ export const SITE_DATA = {
 ],
   contracts: [
   {
-    label: "Stud Contract (image placeholder)",
+    label: "Stud Contract",
     file: "/assets/contracts/BHB_Stud_Contract.png",
+  },
+  {
+    label: "Puppy Contract",
+    file: "/assets/contracts/BHB_American_Bully_Contract.docx",
   },
 ],
 
