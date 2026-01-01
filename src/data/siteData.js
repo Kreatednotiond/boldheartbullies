@@ -168,7 +168,7 @@ export const SITE_DATA = {
     title: "Turbo x Peaches",
     status: "SOLD!",
     price: "SOLD!",
-    description: "Male (Chocolate Tri Merle). Contact for deposit.",
+    description: "SOLD!",
     gallery: [
       "/assets/available_puppies/turbo_peaches/1.JPG"
     ],
