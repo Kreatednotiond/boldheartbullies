@@ -188,8 +188,12 @@ export const SITE_DATA = {
     file: "/assets/contracts/BHB_Stud_Contract.png",
   },
   {
-    label: "Puppy Contract",
-    file: "/assets/contracts/BHB_American_Bully_Contract.docx",
+    label: "American Bully Puppy Contract",
+    file: "/assets/contracts/BHB_American_Bully_Contract.pdf",
+  },
+  {
+    label: "French Bulldog Puppy Contract",
+    file: "/assets/contracts/BHB_French_Bulldog_Contract.pdf",
   },
 ],
 
