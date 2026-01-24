@@ -1,58 +1,131 @@
 import React from "react";
 import { SITE_DATA } from "../data/siteData.js";
-function fmtDate(iso){
-  if(!iso) return "";
-  const d = new Date(iso + "T00:00:00");
-  return d.toLocaleDateString(undefined,{year:"numeric",month:"long",day:"numeric"});
+import ImageGrid from "../components/ImageGrid.jsx";
+
+function fmtDate(iso) {
+  if (!iso) return "";
+  // If already looks like "Due on 2/14/2026" or "February 14, 2026", just return it
+  if (typeof iso === "string" && /[a-zA-Z]/.test(iso)) return iso;
+  if (typeof iso === "string" && iso.includes("/")) return iso;
+
+  // ISO "YYYY-MM-DD"
+  const d = new Date(String(iso) + "T00:00:00");
+  if (isNaN(d.getTime())) return String(iso);
+  return d.toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
 }
+
 export default function Breedings({ onImage }) {
-  const dams = SITE_DATA.dams;
-  const pending = dams.filter(d=>d.pendingBreeding);
-  const planned = dams.filter(d=>d.plannedBreeding);
+  const dams = SITE_DATA.dams || [];
+
+  const confirmed = dams.filter((d) => d.confirmedBreeding);
+  const pending = dams.filter((d) => d.pendingBreeding);
+  const planned = dams.filter((d) => d.plannedBreeding);
+
+  const BreedingCard = ({ dam, type }) => {
+    const b =
+      type === "confirmed"
+        ? dam.confirmedBreeding
+        : type === "pending"
+        ? dam.pendingBreeding
+        : dam.plannedBreeding;
+
+    if (!b) return null;
+
+    const title =
+      type === "confirmed"
+        ? "Confirmed"
+        : type === "pending"
+        ? "Pending"
+        : "Planned";
+
+    const datesText =
+      Array.isArray(b.dates) && b.dates.length
+        ? b.dates.map(fmtDate).join(", ")
+        : b.timing
+        ? b.timing
+        : "";
+
+    return (
+      <div className="card" style={{ marginTop: 14 }}>
+        <div className="pad">
+          <div style={{ fontSize: 18, fontWeight: 900 }}>
+            {dam.name} × {b.stud}
+          </div>
+
+          <p style={{ color: "var(--muted)", lineHeight: 1.7, marginTop: 10 }}>
+            {type !== "planned" ? (
+              <>
+                <b style={{ color: "var(--text)" }}>Method:</b> {b.method || "—"}
+                <br />
+                <b style={{ color: "var(--text)" }}>Due Date:</b> {datesText || "—"}
+                <br />
+                <b style={{ color: "var(--text)" }}>Status:</b> {b.status || title}
+              </>
+            ) : (
+              <>
+                <b style={{ color: "var(--text)" }}>Timing:</b> {datesText || "—"}
+                {b.note ? (
+                  <>
+                    <br />
+                    <b style={{ color: "var(--text)" }}>Notes:</b> {b.note}
+                  </>
+                ) : null}
+              </>
+            )}
+          </p>
+
+          {b.studHero ? (
+            <>
+              <div className="badge" style={{ marginTop: 10 }}>
+                Stud
+              </div>
+              <ImageGrid items={[b.studHero]} onImage={onImage} />
+              <div style={{ marginTop: 10 }} className="badge">
+                Outside stud — not owned by BHB
+              </div>
+            </>
+          ) : null}
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className="container">
       <div className="section">
         <h2>Breedings</h2>
-        <p style={{ color:"var(--muted)" }}>Pending and planned breedings.</p>
+        <p style={{ color: "var(--muted)" }}>Pending, confirmed, and planned breedings.</p>
       </div>
 
-      <div className="section"><h2>Pending</h2></div>
-      {pending.map(d=>(
-        <div className="card" key={d.id} style={{ marginTop:14 }}>
-          <div className="pad">
-            <div style={{ fontWeight:900 }}>{d.name} × {d.pendingBreeding.stud}</div>
-            <p style={{ color:"var(--muted)", lineHeight:1.7 }}>
-              Method: {d.pendingBreeding.method} • Dates: {d.pendingBreeding.dates.map(fmtDate).join(", ")} • Status: {d.pendingBreeding.status}
-            </p>
-            <div className="row">
-              <img className="thumb" style={{ maxWidth:240, height:170, borderRadius:14, cursor:"pointer" }} src={d.hero} alt={d.name} onClick={()=>onImage(d.hero)} />
-              {d.pendingBreeding.studHero ? (
-                <img className="thumb" style={{ maxWidth:240, height:170, borderRadius:14, cursor:"pointer" }} src={d.pendingBreeding.studHero} alt="stud" onClick={()=>onImage(d.pendingBreeding.studHero)} />
-              ) : null}
-            </div>
-            <div style={{ marginTop:10 }} className="badge">Outside stud — not owned by BHB</div>
-          </div>
-        </div>
-      ))}
+      <div className="section">
+        <h2>Confirmed</h2>
+        {!confirmed.length ? (
+          <p style={{ color: "var(--muted)" }}>No confirmed breedings listed yet.</p>
+        ) : null}
+        {confirmed.map((dam) => (
+          <BreedingCard key={dam.id} dam={dam} type="confirmed" />
+        ))}
+      </div>
 
-      <div className="section"><h2>Planned</h2></div>
-      {planned.map(d=>(
-        <div className="card" key={d.id} style={{ marginTop:14 }}>
-          <div className="pad">
-            <div style={{ fontWeight:900 }}>{d.name} × {d.plannedBreeding.stud}</div>
-            <p style={{ color:"var(--muted)", lineHeight:1.7 }}>
-              Timing: {d.plannedBreeding.timing}{d.plannedBreeding.note?` • ${d.plannedBreeding.note}`:""}
-            </p>
-            <div className="row">
-              <img className="thumb" style={{ maxWidth:240, height:170, borderRadius:14, cursor:"pointer" }} src={d.hero} alt={d.name} onClick={()=>onImage(d.hero)} />
-              {d.plannedBreeding.studHero ? (
-                <img className="thumb" style={{ maxWidth:240, height:170, borderRadius:14, cursor:"pointer" }} src={d.plannedBreeding.studHero} alt="stud" onClick={()=>onImage(d.plannedBreeding.studHero)} />
-              ) : null}
-            </div>
-            <div style={{ marginTop:10 }} className="badge">Outside stud — not owned by BHB</div>
-          </div>
-        </div>
-      ))}
+      <div className="section">
+        <h2>Pending</h2>
+        {!pending.length ? (
+          <p style={{ color: "var(--muted)" }}>No pending breedings listed right now.</p>
+        ) : null}
+        {pending.map((dam) => (
+          <BreedingCard key={dam.id} dam={dam} type="pending" />
+        ))}
+      </div>
+
+      <div className="section">
+        <h2>Planned</h2>
+        {!planned.length ? (
+          <p style={{ color: "var(--muted)" }}>No planned breedings listed right now.</p>
+        ) : null}
+        {planned.map((dam) => (
+          <BreedingCard key={dam.id} dam={dam} type="planned" />
+        ))}
+      </div>
     </div>
   );
 }
