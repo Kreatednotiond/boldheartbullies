@@ -106,38 +106,46 @@ export default function Dams({ route, go, onImage }) {
                   </>
                 ) : null}
 
-                {/* PENDING BREEDING */}
-                {dog.pendingBreeding ? (
+                {/* PENDING / CONFIRMED BREEDING */}
+                {(dog.confirmedBreeding || dog.pendingBreeding) ? (
                   <>
-                    <hr />
-                    <div className="badge">Pending Breeding</div>
-                    <p style={{ color: "var(--muted)", lineHeight: 1.7, marginTop: 10 }}>
-                      <b style={{ color: "var(--text)" }}>Stud:</b> {dog.pendingBreeding.stud}
-                      <br />
-                      <b style={{ color: "var(--text)" }}>Method:</b> {dog.pendingBreeding.method}
-                      <br />
-                      <b style={{ color: "var(--text)" }}>Dates:</b>{" "}
-                      {(dog.pendingBreeding.dates || []).map(fmtDate).join(", ")}
-                      <br />
-                      <b style={{ color: "var(--text)" }}>Status:</b> {dog.pendingBreeding.status}
-                    </p>
-
-                    {dog.pendingBreeding.studHero ? (
+                  <hr />
+                  <div className="badge">
+                    {dog.confirmedBreeding ? "Confirmed Breeding" : "Pending Breeding"}
+                    </div>
+                    
+                    {(() => {
+                      const breeding = dog.confirmedBreeding || dog.pendingBreeding;
+                      
+                      return (
                       <>
-                        <div className="badge" style={{ marginTop: 10 }}>
-                          Stud
-                        </div>
-                        <ImageGrid
-                          items={[dog.pendingBreeding.studHero]}
-                          onImage={onImage}
-                        />
-                        <div style={{ marginTop: 10 }} className="badge">
-                          Outside stud — not owned by BHB
-                        </div>
-                      </>
-                    ) : null}
-                  </>
-                ) : null}
+                      <p style={{ color: "var(--muted)", lineHeight: 1.7, marginTop: 10 }}>
+                        <b style={{ color: "var(--text)" }}>Stud:</b> {breeding.stud}
+                        <br />
+                        <b style={{ color: "var(--text)" }}>Method:</b> {breeding.method}
+                        <br />
+                        <b style={{ color: "var(--text)" }}>Dates:</b>{" "}
+                        {(breeding.dates || []).map(fmtDate).join(", ")}
+                        <br />
+                        <b style={{ color: "var(--text)" }}>Status:</b> {breeding.status}
+                        </p>
+                        
+                        {breeding.studHero ? (
+                          <>
+                          <div className="badge" style={{ marginTop: 10 }}>
+                            Stud
+                            </div>
+                            <ImageGrid items={[breeding.studHero]} onImage={onImage} />
+                            <div style={{ marginTop: 10 }} className="badge">
+                              Outside stud — not owned by BHB
+                              </div>
+                              </>
+                            ) : null}
+                            </>
+                            );
+                            })()}
+                            </>
+                          ) : null}
 
                 {/* PLANNED BREEDING */}
                 {dog.plannedBreeding ? (
