@@ -119,10 +119,10 @@ export const SITE_DATA = {
       owner: "Bold Heart Bullies",
       status: "Proven Dam",
       hero: "/assets/dogs/dams/lotty/hero.jpg",
-      pendingBreeding: {
+      confirmedBreeding: {
         stud: "Rango (Outside Stud — owned by Crabbs IncrediBulls)",
         method: "AI",
-        dates: ["Due on 2/14/2026"],
+        dueDates: "February 14, 2026",
         status: "CONFIRMED!",
         studHero: "/assets/dogs/outside/rango/hero.jpg",
       },
