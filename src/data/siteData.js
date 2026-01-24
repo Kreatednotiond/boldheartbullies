@@ -122,7 +122,7 @@ export const SITE_DATA = {
       confirmedBreeding: {
         stud: "Rango (Outside Stud — owned by Crabbs IncrediBulls)",
         method: "AI",
-        dueDates: "February 14, 2026",
+        dueDates: "2026-02-14",
         status: "CONFIRMED!",
         studHero: "/assets/dogs/outside/rango/hero.jpg",
       },
