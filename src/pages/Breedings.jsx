@@ -4,6 +4,7 @@ import ImageGrid from "../components/ImageGrid.jsx";
 
 function fmtDate(iso) {
   if (!iso) return "";
+
   // If already looks like "Due on 2/14/2026" or "February 14, 2026", just return it
   if (typeof iso === "string" && /[a-zA-Z]/.test(iso)) return iso;
   if (typeof iso === "string" && iso.includes("/")) return iso;
@@ -11,7 +12,12 @@ function fmtDate(iso) {
   // ISO "YYYY-MM-DD"
   const d = new Date(String(iso) + "T00:00:00");
   if (isNaN(d.getTime())) return String(iso);
-  return d.toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
+
+  return d.toLocaleDateString(undefined, {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 }
 
 export default function Breedings({ onImage }) {
@@ -32,15 +38,15 @@ export default function Breedings({ onImage }) {
     if (!b) return null;
 
     const title =
-      type === "confirmed"
-        ? "Confirmed"
-        : type === "pending"
-        ? "Pending"
-        : "Planned";
+      type === "confirmed" ? "Confirmed" : type === "pending" ? "Pending" : "Planned";
 
+    // ✅ For confirmed/pending, we want "Due Date"
+    // ✅ For planned, we want "Timing"
     const datesText =
       Array.isArray(b.dates) && b.dates.length
         ? b.dates.map(fmtDate).join(", ")
+        : b.dueDates // ✅ supports older field names if you used it
+        ? fmtDate(b.dueDates)
         : b.timing
         ? b.timing
         : "";
@@ -74,15 +80,23 @@ export default function Breedings({ onImage }) {
             )}
           </p>
 
-          {b.studHero ? (
+          {/* ✅ SHOW DAM + STUD (not just stud) */}
+          {(b.studHero || b.damHero || dam.hero) ? (
             <>
               <div className="badge" style={{ marginTop: 10 }}>
-                Stud
+                Dam & Stud
               </div>
-              <ImageGrid items={[b.studHero]} onImage={onImage} />
-              <div style={{ marginTop: 10 }} className="badge">
-                Outside stud — not owned by BHB
-              </div>
+
+              <ImageGrid
+                items={[b.damHero || dam.hero, b.studHero].filter(Boolean)}
+                onImage={onImage}
+              />
+
+              {b.studHero ? (
+                <div style={{ marginTop: 10 }} className="badge">
+                  Outside stud — not owned by BHB
+                </div>
+              ) : null}
             </>
           ) : null}
         </div>
@@ -94,7 +108,9 @@ export default function Breedings({ onImage }) {
     <div className="container">
       <div className="section">
         <h2>Breedings</h2>
-        <p style={{ color: "var(--muted)" }}>Pending, confirmed, and planned breedings.</p>
+        <p style={{ color: "var(--muted)" }}>
+          Pending, confirmed, and planned breedings.
+        </p>
       </div>
 
       <div className="section">
