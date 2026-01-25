@@ -108,6 +108,12 @@ export const SITE_DATA = {
       dna: "/assets/dogs/dams/espie/dna.png",
       note: "Espie does not have a stud selected yet. BHB is actively searching for the right match when she is of age.",
       gallery: ["/assets/dogs/dams/espie/hero.jpg"],
+      plannedBreeding: {
+        stud: "Makaveli (Outside stud — owned by Golden Rule Bullies)",
+        timing: "Mid-Late 2026",
+        studHero: "/assets/dogs/outside/makaveli/hero.jpg",
+        note: "Planned pairing. No stud page (outside stud).",
+      },
     },
 
     {
