@@ -180,7 +180,7 @@ export const SITE_DATA = {
     ],
     parents: {
       sire: { name: "Rango", hero: "/assets/dogs/studs/rango/hero.jpg" },
-      dam:  { name: "Lotty", hero: "/assets/dogs/dams/lotty/hero.JPG" },
+      dam:  { name: "Lotty", hero: "/assets/dogs/dams/lotty/hero.jpg" },
      },
   }
 ],
