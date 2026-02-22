@@ -170,21 +170,17 @@ export const SITE_DATA = {
 
   puppies: [
   {
-    id: "turbo-peaches-2025",
-    title: "Turbo x Peaches",
-    status: "SOLD!",
-    price: "SOLD!",
-    description: "SOLD!",
+    id: "lotty-rango-2026",
+    title: "Lotty x Rango",
+    status: "Available",
+    price: "$5000",
+    description: "Now accepting deposits. Message us for details.",
     gallery: [
-      "/assets/available_puppies/turbo_peaches/1.JPG"
+      "/assets/available_puppies/lotty_rango/1.jpg"
     ],
     parents: {
-      sire: { name: "Turbo", hero: "/assets/dogs/studs/turbo/hero.jpg" },
-      dam:  { name: "Peaches", hero: "/assets/dogs/dams/peaches/hero.JPG" },
-    },
-    dna: { 
-      name: "Pedigree",
-      hero: "/assets/available_puppies/turbo_peaches/2.png"
+      sire: { name: "Rango", hero: "/assets/dogs/studs/rango/hero.jpg" },
+      dam:  { name: "Lotty", hero: "/assets/dogs/dams/lotty/hero.JPG" },
      },
   }
 ],

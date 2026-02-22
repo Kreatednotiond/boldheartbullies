@@ -3,8 +3,10 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/",          // ✅ custom domain uses root
+  // repo is /boldheartbullies/
+  base: "/boldheartbullies/",
   build: {
-    outDir: "docs",   // (keep if you're publishing from /docs)
+    outDir: "docs",
+    emptyOutDir: true,
   },
 });
