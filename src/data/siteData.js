@@ -179,7 +179,7 @@ export const SITE_DATA = {
       "/assets/available_puppies/lotty_rango/1.jpg"
     ],
     parents: {
-      sire: { name: "Rango", hero: "/assets/dogs/studs/rango/hero.jpg" },
+      sire: { name: "Rango", hero: "/assets/dogs/outside/rango/hero.jpg" },
       dam:  { name: "Lotty", hero: "/assets/dogs/dams/lotty/hero.jpg" },
      },
   }
