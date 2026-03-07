@@ -104,7 +104,7 @@ export const SITE_DATA = {
       owner: "Bold Heart Bullies",
       status: "Young Prospect",
       hero: "/assets/dogs/dams/brookie/hero.jpg",
-      dna: "/assets/dogs/dams/brookie/dna.png",
+      dna: "/assets/dogs/dams/brookie/dna.PNG",
       note: "Brookie does not have a stud selected yet. BHB is actively searching for the right match when she is of age.",
       gallery: ["/assets/dogs/dams/brookie/hero.jpg"],
     },
@@ -130,7 +130,7 @@ export const SITE_DATA = {
         note: "Planned pairing. No stud page (outside stud).",
       },
     },
-    
+
     {
       id: "lotty",
       name: "BHB Lotty",
