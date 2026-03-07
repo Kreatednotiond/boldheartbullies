@@ -72,7 +72,6 @@ export const SITE_DATA = {
         note: "Planned pairing. No stud page (outside stud).",
       },
     },
-
     {
       id: "remi",
       name: "CLB's Remi of Bold Heart Bullies",
@@ -92,6 +91,22 @@ export const SITE_DATA = {
         studHero: "/assets/dogs/outside/Hokie/hero.jpg",
         note: "Planned pairing. No stud page (outside stud).",
       },
+    },
+
+    {
+      id: "brookie",
+      name: "Brookie of Bold Heart Bullies",
+      breed: "American Bully",
+      class: "Pocket",
+      registry: "ABKC",
+      dob: "2025-04-13",
+      color: "Black Tri-Color Merle",
+      owner: "Bold Heart Bullies",
+      status: "Young Prospect",
+      hero: "/assets/dogs/dams/brookie/hero.jpg",
+      dna: "/assets/dogs/dams/brookie/dna.png",
+      note: "Brookie does not have a stud selected yet. BHB is actively searching for the right match when she is of age.",
+      gallery: ["/assets/dogs/dams/brookie/hero.jpg"],
     },
 
     {
@@ -115,7 +130,7 @@ export const SITE_DATA = {
         note: "Planned pairing. No stud page (outside stud).",
       },
     },
-
+    
     {
       id: "lotty",
       name: "BHB Lotty",
