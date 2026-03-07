@@ -3,9 +3,9 @@ import { SITE_DATA } from "../data/siteData.js";
 import DogCard from "../components/DogCard.jsx";
 
 export default function Home({ go, onImage }) {
-  const { brand, ownedStuds, dams } = SITE_DATA;
+  const { brand, ownedStuds, dams } = SITE_DATA;
   const featuredStud = ownedStuds[0];
-  const featuredDams = dams.slice(0, 3);
+  const featuredDams = dams.slice(0, 6);
 
   return (
     <div className="container">
