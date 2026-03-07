@@ -163,8 +163,8 @@ export const SITE_DATA = {
       dob: "2025-08-13",
       owner: "Bold Heart Bullies",
       status: "Young Prospect",
-      hero: "/assets/dogs/dams/stromi/hero.jpg",
-      gallery: ["/assets/dogs/dams/stromi/hero.jpg"],
+      hero: "/assets/dogs/dams/stromi/hero.png",
+      gallery: ["/assets/dogs/dams/stromi/hero.png"],
     },
   ],
 
