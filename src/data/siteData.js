@@ -8,25 +8,7 @@ export const SITE_DATA = {
     instagram: "https://instagram.com/boldheart_bullies",
   },
 
-  ownedStuds: [
-    {
-      id: "turbo",
-      name: "Spectrum's Turbo of BHB",
-      breed: "American Bully",
-      class: "Pocket",
-      registry: "ABKC / UKC",
-      dob: "2021-02-28",
-      color: "Chocolate Ghost Tri",
-      height: "13.5 in",
-      weight: "90 lbs",
-      studFee: "$1,000 ($500 Deposit)",
-      owner: "Bold Heart Bullies",
-      status: "Owned & Standing Stud",
-      hero: "/assets/dogs/studs/turbo/hero.jpg",
-      dna: "/assets/dogs/studs/turbo/dna.jpg",
-      gallery: ["/assets/dogs/studs/turbo/hero.jpg"],
-    },
-  ],
+  ownedStuds: [],
 
   dams: [
     {
