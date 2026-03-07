@@ -126,7 +126,7 @@ export const SITE_DATA = {
         stud: "Rango (Outside Stud — owned by Crabbs IncrediBulls)",
         method: "AI",
         dueDates: ["2026-02-14"],
-        status: "CONFIRMED!",
+        status: "Birthed 2 boys",
         studHero: "/assets/dogs/outside/rango/hero.jpg",
       },
       pastLitter: {
