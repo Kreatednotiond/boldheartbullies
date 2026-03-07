@@ -64,9 +64,9 @@ export const SITE_DATA = {
       color: "Blue Tri",
       owner: "Bold Heart Bullies",
       status: "Young Prospect",
-      hero: "/assets/dogs/dams/remi/hero.jpg",
+      hero: "/assets/dogs/dams/remi/hero.jpeg",
       dna: "/assets/dogs/dams/remi/dna.png",
-      gallery: ["/assets/dogs/dams/remi/hero.jpg"],
+      gallery: ["/assets/dogs/dams/remi/hero.jpeg"],
       plannedBreeding: {
         stud: "Hokie (Outside stud — owned by Oceanview Bullies)",
         timing: "Mid-Late 2026",
