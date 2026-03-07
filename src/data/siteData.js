@@ -106,9 +106,9 @@ export const SITE_DATA = {
       note: "Espie does not have a stud selected yet. BHB is actively searching for the right match when she is of age.",
       gallery: ["/assets/dogs/dams/espie/hero.jpg"],
       plannedBreeding: {
-        stud: "Makaveli (Outside stud — owned by Golden Rule Bullies)",
+        stud: "CLB's Typhon (Outside stud — owned by Cel’s Legacy Bullies)",
         timing: "Mid-Late 2026",
-        studHero: "/assets/dogs/outside/makaveli/hero.jpg",
+        studHero: "/assets/dogs/outside/typhon/hero.jpg",
         note: "Planned pairing. No stud page (outside stud).",
       },
     },
