@@ -89,6 +89,12 @@ export const SITE_DATA = {
       dna: "/assets/dogs/dams/brookie/dna.PNG",
       note: "Brookie does not have a stud selected yet. BHB is actively searching for the right match when she is of age.",
       gallery: ["/assets/dogs/dams/brookie/hero.jpg"],
+      plannedBreeding: {
+        stud: "Rambo of Triple J (Outside stud — owned by Triple J)",
+        timing: "Mid-Late 2026",
+        studHero: "/assets/dogs/outside/rambo/hero.JPG",
+        note: "Planned pairing. No stud page (outside stud).",
+      },
     },
 
     {
