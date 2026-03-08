@@ -179,7 +179,7 @@ export const SITE_DATA = {
     price: "$5000",
     description: "Now accepting deposits. Message us for details.",
     gallery: [
-      "/assets/available_puppies/lotty_rango/1.jpg"
+      "/assets/available_puppies/lotty_rango/1.png"
     ],
     parents: {
       sire: { name: "Rango", hero: "/assets/dogs/outside/rango/hero.jpg" },
