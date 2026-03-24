@@ -113,7 +113,7 @@ export const SITE_DATA = {
       gallery: ["/assets/dogs/dams/espie/hero.jpg"],
       pendingBreeding: {
         stud: "CLB's Typhon (Outside stud — owned by Cel’s Legacy Bullies)",
-        methods: "AI",
+        method: "AI",
         dates: ["2026-03-19", "2026-03-20"],
         studHero: "/assets/dogs/outside/typhon/hero.jpg",
       },
