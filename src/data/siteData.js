@@ -48,9 +48,9 @@ export const SITE_DATA = {
       },
 
       plannedBreeding: {
-        stud: "CLB's Tyson (Outside Stud — owned by Cel’s Legacy Bullies)",
+        stud: "QBB's Hank (Outside Stud — owned by Stay Fresh Bullyz)",
         timing: "Early/Mid 2026",
-        studHero: "/assets/dogs/outside/tyson/hero.jpg",
+        studHero: "/assets/dogs/outside/hank/hero.png",
         note: "Planned pairing. No stud page (outside stud).",
       },
     },
