@@ -63,7 +63,10 @@ export default function Breedings({ onImage }) {
               <>
                 <b style={{ color: "var(--text)" }}>Method:</b> {b.method || "—"}
                 <br />
-                <b style={{ color: "var(--text)" }}>Due Date:</b> {datesText || "—"}
+                <b style={{ color: "var(--text)" }}>
+                  {type === "pending" ? "AI dates: " : "Due Date:"}
+                </b>{" "}
+                {datesText || "—"}
                 <br />
                 <b style={{ color: "var(--text)" }}>Status:</b> {b.status || title}
               </>
