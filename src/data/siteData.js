@@ -176,8 +176,8 @@ export const SITE_DATA = {
     id: "lotty-rango-2026",
     title: "Lotty x Rango",
     status: "(Male) Available",
-    price: "$5000",
-    description: "3 weeks old, Now accepting deposits. Message us for details.",
+    price: "$3000",
+    description: "11 weeks old, Now accepting deposits. Message us for details.",
     gallery: [
       "/assets/available_puppies/lotty_rango/1.png"
     ],
