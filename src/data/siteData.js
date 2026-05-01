@@ -111,10 +111,12 @@ export const SITE_DATA = {
       dna: "/assets/dogs/dams/espie/dna.png",
       note: "Espie does not have a stud selected yet. BHB is actively searching for the right match when she is of age.",
       gallery: ["/assets/dogs/dams/espie/hero.jpg"],
-      pendingBreeding: {
+      confirmedBreeding: {
         stud: "CLB's Typhon (Outside stud — owned by Cel’s Legacy Bullies)",
         method: "AI",
-        dates: ["2026-03-19", "2026-03-20"],
+        dueDates: ["2026-05-21"],
+        status: "CONFIRMED - Accepting deposits", 
+        picks: "3rd & 4th picks available",
         studHero: "/assets/dogs/outside/typhon/hero.jpg",
       },
     },
