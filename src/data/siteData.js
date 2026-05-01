@@ -66,7 +66,7 @@ export const SITE_DATA = {
       status: "Young Prospect",
       hero: "/assets/dogs/dams/remi/hero.jpeg",
       dna: "/assets/dogs/dams/remi/dna.png",
-      gallery: ["/assets/dogs/dams/remi/hero.jpeg"],
+      gallery: ["/assets/dogs/dams/remi/hero.png"],
       plannedBreeding: {
         stud: "Hokie (Outside stud — owned by Oceanview Bullies)",
         timing: "Mid-Late 2026",
