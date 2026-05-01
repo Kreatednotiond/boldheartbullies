@@ -87,7 +87,7 @@ export const SITE_DATA = {
       status: "Young Prospect",
       hero: "/assets/dogs/dams/brookie/hero.jpg",
       dna: "/assets/dogs/dams/brookie/dna.PNG",
-      note: "Brookie does not have a stud selected yet. BHB is actively searching for the right match when she is of age.",
+      note: "Brookie has not had any previous litters.",
       gallery: ["/assets/dogs/dams/brookie/hero.jpg"],
       plannedBreeding: {
         stud: "Rambo of Triple J (Outside stud — owned by Triple J)",
@@ -109,7 +109,7 @@ export const SITE_DATA = {
       status: "Young Prospect",
       hero: "/assets/dogs/dams/espie/hero.jpg",
       dna: "/assets/dogs/dams/espie/dna.png",
-      note: "Espie does not have a stud selected yet. BHB is actively searching for the right match when she is of age.",
+      note: "Espie has not had any previous litters.",
       gallery: ["/assets/dogs/dams/espie/hero.jpg"],
       confirmedBreeding: {
         stud: "CLB's Typhon (Outside stud — owned by Cel’s Legacy Bullies)",
@@ -117,7 +117,7 @@ export const SITE_DATA = {
         dueDates: ["2026-05-21"],
         status: "CONFIRMED - Accepting deposits", 
         picks: "Available picks: 3rd pick, 4th pick, 5th pick & 6th pick available",
-        depositNote: "Deposits are required to reserve a pick. Please contact Bold Heart Bulliesto confirm availability before sending payment.",
+        depositNote: "Deposits are required to reserve a pick. Please contact Bold Heart Bullies to confirm availability before sending payment.",
         reserveSubject: "Reserve a Pick - Espie x Typhon",
         studHero: "/assets/dogs/outside/typhon/hero.jpg",
       },
@@ -137,6 +137,9 @@ export const SITE_DATA = {
         method: "AI",
         dueDates: ["2026-02-14"],
         status: "Birthed 2 boys",
+        picks: "Available picks: 1st pick available",
+        depositNote: "Deposits are required to reserve a pick. Please contact Bold Heart Bullies to confirm availability before sending payment.",
+        reserveSubject: "Reserve a Pick - Lotty x Rango",
         studHero: "/assets/dogs/outside/rango/hero.jpg",
       },
       pastLitter: {
