@@ -224,7 +224,8 @@ export const SITE_DATA = {
       id: "aja-hank-2026",
       title: "Aja x Hank",
       status: "Litter of 6",
-      pescription: "Born June 23, 2026. Now accepting deposits and reservations for available puppies.",
+      price: "Males $4,000 - Females $4,500",
+      description: "Born June 23, 2026. Now accepting deposits and reservations for available puppies.",
       gallery: [
         "/assets/available_puppies/aja_hank/1.jpg",
         "/assets/available_puppies/aja_hank/2.jpg",
