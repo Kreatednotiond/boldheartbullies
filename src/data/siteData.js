@@ -137,7 +137,9 @@ export const SITE_DATA = {
         reserveSubjest: "Reserve a Pick - Chyna x Rango",
         studHero: "/assets/dogs/outside/rango/hero.jpg",
       },
-      
+    },
+
+    { 
       id: "lotty",
       name: "BHB Lotty",
       breed: "French Bulldog",
