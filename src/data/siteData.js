@@ -127,9 +127,9 @@ export const SITE_DATA = {
       color: "Chocolate Tri",
       owner: "Bold Heart Bullies",
       status: "Proven Producer",
-      hero: "/assets/dogs/dams/aja/hero.jpg",
+      hero: "/assets/dogs/dams/Aja/hero.jpg",
       dna: "/assets/dogs/dams/dolla/dna.png",
-      gallery: ["/assets/dogs/dams/aja/hero.jpg"],
+      gallery: ["/assets/dogs/dams/Aja/hero.jpg"],
       confirmedBreeding: {
         stud: "Hank (Outside Stud — owned by StayFresh Bullyz)",
         method: "AI",
