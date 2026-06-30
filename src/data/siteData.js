@@ -118,7 +118,7 @@ export const SITE_DATA = {
   },
 
     {
-      id: "Chyna",
+      id: "chyna",
       name: "Chyna",
       breed: "French Bulldog",
       registry: "AKC",
@@ -126,7 +126,7 @@ export const SITE_DATA = {
       owner: "Bold Heart Bullies",
       status: "Proven Dam",
       hero: "/assets/dogs/dams/Chyna/hero.PNG",
-      gallery: ["assets/dogs/dams/Chyna/hero.PNG"],
+      gallery: ["/assets/dogs/dams/Chyna/hero.PNG"],
       confirmedBreeding: {
         stud: "Rango (Outside Stud — owned by Crabbs IncrediBulls)",
         method: "AI",
@@ -134,7 +134,7 @@ export const SITE_DATA = {
         status: "CONFIRMED - Accepting Deposits",
         picks: "Available picks: All Picks available.",
         depositNote: "Deposites are required to resrve a pick. Please contact Bold Heart Bullies before submitting a deposit.",
-        reserveSubjest: "Reserve a Pick - Chyna x Rango",
+        reserveSubject: "Reserve a Pick - Chyna x Rango",
         studHero: "/assets/dogs/outside/rango/hero.jpg",
       },
     },
