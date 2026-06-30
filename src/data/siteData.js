@@ -220,21 +220,33 @@ export const SITE_DATA = {
   ],
 
   puppies: [
-  {
-    id: "lotty-rango-2026",
-    title: "Lotty x Rango",
-    status: "(Male) Available",
-    price: "$3000",
-    description: "11 weeks old, Now accepting deposits. Message us for details.",
-    gallery: [
-      "/assets/available_puppies/lotty_rango/1.png"
-    ],
-    parents: {
-      sire: { name: "Rango", hero: "/assets/dogs/outside/rango/hero.jpg" },
-      dam:  { name: "Lotty", hero: "/assets/dogs/dams/lotty/hero.jpg" },
-     },
-  }
-],
+    {
+      id: "aja-hank-2026",
+      title: "Aja x Hank",
+      status: "Litter of 6",
+      pescription: "Born June 23, 2026. Now accepting deposits and reservations for available puppies.",
+      gallery: [
+        "/assets/available_puppies/aja_hank/1",
+        "/assets/available_puppies/aja_hank/2",
+        "/assets/available_puppies/aja_hank/3",
+        "/assets/available_puppies/aja_hank/4",
+        "/assets/available_puppies/aja_hank/5",
+        "/assets/available_puppies/aja_hank/6",
+      ],
+      parents: {
+        sire: { name: "Hank", hero: "/assets/dogs/outside/hank/hero.png" },
+        dam:  { name: "Aja", hero: "/assets/dogs/dams/Aja/hero.jpg" },
+      },
+      available: [
+        { id: "male1", sex: "Male", status: "Available", price: "$4000" },
+        { id: "male2", sex: "Male", status: "Available", price: "$4000" },
+        { id: "male3", sex: "Male", status: "Available", price: "$4000" },
+        { id: "male4", sex: "Male", status: "Available", price: "$4000" },
+        { id: "female1", sex: "Female", status: "Available", price: "$4500" },
+        { id: "female2", sex: "Female", status: "Available", price: "$4500" },
+      ],
+    },
+  ],
   contracts: [
   {
     label: "Stud Contract",
