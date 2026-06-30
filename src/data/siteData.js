@@ -117,6 +117,31 @@ export const SITE_DATA = {
       gallery: ["/assets/dogs/dams/espie/hero.jpg"],
   },
 
+    { 
+      id: "aja",
+      name: "BHB Aja",
+      breed: "American Bully",
+      class: "Pocket",
+      reigstry: "ABKC",
+      dob: "2024-07-28",
+      color: "Chocolate Tri",
+      owner: "Bold Heart Bullies",
+      status: "Proven Producer",
+      hero: "/assets/dogs/dams/aja/hero.jpg",
+      dna: "/assets/dogs/dams/dolla/dna.png",
+      gallery: ["/assets/dogs/dams/aja/hero.jpg"],
+      confirmedBreeding: {
+        stud: "Hank (Outside Stud — owned by StayFresh Bullyz)",
+        method: "AI",
+        dueDates: ["2026-06-23"],
+        status: "Birthed 4 boys and 2 girls",
+        picks: "Available picks: 2nd through 6th picks available",
+        depositNote: "Deposits are required to reserve a pick. Please contact Bold Heart Bullies to confirm availability before sending payment.",
+        reserveSubject: "Reserve a Pick - Aja x Hank",
+        studHero: "/assets/dogs/outside/hank/hero.png",
+      },
+    },
+
     {
       id: "chyna",
       name: "Chyna",
