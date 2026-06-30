@@ -47,11 +47,13 @@ export const SITE_DATA = {
         ],
       },
 
-      plannedBreeding: {
-        stud: "QBB's Hank (Outside Stud — owned by Stay Fresh Bullyz)",
-        timing: "Early/Mid 2026",
-        studHero: "/assets/dogs/outside/hank/hero.png",
-        note: "Planned pairing. No stud page (outside stud).",
+      pendingBreeding: {
+        stud: "CLB's GoldDust (Outside Stud — owned by Cel’s Legacy Bullies)",
+        method: "AI",
+        dates: ["2026-05-26"],
+        status: "Pending Pregnancy Confirmation",
+        studHero: "/assets/dogs/outside/golddust/hero.JPEG",
+        note: "Pregnancy cinfirmation ultrasound scheduled. Check back for updates.",
       },
     },
     {
@@ -89,11 +91,13 @@ export const SITE_DATA = {
       dna: "/assets/dogs/dams/brookie/dna.PNG",
       note: "Brookie has not had any previous litters.",
       gallery: ["/assets/dogs/dams/brookie/hero.jpg"],
-      plannedBreeding: {
-        stud: "Rambo of Triple J (Outside stud — owned by Triple J)",
-        timing: "Mid-Late 2026",
-        studHero: "/assets/dogs/outside/rambo/hero.JPG",
-        note: "Planned pairing. No stud page (outside stud).",
+      pendingBreeding: {
+        stud: "CLB's GoldDust (Outside Stud — owned by Cel’s Legacy Bullies)",
+        method: "AI",
+        dates: ["2026-05-26"],
+        status: "Pending Pregnancy Confirmation",
+        studHero: "/assets/dogs/outside/golddust/hero.JPEG",
+        note: "Pregnancy cinfirmation ultrasound scheduled. Check back for updates.",
       },
     },
 
@@ -111,19 +115,29 @@ export const SITE_DATA = {
       dna: "/assets/dogs/dams/espie/dna.png",
       note: "Espie has not had any previous litters.",
       gallery: ["/assets/dogs/dams/espie/hero.jpg"],
-      confirmedBreeding: {
-        stud: "CLB's Typhon (Outside stud — owned by Cel’s Legacy Bullies)",
-        method: "AI",
-        dueDates: ["2026-05-21"],
-        status: "CONFIRMED - Accepting deposits", 
-        picks: "Available picks: 3rd pick, 4th pick, 5th pick & 6th pick available",
-        depositNote: "Deposits are required to reserve a pick. Please contact Bold Heart Bullies to confirm availability before sending payment.",
-        reserveSubject: "Reserve a Pick - Espie x Typhon",
-        studHero: "/assets/dogs/outside/typhon/hero.jpg",
-      },
-    },
+  },
 
     {
+      id: "Chyna",
+      name: "Chyna",
+      breed: "French Bulldog",
+      registry: "AKC",
+      dob: "2024-06-26",
+      owner: "Bold Heart Bullies",
+      status: "Proven Dam",
+      hero: "/assets/dogs/dams/Chyna/hero.PNG",
+      gallery: ["assets/dogs/dams/Chyna/hero.PNG"],
+      confirmedBreeding: {
+        stud: "Rango (Outside Stud — owned by Crabbs IncrediBulls)",
+        method: "AI",
+        dueDates: ["2026-07-15"],
+        status: "CONFIRMED - Accepting Deposits",
+        picks: "Available picks: All Picks available.",
+        depositNote: "Deposites are required to resrve a pick. Please contact Bold Heart Bullies before submitting a deposit.",
+        reserveSubjest: "Reserve a Pick - Chyna x Rango",
+        studHero: "/assets/dogs/outside/rango/hero.jpg",
+      },
+      
       id: "lotty",
       name: "BHB Lotty",
       breed: "French Bulldog",
