@@ -173,16 +173,7 @@ export const SITE_DATA = {
       owner: "Bold Heart Bullies",
       status: "Proven Dam",
       hero: "/assets/dogs/dams/lotty/hero.jpg",
-      confirmedBreeding: {
-        stud: "Rango (Outside Stud — owned by Crabbs IncrediBulls)",
-        method: "AI",
-        dueDates: ["2026-02-14"],
-        status: "Birthed 2 boys",
-        picks: "Available picks: 1st pick available",
-        depositNote: "Deposits are required to reserve a pick. Please contact Bold Heart Bullies to confirm availability before sending payment.",
-        reserveSubject: "Reserve a Pick - Lotty x Rango",
-        studHero: "/assets/dogs/outside/rango/hero.jpg",
-      },
+      
       pastLitter: {
         title: "Lotty x Mr. Banks (Outside Stud)",
         heroes: [
