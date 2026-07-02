@@ -94,7 +94,7 @@ export const SITE_DATA = {
       pendingBreeding: {
         stud: "CLB's GoldDust (Outside Stud — owned by Cel’s Legacy Bullies)",
         method: "AI",
-        dates: ["2026-05-26"],
+        dates: ["2026-06-10"],
         status: "Pending Pregnancy Confirmation",
         studHero: "/assets/dogs/outside/golddust/hero.JPEG",
         note: "Pregnancy cinfirmation ultrasound scheduled. Check back for updates.",
@@ -173,7 +173,7 @@ export const SITE_DATA = {
       owner: "Bold Heart Bullies",
       status: "Proven Dam",
       hero: "/assets/dogs/dams/lotty/hero.jpg",
-      
+
       pastLitter: {
         title: "Lotty x Mr. Banks (Outside Stud)",
         heroes: [
