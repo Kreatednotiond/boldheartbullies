@@ -138,7 +138,7 @@ export const SITE_DATA = {
         picks: "Available picks: 2nd through 6th picks available",
         depositNote: "Deposits are required to reserve a pick. Please contact Bold Heart Bullies to confirm availability before sending payment.",
         reserveSubject: "Reserve a Pick - Aja x Hank",
-        studHero: "/assets/dogs/outside/hank/hero.png",
+        studHero: "/assets/dogs/outside/hank/hero.JPEG",
       },
     },
 
@@ -226,7 +226,7 @@ export const SITE_DATA = {
         "/assets/available_puppies/aja_hank/6.jpg",
       ],
       parents: {
-        sire: { name: "Hank", hero: "/assets/dogs/outside/hank/hero.png" },
+        sire: { name: "Hank", hero: "/assets/dogs/outside/hank/hero.JPEG" },
         dam:  { name: "Aja", hero: "/assets/dogs/dams/Aja/hero.jpg" },
       },
       available: [
