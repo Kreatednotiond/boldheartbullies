@@ -219,8 +219,7 @@ export const SITE_DATA = {
       description: "Born June 23, 2026. Now accepting deposits and reservations for available puppies.",
       gallery: [
         "/assets/available_puppies/aja_hank/1.jpg",
-        "/assets/available_puppies/aja_hank/2.jpg",
-        "/assets/available_puppies/aja_hank/3.jpg",
+      "/assets/available_puppies/aja_hank/3.jpg",
         "/assets/available_puppies/aja_hank/4.jpg",
         "/assets/available_puppies/aja_hank/5.jpg",
         "/assets/available_puppies/aja_hank/6.jpg",
@@ -231,8 +230,7 @@ export const SITE_DATA = {
       },
       available: [
         { id: "male1", sex: "Male", status: "Available", price: "$4000" },
-        { id: "male2", sex: "Male", status: "Available", price: "$4000" },
-        { id: "male3", sex: "Male", status: "Available", price: "$4000" },
+      { id: "male3", sex: "Male", status: "Available", price: "$4000" },
         { id: "male4", sex: "Male", status: "Available", price: "$4000" },
         { id: "female1", sex: "Female", status: "Available", price: "$4500" },
         { id: "female2", sex: "Female", status: "Available", price: "$4500" },
