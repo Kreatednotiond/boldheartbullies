@@ -156,7 +156,7 @@ export const SITE_DATA = {
         stud: "Rango (Outside Stud — owned by Crabbs IncrediBulls)",
         method: "AI",
         dueDates: ["2026-07-15"],
-        status: "CONFIRMED - Accepting Deposits",
+        status: "Birthed 2 boys and 1 girls",
         picks: "Available picks: All Picks available.",
         depositNote: "Deposites are required to resrve a pick. Please contact Bold Heart Bullies before submitting a deposit.",
         reserveSubject: "Reserve a Pick - Chyna x Rango",
