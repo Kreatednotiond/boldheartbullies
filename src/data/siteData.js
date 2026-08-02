@@ -219,6 +219,29 @@ export const SITE_DATA = {
         { id: "female2", sex: "Female", status: "Available", price: "$3500" },
       ],
     },
+
+    {
+        id: "Chyna-Rango-2026",
+      title: "Chyna x Rango",
+      status: "Litter of 3",
+      price: "Males $3,000 - Females $3,500",
+      description: "Born July 16, 2026. Now accepting deposits and reservations for available puppies.",
+      gallery: [
+        "/assets/available_puppies/aja_hank/1.jpg",
+      "/assets/available_puppies/aja_hank/2.jpg",
+        "/assets/available_puppies/aja_hank/5.jpg",
+        "/assets/available_puppies/aja_hank/6.jpg",
+      ],
+      parents: {
+        sire: { name: "Rango", hero: "/assets/dogs/outside/hank/hero.JPG" },
+        dam:  { name: "Chyna", hero: "/assets/dogs/dams/Aja/hero.PNG" },
+      },
+      available: [
+      { id: "male3", sex: "Male", status: "Available", price: "$3000" },
+        { id: "male4", sex: "Male", status: "Available", price: "$3000" },
+        { id: "female1", sex: "Female", status: "Available", price: "$3500" },
+      ],
+    },
   ],
   contracts: [
   {
