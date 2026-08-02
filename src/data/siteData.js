@@ -203,8 +203,7 @@ export const SITE_DATA = {
       description: "Born June 23, 2026. Now accepting deposits and reservations for available puppies.",
       gallery: [
         "/assets/available_puppies/aja_hank/1.jpg",
-      "/assets/available_puppies/aja_hank/3.jpg",
-        "/assets/available_puppies/aja_hank/4.jpg",
+      "/assets/available_puppies/aja_hank/2.jpg",
         "/assets/available_puppies/aja_hank/5.jpg",
         "/assets/available_puppies/aja_hank/6.jpg",
       ],
