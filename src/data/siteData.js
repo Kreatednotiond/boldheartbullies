@@ -233,8 +233,8 @@ export const SITE_DATA = {
         "/assets/available_puppies/aja_hank/6.jpg",
       ],
       parents: {
-        sire: { name: "Rango", hero: "/assets/dogs/outside/hank/hero.JPG" },
-        dam:  { name: "Chyna", hero: "/assets/dogs/dams/Aja/hero.PNG" },
+        sire: { name: "Rango", hero: "/assets/dogs/outside/rango/hero.JPG" },
+        dam:  { name: "Chyna", hero: "/assets/dogs/dams/chyna/hero.PNG" },
       },
       available: [
       { id: "male3", sex: "Male", status: "Available", price: "$3000" },
