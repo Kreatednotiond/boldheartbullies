@@ -230,10 +230,9 @@ export const SITE_DATA = {
       price: "Males $3,000 - Females $3,500",
       description: "Born July 16, 2026. Now accepting deposits and reservations for available puppies.",
       gallery: [
-        "/assets/available_puppies/aja_hank/1.jpg",
-      "/assets/available_puppies/aja_hank/2.jpg",
-        "/assets/available_puppies/aja_hank/5.jpg",
-        "/assets/available_puppies/aja_hank/6.jpg",
+        "/assets/available_puppies/chyna_rango/1.jpg",
+      "/assets/available_puppies/chyna_rango/2.jpg",
+        "/assets/available_puppies/chyna_rango/3.jpg",
       ],
       parents: {
         sire: { name: "Rango", hero: "/assets/dogs/outside/rango/hero.jpg" },
