@@ -218,6 +218,9 @@ export const SITE_DATA = {
         { id: "female1", sex: "Female", status: "Available", price: "$3500" },
         { id: "female2", sex: "Female", status: "Available", price: "$3500" },
       ],
+
+      reserveSubject: "Reserve a Puppy - Aja x Hank",
+      depositNote: "A deposit is required to reservean available puppy. Please contact Bold Heart Bullies to confirm availablility before submitting payment.",
     },
 
     {
@@ -241,6 +244,9 @@ export const SITE_DATA = {
         { id: "male4", sex: "Male", status: "Available", price: "$3000" },
         { id: "female1", sex: "Female", status: "Available", price: "$3500" },
       ],
+
+      reserveSubject: "Reserve a Puppy - Chyna x Rango",
+      depositNote: "A deposit is required to reservean available puppy. Please contact Bold Heart Bullies to confirm availablility before submitting payment.",
     },
   ],
   contracts: [
