@@ -212,7 +212,7 @@ export const SITE_DATA = {
         dam:  { name: "Aja", hero: "/assets/dogs/dams/Aja/hero.jpg" },
       },
       available: [
-        { id: "male1", sex: "Male", status: "SOLD", price: "$SOLD" },
+        { id: "male1", sex: "Male", status: "SOLD", price: "SOLD" },
       { id: "male3", sex: "Male", status: "Available", price: "$3000" },
         { id: "male4", sex: "Male", status: "Available", price: "$3000" },
         { id: "female1", sex: "Female", status: "Available", price: "$3500" },
