@@ -45,17 +45,9 @@ export const SITE_DATA = {
           "/assets/past_litters/dolla_geronimo_2025/7.jpg",
           "/assets/past_litters/dolla_geronimo_2025/8.jpg",
         ],
-      },
-
-      pendingBreeding: {
-        stud: "CLB's GoldDust (Outside Stud — owned by Cel’s Legacy Bullies)",
-        method: "AI",
-        dates: ["2026-05-26"],
-        status: "Pending Pregnancy Confirmation",
-        studHero: "/assets/dogs/outside/golddust/hero.JPEG",
-        note: "Pregnancy cinfirmation ultrasound scheduled. Check back for updates.",
-      },
     },
+  },
+    
     {
       id: "remi",
       name: "CLB's Remi of Bold Heart Bullies",
@@ -91,15 +83,7 @@ export const SITE_DATA = {
       dna: "/assets/dogs/dams/brookie/dna.PNG",
       note: "Brookie has not had any previous litters.",
       gallery: ["/assets/dogs/dams/brookie/hero.jpg"],
-      pendingBreeding: {
-        stud: "CLB's GoldDust (Outside Stud — owned by Cel’s Legacy Bullies)",
-        method: "AI",
-        dates: ["2026-06-10"],
-        status: "Pending Pregnancy Confirmation",
-        studHero: "/assets/dogs/outside/golddust/hero.JPEG",
-        note: "Pregnancy cinfirmation ultrasound scheduled. Check back for updates.",
-      },
-    },
+},
 
     {
       id: "espie",
