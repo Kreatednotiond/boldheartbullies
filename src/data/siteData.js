@@ -226,7 +226,7 @@ export const SITE_DATA = {
     {
         id: "Chyna-Rango-2026",
       title: "Chyna x Rango",
-      status: "Litter of 3",
+      status: "Litter of 3", 
       price: "Males $3,000 - Females $3,500",
       description: "Born July 16, 2026. Now accepting deposits and reservations for available puppies.",
       gallery: [
