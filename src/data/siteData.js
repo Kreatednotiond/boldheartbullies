@@ -8,7 +8,25 @@ export const SITE_DATA = {
     instagram: "https://instagram.com/boldheart_bullies",
   },
 
-  ownedStuds: [],
+  ownedStuds: [
+    {
+      id: "Melo",
+      name: "BHB's Melo",
+      breed: "American Bully",
+      class: "Pocket",
+      registry: "ABKC",
+      dob: "2025-03-17",
+      color: "Blue Tri",
+      height: "13 in",
+      studFee: "$1000 (($500 Deposit)",
+      owner: "Bold Heart Bullies",
+      status: "Owned and Standing Stud",
+      hero: "/assets/dogs/studs/melo/hero.jpg",
+      dna: "/assets/dogs/dams/espie/dna.png",
+      glallery: ["/assets/dogs/studs/melo/hero.jpg",
+      ]
+    }
+  ],
 
   dams: [
     {
