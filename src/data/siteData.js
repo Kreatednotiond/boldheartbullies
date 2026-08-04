@@ -211,6 +211,12 @@ export const SITE_DATA = {
         sire: { name: "Hank", hero: "/assets/dogs/outside/hank/hero.JPEG" },
         dam:  { name: "Aja", hero: "/assets/dogs/dams/Aja/hero.jpg" },
       },
+    pedigree: {
+      name: "Pedigree",
+      photos: [
+        "/assets/available_puppies/aja_hank/pedigree1.jpg",
+      ],
+    },
       available: [
         { id: "male1", sex: "Male", status: "SOLD", price: "SOLD" },
       { id: "male3", sex: "Male", status: "Available", price: "$3000" },
