@@ -272,20 +272,7 @@ export const SITE_DATA = {
       depositNote: "A deposit is required to reservean available puppy. Please contact Bold Heart Bullies to confirm availablility before submitting payment.",
     },
   ],
-  contracts: [
-  {
-    label: "Stud Contract",
-    file: "/assets/contracts/BHB_Stud_Contract.png",
-  },
-  {
-    label: "American Bully Puppy Contract",
-    file: "/assets/contracts/BHB_American_Bully_Contract.pdf",
-  },
-  {
-    label: "French Bulldog Puppy Contract",
-    file: "/assets/contracts/BHB_French_Bulldog_Contract.pdf",
-  },
-],
+  contracts: [],
 
 contractsImportant: [
   "Deposits are non-refundable under any circumstances, but may be transferable to a future puppy's deposit if the breeder agrees.",
