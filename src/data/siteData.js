@@ -39,9 +39,9 @@ export const SITE_DATA = {
       color: "Lilac Tri",
       owner: "Bold Heart Bullies",
       status: "Proven Producer",
-      hero: "/assets/dogs/dams/dolla/hero.jpg",
+      hero: "/assets/dogs/dams/dolla/hero.jpeg",
       dna: "/assets/dogs/dams/dolla/dna.png",
-      gallery: ["/assets/dogs/dams/dolla/hero.jpg"],
+      gallery: ["/assets/dogs/dams/dolla/hero.jpeg"],
 
       // ✅ UPDATED: BOTH Dolla + Geronimo images here
       pastLitter: {
