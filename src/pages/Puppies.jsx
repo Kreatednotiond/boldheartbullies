@@ -61,6 +61,20 @@ Thank you.`;
                 <ImageGrid items={p.gallery} onImage={onImage} />
               ) : null}
 
+{/* Pedigree photos */}
+{p.pedigree?.photos?.length ? (
+  <div style={{ marginTop: 18 }}>
+    <div className="badge" style={{ marginBottom: 10 }}>
+      {p.pedigree.name || "Pedigree"}
+    </div>
+
+    <ImageGrid
+      items={p.pedigree.photos}
+      onImage={onImage}
+    />
+  </div>
+) : null}
+
               {/* Available puppies and pricing */}
               {p.available?.length ? (
                 <div style={{ marginTop: 14 }}>
