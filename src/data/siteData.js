@@ -21,9 +21,9 @@ export const SITE_DATA = {
       studFee: "$1000 (($500 Deposit)",
       owner: "Bold Heart Bullies",
       status: "Owned and Standing Stud",
-      hero: "/assets/dogs/studs/melo/hero.jpg",
+      hero: "/assets/dogs/studs/melo/hero.jpeg",
       dna: "/assets/dogs/dams/espie/dna.png",
-      glallery: ["/assets/dogs/studs/melo/hero.jpg",
+      glallery: ["/assets/dogs/studs/melo/hero.jpeg",
       ]
     }
   ],
