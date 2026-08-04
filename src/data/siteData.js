@@ -18,7 +18,7 @@ export const SITE_DATA = {
       dob: "2025-03-17",
       color: "Blue Tri",
       height: "13 in",
-      studFee: "$1000 (($500 Deposit)",
+      studFee: "$1000 ($500 Deposit)",
       owner: "Bold Heart Bullies",
       status: "Owned and Standing Stud",
       hero: "/assets/dogs/studs/melo/hero.jpeg",
@@ -39,9 +39,9 @@ export const SITE_DATA = {
       color: "Lilac Tri",
       owner: "Bold Heart Bullies",
       status: "Proven Producer",
-      hero: "/assets/dogs/dams/dolla/hero.jpeg",
+      hero: "/assets/dogs/dams/dolla/hero.jpg",
       dna: "/assets/dogs/dams/dolla/dna.png",
-      gallery: ["/assets/dogs/dams/dolla/hero.jpeg"],
+      gallery: ["/assets/dogs/dams/dolla/hero.jpg"],
 
       // ✅ UPDATED: BOTH Dolla + Geronimo images here
       pastLitter: {
