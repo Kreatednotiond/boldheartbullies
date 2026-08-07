@@ -80,9 +80,9 @@ export const SITE_DATA = {
       dna: "/assets/dogs/dams/remi/dna.png",
       gallery: ["/assets/dogs/dams/remi/hero.jpeg"],
       plannedBreeding: {
-        stud: "Hokie (Outside stud — owned by Oceanview Bullies)",
+        stud: "PBK Ghost (Outside stud — owned by Production Bully Kennels)",
         timing: "Mid-Late 2026",
-        studHero: "/assets/dogs/outside/Hokie/hero.jpg",
+        studHero: "/assets/dogs/outside/ghost/hero.jpeg",
         note: "Planned pairing. No stud page (outside stud).",
       },
     },
