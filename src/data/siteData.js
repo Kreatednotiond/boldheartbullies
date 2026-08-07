@@ -81,7 +81,7 @@ export const SITE_DATA = {
       gallery: ["/assets/dogs/dams/remi/hero.jpeg"],
       plannedBreeding: {
         stud: "PBK Ghost (Outside stud — owned by Production Bully Kennels)",
-        timing: "Mid-Late 2026",
+        timing: "Late 2026, Early 2027",
         studHero: "/assets/dogs/outside/ghost/hero.jpeg",
         note: "Planned pairing. No stud page (outside stud).",
       },
