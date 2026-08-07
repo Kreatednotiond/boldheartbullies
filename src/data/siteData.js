@@ -117,6 +117,12 @@ export const SITE_DATA = {
       dna: "/assets/dogs/dams/espie/dna.png",
       note: "Espie has not had any previous litters.",
       gallery: ["/assets/dogs/dams/espie/hero.jpg"],
+      plannedBreeding: {
+        stud: "Rambo (Outside stud — owned by UpOne Bullys)",
+        timing: "Late 2026, Early 2027",
+        studHero: "/assets/dogs/outside/rambo/hero.jpg",
+        note: "Planned pairing. No stud page (outside stud).",
+      },
   },
 
     { 
