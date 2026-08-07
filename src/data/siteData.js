@@ -120,7 +120,7 @@ export const SITE_DATA = {
       plannedBreeding: {
         stud: "Rambo (Outside stud — owned by UpOne Bullys)",
         timing: "Late 2026, Early 2027",
-        studHero: "/assets/dogs/outside/rambo/hero.jpg",
+        studHero: "/assets/dogs/outside/rambo/hero.JPG",
         note: "Planned pairing. No stud page (outside stud).",
       },
   },
