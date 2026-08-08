@@ -247,10 +247,10 @@ export const SITE_DATA = {
     },
       available: [
         { id: "male1", sex: "Male", status: "Sold", price: "SOLD" },
-      { id: "male3", sex: "Male", status: "Available", price: "$3000" },
-        { id: "male4", sex: "Male", status: "Available", price: "$3000" },
-        { id: "female1", sex: "Female", status: "Available", price: "$3500" },
-        { id: "female2", sex: "Female", status: "Available", price: "$3500" },
+      { id: "male3", sex: "Male", status: "Available", price: "$3000", photo: "/assets/available_puppies/aja_hank/1.jpg",},
+        { id: "male4", sex: "Male", status: "Available", price: "$3000", photo: "/assets/available_puppies/aja_hank/2.jpg",},
+        { id: "female1", sex: "Female", status: "Available", price: "$3500", photo: "/assets/available_puppies/aja_hank/5.jpg",},
+        { id: "female2", sex: "Female", status: "Available", price: "$3500", photo: "/assets/available_puppies/aja_hank/6.jpg",},
       ],
 
       reserveSubject: "Reserve a Puppy - Aja x Hank",
@@ -276,9 +276,9 @@ export const SITE_DATA = {
         dam:  { name: "Chyna", hero: "/assets/dogs/dams/Chyna/hero.PNG" },
       },
       available: [
-      { id: "male3", sex: "Male", status: "Available", price: "$3000" },
-        { id: "male4", sex: "Male", status: "Available", price: "$3000" },
-        { id: "female1", sex: "Female", status: "Available", price: "$3500" },
+      { id: "male3", sex: "Male", status: "Available", price: "$3000", photo: "/assets/available_puppies/chyna_rango/1.jpg",},
+        { id: "male4", sex: "Male", status: "Available", price: "$3000", photo: "/assets/available_puppies/chyna_rango/2.jpg",},
+        { id: "female1", sex: "Female", status: "Available", price: "$3500", photo: "/assets/available_puppies/chyna_rango/3.jpg",},
       ],
 
       reserveSubject: "Reserve a Puppy - Chyna x Rango",

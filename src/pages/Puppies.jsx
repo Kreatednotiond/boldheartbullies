@@ -225,93 +225,127 @@ Thank you.`;
               {isOpen ? (
                 <div style={{ marginTop: 18 }}>
                   {/* AVAILABLE PUPPIES */}
-                  {p.available?.length ? (
-                    <div>
-                      <div className="badge" style={{ marginBottom: 10 }}>
-                        Available Puppies
-                      </div>
+{p.available?.length ? (
+  <div>
+    <div className="badge" style={{ marginBottom: 10 }}>
+      Available Puppies
+    </div>
 
-                      <div className="card">
-                        <div className="pad">
-                          {p.available.map((puppy) => {
-                            const puppyStatus = String(
-                              puppy.status || ""
-                            ).toLowerCase();
+    <div className="card">
+      <div className="pad">
+        {p.available.map((puppy) => {
+          const puppyStatus = String(
+            puppy.status || ""
+          ).toLowerCase();
 
-                            const statusBackground =
-                              puppyStatus === "sold"
-                                ? "#4b1f1f"
-                                : puppyStatus === "reserved"
-                                ? "#4a3a12"
-                                : "#173d2a";
+          const statusBackground =
+            puppyStatus === "sold"
+              ? "#4b1f1f"
+              : puppyStatus === "reserved"
+              ? "#4a3a12"
+              : "#173d2a";
 
-                            const statusColor =
-                              puppyStatus === "sold"
-                                ? "#ffb4b4"
-                                : puppyStatus === "reserved"
-                                ? "#ffe08a"
-                                : "#9ff0be";
+          const statusColor =
+            puppyStatus === "sold"
+              ? "#ffb4b4"
+              : puppyStatus === "reserved"
+              ? "#ffe08a"
+              : "#9ff0be";
 
-                            return (
-                              <div
-                                key={puppy.id}
-                                style={{
-                                  display: "flex",
-                                  justifyContent: "space-between",
-                                  alignItems: "center",
-                                  gap: 12,
-                                  padding: "14px 16px",
-                                  marginBottom: 10,
-                                  borderRadius: 14,
-                                  background: "#0f1720",
-                                  border:
-                                    "1px solid rgba(255,255,255,.08)",
-                                }}
-                              >
-                                <div>
-                                  <div
-                                    style={{
-                                      fontWeight: 800,
-                                      fontSize: 16,
-                                    }}
-                                  >
-                                    {puppy.sex}
-                                  </div>
+          return (
+            <div
+              key={puppy.id}
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                gap: 14,
+                padding: "14px",
+                marginBottom: 12,
+                borderRadius: 14,
+                background: "#0f1720",
+                border: "1px solid rgba(255,255,255,.08)",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 12,
+                  minWidth: 0,
+                }}
+              >
+                {puppy.photo ? (
+                  <img
+                    src={puppy.photo}
+                    alt={puppy.name || puppy.sex}
+                    style={{
+                      width: 82,
+                      height: 82,
+                      objectFit: "cover",
+                      borderRadius: 12,
+                      flexShrink: 0,
+                      cursor: "pointer",
+                    }}
+                    onClick={() => onImage?.(puppy.photo)}
+                  />
+                ) : null}
 
-                                  <div
-                                    style={{
-                                      marginTop: 6,
-                                      display: "inline-block",
-                                      padding: "4px 9px",
-                                      borderRadius: 999,
-                                      fontSize: 12,
-                                      fontWeight: 800,
-                                      background: statusBackground,
-                                      color: statusColor,
-                                      border:
-                                        "1px solid rgba(255,255,255,.08)",
-                                    }}
-                                  >
-                                    {puppy.status}
-                                  </div>
-                                </div>
+                <div>
+                  <div
+                    style={{
+                      fontWeight: 800,
+                      fontSize: 16,
+                    }}
+                  >
+                    {puppy.name || puppy.sex}
+                  </div>
 
-                                <div
-                                  style={{
-                                    textAlign: "right",
-                                    fontWeight: 900,
-                                    fontSize: 17,
-                                  }}
-                                >
-                                  {puppy.price}
-                                </div>
-                              </div>
-                            );
-                          })}
-                        </div>
-                      </div>
-                    </div>
-                  ) : null}
+                  <div
+                    style={{
+                      fontSize: 13,
+                      color: "var(--muted)",
+                      marginTop: 2,
+                    }}
+                  >
+                    {puppy.sex}
+                  </div>
+
+                  <div
+                    style={{
+                      marginTop: 6,
+                      display: "inline-block",
+                      padding: "4px 9px",
+                      borderRadius: 999,
+                      fontSize: 12,
+                      fontWeight: 800,
+                      background: statusBackground,
+                      color: statusColor,
+                      border: "1px solid rgba(255,255,255,.08)",
+                    }}
+                  >
+                    {puppy.status}
+                  </div>
+                </div>
+              </div>
+
+              <div
+                style={{
+                  textAlign: "right",
+                  fontWeight: 900,
+                  fontSize: 17,
+                  flexShrink: 0,
+                }}
+              >
+                {puppy.price}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </div>
+) : null}
 
                   {/* DEPOSIT INFO */}
                   {p.depositNote ? (
