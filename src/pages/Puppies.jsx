@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { SITE_DATA } from "../data/siteData.js";
 import ImageGrid from "../components/ImageGrid.jsx";
 
 export default function Puppies({ onImage }) {
   const pups = SITE_DATA.puppies || [];
+  const [openLitters, setOpenLitters] = useState({});
+
+  const toggleLitter = (id) => {
+    setOpenLitters((current) => ({
+      ...current,
+      [id]: !current[id],
+    }));
+  };
 
   return (
     <div className="container">
@@ -19,6 +27,7 @@ export default function Puppies({ onImage }) {
 
       {pups.map((p) => {
         const featuredImage = p.featuredImage || p.gallery?.[0];
+        const isOpen = !!openLitters[p.id];
 
         const reserveSubject =
           p.reserveSubject || `Reserve a Puppy - ${p.title}`;
@@ -88,274 +97,301 @@ Thank you.`;
             ) : null}
 
             <div className="pad">
-              <div
-  style={{
-    display: "grid",
-    gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
-    gap: 10,
-    marginTop: 4,
-  }}
->
-  <div
-    style={{
-      padding: "12px 14px",
-      borderRadius: 12,
-      background: "#0f1720",
-      border: "1px solid rgba(255,255,255,.08)",
-    }}
-  >
-    <div
-      style={{
-        fontSize: 12,
-        color: "var(--muted)",
-        marginBottom: 4,
-      }}
-    >
-      Litter
-    </div>
-
-    <div style={{ fontWeight: 800 }}>
-      {p.status}
-    </div>
-  </div>
-
-  <div
-    style={{
-      padding: "12px 14px",
-      borderRadius: 12,
-      background: "#0f1720",
-      border: "1px solid rgba(255,255,255,.08)",
-    }}
-  >
-    <div
-      style={{
-        fontSize: 12,
-        color: "var(--muted)",
-        marginBottom: 4,
-      }}
-    >
-      Pricing
-    </div>
-
-    <div style={{ fontWeight: 800 }}>
-      {p.price || "Contact for pricing"}
-    </div>
-  </div>
-</div>
-
-{p.description ? (
-  <p
-    style={{
-      color: "var(--muted)",
-      lineHeight: 1.7,
-      marginTop: 14,
-    }}
-  >
-    {p.description}
-  </p>
-) : null}
-
-              {/* AVAILABLE PUPPIES */}
-{p.available?.length ? (
-  <div style={{ marginTop: 16 }}>
-    <div className="badge" style={{ marginBottom: 10 }}>
-      Available Puppies
-    </div>
-
-    <div className="card">
-      <div className="pad">
-        {p.available.map((puppy) => (
-          <div
-            key={puppy.id}
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              gap: 12,
-              padding: "14px 16px",
-              marginBottom: 10,
-              borderRadius: 14,
-              background: "#0f1720",
-              border: "1px solid rgba(255,255,255,.08)",
-            }}
-          >
-            <div>
+              {/* LITTER INFO */}
               <div
                 style={{
-                  fontWeight: 800,
-                  fontSize: 16,
+                  display: "grid",
+                  gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+                  gap: 10,
+                  marginTop: 4,
                 }}
               >
-                {puppy.sex}
+                <div
+                  style={{
+                    padding: "12px 14px",
+                    borderRadius: 12,
+                    background: "#0f1720",
+                    border: "1px solid rgba(255,255,255,.08)",
+                  }}
+                >
+                  <div
+                    style={{
+                      fontSize: 12,
+                      color: "var(--muted)",
+                      marginBottom: 4,
+                    }}
+                  >
+                    Litter
+                  </div>
+
+                  <div style={{ fontWeight: 800 }}>{p.status}</div>
+                </div>
+
+                <div
+                  style={{
+                    padding: "12px 14px",
+                    borderRadius: 12,
+                    background: "#0f1720",
+                    border: "1px solid rgba(255,255,255,.08)",
+                  }}
+                >
+                  <div
+                    style={{
+                      fontSize: 12,
+                      color: "var(--muted)",
+                      marginBottom: 4,
+                    }}
+                  >
+                    Pricing
+                  </div>
+
+                  <div style={{ fontWeight: 800 }}>
+                    {p.price || "Contact for pricing"}
+                  </div>
+                </div>
               </div>
 
-              <div
-  style={{
-    marginTop: 6,
-    display: "inline-block",
-    padding: "4px 9px",
-    borderRadius: 999,
-    fontSize: 12,
-    fontWeight: 800,
-    background:
-      puppy.status?.toLowerCase() === "sold"
-        ? "#4b1f1f"
-        : puppy.status?.toLowerCase() === "reserved"
-        ? "#4a3a12"
-        : "#173d2a",
-    color:
-      puppy.status?.toLowerCase() === "sold"
-        ? "#ffb4b4"
-        : puppy.status?.toLowerCase() === "reserved"
-        ? "#ffe08a"
-        : "#9ff0be",
-    border: "1px solid rgba(255,255,255,.08)",
-  }}
->
-  {puppy.status}
-</div>
-            </div>
-
-            <div
-              style={{
-                textAlign: "right",
-                fontWeight: 900,
-                fontSize: 17,
-              }}
-            >
-              {puppy.price}
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-) : null}
-
-              {/* RESERVE BUTTON */}
-              {p.depositNote ? (
+              {p.description ? (
                 <p
                   style={{
                     color: "var(--muted)",
                     lineHeight: 1.7,
-                    marginTop: 16,
+                    marginTop: 14,
                   }}
                 >
-                  <b style={{ color: "var(--text)" }}>
-                    Deposit Information:
-                  </b>{" "}
-                  {p.depositNote}
+                  {p.description}
                 </p>
               ) : null}
-<button
-                className="btn primary"
-                style={{ marginTop: 10 }}
-                onClick={() => {
-                  window.location.href = `mailto:${
-                    SITE_DATA.brand.email
-                  }?subject=${encodeURIComponent(
-                    reserveSubject
-                  )}&body=${encodeURIComponent(reserveBody)}`;
+
+              {/* VIEW LITTER BUTTON */}
+              <button
+                className="btn"
+                style={{
+                  width: "100%",
+                  marginTop: 10,
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  fontWeight: 800,
                 }}
+                onClick={() => toggleLitter(p.id)}
               >
-                Reserve a Puppy
+                <span>{isOpen ? "Hide Litter Details" : "View Litter"}</span>
+                <span>{isOpen ? "↑" : "→"}</span>
               </button>
 
-              {/* PUPPY GALLERY */}
-              {p.gallery?.length ? (
-                <div style={{ marginTop: 20 }}>
-                  <div className="badge" style={{ marginBottom: 10 }}>
-                    Puppy Gallery
-                  </div>
-
-                  <ImageGrid items={p.gallery} onImage={onImage} />
-                </div>
-              ) : null}
-
-              {/* PEDIGREE */}
-              {p.pedigree?.photos?.length ? (
-                <div style={{ marginTop: 20 }}>
-                  <div className="badge" style={{ marginBottom: 10 }}>
-                    {p.pedigree.name || "Pedigree"}
-                  </div>
-
-                  <ImageGrid
-                    items={p.pedigree.photos}
-                    onImage={onImage}
-                  />
-                </div>
-              ) : null}
-
-              {/* PARENTS */}
-              {p.parents ? (
-                <div style={{ marginTop: 20 }}>
-                  <div className="badge" style={{ marginBottom: 10 }}>
-                    Parents
-                  </div>
-
-                  <div className="row" style={{ gap: 12 }}>
-                    {p.parents.sire?.hero ? (
-                      <div style={{ flex: 1 }}>
-                        <div
-                          style={{
-                            fontWeight: 700,
-                            marginBottom: 6,
-                          }}
-                        >
-                          Sire: {p.parents.sire.name}
-                        </div>
-
-                        <img
-                          src={p.parents.sire.hero}
-                          alt={`Sire: ${p.parents.sire.name}`}
-                          style={{
-                            width: "100%",
-                            height: 220,
-                            objectFit: "cover",
-                            borderRadius: 14,
-                            cursor: "pointer",
-                          }}
-                          onClick={() =>
-                            onImage?.(p.parents.sire.hero)
-                          }
-                        />
+              {/* COLLAPSIBLE LITTER DETAILS */}
+              {isOpen ? (
+                <div style={{ marginTop: 18 }}>
+                  {/* AVAILABLE PUPPIES */}
+                  {p.available?.length ? (
+                    <div>
+                      <div className="badge" style={{ marginBottom: 10 }}>
+                        Available Puppies
                       </div>
-                    ) : null}
 
-                    {p.parents.dam?.hero ? (
-                      <div style={{ flex: 1 }}>
-                        <div
-                          style={{
-                            fontWeight: 700,
-                            marginBottom: 6,
-                          }}
-                        >
-                          Dam: {p.parents.dam.name}
+                      <div className="card">
+                        <div className="pad">
+                          {p.available.map((puppy) => (
+                            <div
+                              key={puppy.id}
+                              style={{
+                                display: "flex",
+                                justifyContent: "space-between",
+                                alignItems: "center",
+                                gap: 12,
+                                padding: "14px 16px",
+                                marginBottom: 10,
+                                borderRadius: 14,
+                                background: "#0f1720",
+                                border:
+                                  "1px solid rgba(255,255,255,.08)",
+                              }}
+                            >
+                              <div>
+                                <div
+                                  style={{
+                                    fontWeight: 800,
+                                    fontSize: 16,
+                                  }}
+                                >
+                                  {puppy.sex}
+                                </div>
+
+                                <div
+                                  style={{
+                                    marginTop: 6,
+                                    display: "inline-block",
+                                    padding: "4px 9px",
+                                    borderRadius: 999,
+                                    fontSize: 12,
+                                    fontWeight: 800,
+                                    background:
+                                      puppy.status?.toLowerCase() === "sold"
+                                        ? "#4b1f1f"
+                                        : puppy.status?.toLowerCase() ===
+                                          "reserved"
+                                        ? "#4a3a12"
+                                        : "#173d2a",
+                                    color:
+                                      puppy.status?.toLowerCase() === "sold"
+                                        ? "#ffb4b4"
+                                        : puppy.status?.toLowerCase() ===
+                                          "reserved"
+                                        ? "#ffe08a"
+                                        : "#9ff0be",
+                                    border:
+                                      "1px solid rgba(255,255,255,.08)",
+                                  }}
+                                >
+                                  {puppy.status}
+                                </div>
+                              </div>
+
+                              <div
+                                style={{
+                                  textAlign: "right",
+                                  fontWeight: 900,
+                                  fontSize: 17,
+                                }}
+                              >
+                                {puppy.price}
+                              </div>
+                            </div>
+                          ))}
                         </div>
-
-                        <img
-                          src={p.parents.dam.hero}
-                          alt={`Dam: ${p.parents.dam.name}`}
-                          style={{
-                            width: "100%",
-                            height: 220,
-                            objectFit: "cover",
-                            borderRadius: 14,
-                            cursor: "pointer",
-                          }}
-                          onClick={() =>
-                            onImage?.(p.parents.dam.hero)
-                          }
-                        />
                       </div>
-                    ) : null}
-                  </div>
-</div>
+                    </div>
+                  ) : null}
+
+                  {/* DEPOSIT INFO */}
+                  {p.depositNote ? (
+                    <p
+                      style={{
+                        color: "var(--muted)",
+                        lineHeight: 1.7,
+                        marginTop: 16,
+                      }}
+                    >
+                      <b style={{ color: "var(--text)" }}>
+                        Deposit Information:
+                      </b>{" "}
+                      {p.depositNote}
+                    </p>
+                  ) : null}
+
+                  {/* RESERVE BUTTON */}
+                  <button
+                    className="btn primary"
+                    style={{ marginTop: 10 }}
+                    onClick={() => {
+                      window.location.href = `mailto:${
+                        SITE_DATA.brand.email
+                      }?subject=${encodeURIComponent(
+                        reserveSubject
+                      )}&body=${encodeURIComponent(reserveBody)}`;
+                    }}
+                  >
+                    Reserve a Puppy
+                  </button>
+
+                  {/* PUPPY GALLERY */}
+                  {p.gallery?.length ? (
+                    <div style={{ marginTop: 20 }}>
+                      <div className="badge" style={{ marginBottom: 10 }}>
+                        Puppy Gallery
+                      </div>
+
+                      <ImageGrid items={p.gallery} onImage={onImage} />
+                    </div>
+                  ) : null}
+
+                  {/* PEDIGREE */}
+                  {p.pedigree?.photos?.length ? (
+                    <div style={{ marginTop: 20 }}>
+                      <div className="badge" style={{ marginBottom: 10 }}>
+                        {p.pedigree.name || "Pedigree"}
+                      </div>
+
+                      <ImageGrid
+                        items={p.pedigree.photos}
+                        onImage={onImage}
+                      />
+                    </div>
+                  ) : null}
+
+                  {/* PARENTS */}
+                  {p.parents ? (
+                    <div style={{ marginTop: 20 }}>
+                      <div className="badge" style={{ marginBottom: 10 }}>
+                        Parents
+                      </div>
+
+                      <div className="row" style={{ gap: 12 }}>
+                        {p.parents.sire?.hero ? (
+                          <div style={{ flex: 1 }}>
+                            <div
+                              style={{
+                                fontWeight: 700,
+                                marginBottom: 6,
+                              }}
+                            >
+                              Sire: {p.parents.sire.name}
+                            </div>
+
+                            <img
+                              src={p.parents.sire.hero}
+                              alt={`Sire: ${p.parents.sire.name}`}
+                              style={{
+                                width: "100%",
+                                height: 220,
+                                objectFit: "cover",
+                                borderRadius: 14,
+                                cursor: "pointer",
+                              }}
+                              onClick={() =>
+                                onImage?.(p.parents.sire.hero)
+                              }
+                            />
+                          </div>
+                        ) : null}
+
+                        {p.parents.dam?.hero ? (
+                          <div style={{ flex: 1 }}>
+                            <div
+                              style={{
+                                fontWeight: 700,
+                                marginBottom: 6,
+                              }}
+                            >
+                              Dam: {p.parents.dam.name}
+                            </div>
+
+                            <img
+                              src={p.parents.dam.hero}
+                              alt={`Dam: ${p.parents.dam.name}`}
+                              style={{
+                                width: "100%",
+                                height: 220,
+                                objectFit: "cover",
+                                borderRadius: 14,
+                                cursor: "pointer",
+                              }}
+                              onClick={() =>
+                                onImage?.(p.parents.dam.hero)
+                              }
+                            />
+                          </div>
+                        ) : null}
+                      </div>
+                    </div>
+                  ) : null}
+                </div>
               ) : null}
             </div>
           </div>
         );
       })}
     </div>
-);
+  );
 }
