@@ -2,6 +2,35 @@ import React, { useState } from "react";
 import { SITE_DATA } from "../data/siteData.js";
 import ImageGrid from "../components/ImageGrid.jsx";
 
+function getPuppyAge(birthDate) {
+  if (!birthDate) return "";
+
+  const birth = new Date(`${birthDate}T00:00:00`);
+  const today = new Date();
+
+  if (Number.isNaN(birth.getTime())) return "";
+
+  const diffMs = today.getTime() - birth.getTime();
+  const totalDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+
+  if (totalDays < 0) return "Coming Soon";
+
+  if (totalDays === 0) return "Born Today";
+
+  if (totalDays < 7) {
+    return `${totalDays} day${totalDays === 1 ? "" : "s"} old`;
+  }
+
+  const weeks = Math.floor(totalDays / 7);
+
+  if (weeks < 12) {
+    return `${weeks} week${weeks === 1 ? "" : "s"} old`;
+  }
+
+  const months = Math.floor(totalDays / 30.44);
+
+  return `${months} month${months === 1 ? "" : "s"} old`;
+}
 export default function Puppies({ onImage }) {
   const pups = SITE_DATA.puppies || [];
   const [openLitters, setOpenLitters] = useState({});
@@ -28,6 +57,7 @@ export default function Puppies({ onImage }) {
       {pups.map((p) => {
         const featuredImage = p.featuredImage || p.gallery?.[0];
         const isOpen = !!openLitters[p.id];
+const age = getPuppyAge (p.birthDate);
 
         const reserveSubject =
           p.reserveSubject || `Reserve a Puppy - ${p.title}`;
@@ -142,7 +172,7 @@ Thank you.`;
               <div
                 style={{
                   display: "grid",
-                  gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+                  gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
                   gap: 10,
                   marginTop: 4,
                 }}
@@ -187,10 +217,35 @@ Thank you.`;
                   </div>
 
                   <div style={{ fontWeight: 800 }}>
-                    {p.price || "Contact for pricing"}
-                  </div>
-                </div>
-              </div>
+  {p.price || "Contact for pricing"}
+</div>
+</div>
+
+{/* AGE */}
+<div
+  style={{
+    padding: "12px 14px",
+    borderRadius: 12,
+    background: "#0f1720",
+    border: "1px solid rgba(255,255,255,.08)",
+  }}
+>
+  <div
+    style={{
+      fontSize: 12,
+      color: "var(--muted)",
+      marginBottom: 4,
+    }}
+  >
+    Age
+  </div>
+
+  <div style={{ fontWeight: 800 }}>
+    {age || "—"}
+  </div>
+</div>
+
+</div>
 
               {p.description ? (
                 <p

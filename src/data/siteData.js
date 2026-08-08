@@ -223,6 +223,7 @@ export const SITE_DATA = {
       id: "aja-hank-2026",
       title: "Aja x Hank",
       status: "Litter of 6",
+      birthDate: "2026-07-16",
       price: "Males $3,000 - Females $3,500",
       description: "Born June 23, 2026. Now accepting deposits and reservations for available puppies.",
 
@@ -256,6 +257,7 @@ export const SITE_DATA = {
         id: "Chyna-Rango-2026",
       title: "Chyna x Rango",
       status: "Litter of 3", 
+      birthDate: "2026-06-23",
       price: "Males $3,000 - Females $3,500",
       description: "Born July 16, 2026. Now accepting deposits and reservations for available puppies.",
       
