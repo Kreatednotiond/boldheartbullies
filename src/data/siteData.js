@@ -229,12 +229,7 @@ export const SITE_DATA = {
       featuredImage:
       "/assets/available_puppies/aja_hank/pedigree1.jpg",
 
-      gallery: [
-        "/assets/available_puppies/aja_hank/1.jpg",
-      "/assets/available_puppies/aja_hank/2.jpg",
-        "/assets/available_puppies/aja_hank/5.jpg",
-        "/assets/available_puppies/aja_hank/6.jpg",
-      ],
+      
       parents: {
         sire: { name: "Hank", hero: "/assets/dogs/outside/hank/hero.JPEG" },
         dam:  { name: "Aja", hero: "/assets/dogs/dams/Aja/hero.jpg" },
@@ -266,11 +261,7 @@ export const SITE_DATA = {
       
       featuredImage:"/assets/available_puppies/chyna_rango/1.jpg",
 
-      gallery: [
-        "/assets/available_puppies/chyna_rango/1.jpg",
-      "/assets/available_puppies/chyna_rango/2.jpg",
-        "/assets/available_puppies/chyna_rango/3.jpg",
-      ],
+
       parents: {
         sire: { name: "Rango", hero: "/assets/dogs/outside/rango/hero.jpg" },
         dam:  { name: "Chyna", hero: "/assets/dogs/dams/Chyna/hero.PNG" },
