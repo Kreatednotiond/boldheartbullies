@@ -272,10 +272,11 @@ body::before{
 }
 
 .card{
-  border:1px solid var(--line);
-  background: var(--card);
+  border:1px solid rgba(255,255,255,0.08);
+  background:#171411;
   border-radius:18px;
   overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,0.35);
 }
 
 .pad{ padding:16px; }
