@@ -378,16 +378,7 @@ Thank you.`;
                     Reserve a Puppy
                   </button>
 
-                  {/* PUPPY GALLERY */}
-                  {p.gallery?.length ? (
-                    <div style={{ marginTop: 20 }}>
-                      <div className="badge" style={{ marginBottom: 10 }}>
-                        Puppy Gallery
-                      </div>
 
-                      <ImageGrid items={p.gallery} onImage={onImage} />
-                    </div>
-                  ) : null}
 
                   {/* PEDIGREE */}
                   {p.pedigree?.photos?.length ? (
