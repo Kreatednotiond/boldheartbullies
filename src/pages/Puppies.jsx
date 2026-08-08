@@ -58,8 +58,75 @@ Thank you.`;
 
               {/* Puppy gallery */}
               {p.gallery?.length ? (
-                <ImageGrid items={p.gallery} onImage={onImage} />
-              ) : null}
+  <>
+    <div
+      style={{
+        position: "relative",
+        marginTop: 14,
+        borderRadius: 16,
+        overflow: "hidden",
+      }}
+    >
+      <img
+        src={p.gallery[0]}
+        alt={p.title}
+        style={{
+          width: "100%",
+          height: 380,
+          objectFit: "cover",
+          display: "block",
+          cursor: "pointer",
+        }}
+        onClick={() => onImage?.(p.gallery[0])}
+      />
+
+      <div
+        style={{
+          position: "absolute",
+          left: 0,
+          right: 0,
+          bottom: 0,
+          padding: "50px 20px 18px",
+          background:
+            "linear-gradient(to top, rgba(0,0,0,.92), rgba(0,0,0,0))",
+        }}
+      >
+        <div
+          style={{
+            fontSize: 25,
+            fontWeight: 900,
+            color: "#fff",
+          }}
+        >
+          {p.title}
+        </div>
+
+        <div
+          style={{
+            marginTop: 4,
+            color: "rgba(255,255,255,.80)",
+          }}
+        >
+          {p.status}
+        </div>
+      </div>
+    </div>
+
+    {/* Additional puppy photos */}
+    {p.gallery.length > 1 ? (
+      <div style={{ marginTop: 14 }}>
+        <div className="badge" style={{ marginBottom: 10 }}>
+          Puppy Gallery
+        </div>
+
+        <ImageGrid
+          items={p.gallery.slice(1)}
+          onImage={onImage}
+        />
+      </div>
+    ) : null}
+  </>
+) : null}
 
 {/* Pedigree photos */}
 {p.pedigree?.photos?.length ? (
