@@ -40,6 +40,24 @@ Please let me know which puppies are currently available and how to submit a dep
 
 Thank you.`;
 
+        const litterStatus = String(p.status || "").toLowerCase();
+
+        const litterBadgeBackground = litterStatus.includes("sold")
+          ? "#4b1f1f"
+          : litterStatus.includes("limited")
+          ? "#4a3a12"
+          : litterStatus.includes("reserved")
+          ? "#4a3a12"
+          : "#173d2a";
+
+        const litterBadgeColor = litterStatus.includes("sold")
+          ? "#ffb4b4"
+          : litterStatus.includes("limited")
+          ? "#ffe08a"
+          : litterStatus.includes("reserved")
+          ? "#ffe08a"
+          : "#9ff0be";
+
         return (
           <div className="card" key={p.id} style={{ marginTop: 18 }}>
             {/* FEATURED VISUAL */}
@@ -63,6 +81,29 @@ Thank you.`;
                   onClick={() => onImage?.(featuredImage)}
                 />
 
+                {/* LITTER STATUS BADGE */}
+                {p.status ? (
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: 14,
+                      right: 14,
+                      padding: "7px 11px",
+                      borderRadius: 999,
+                      fontSize: 12,
+                      fontWeight: 900,
+                      background: litterBadgeBackground,
+                      color: litterBadgeColor,
+                      border: "1px solid rgba(255,255,255,.12)",
+                      boxShadow: "0 6px 18px rgba(0,0,0,.28)",
+                      zIndex: 2,
+                    }}
+                  >
+                    {p.status}
+                  </div>
+                ) : null}
+
+                {/* TITLE OVERLAY */}
                 <div
                   style={{
                     position: "absolute",
@@ -192,73 +233,81 @@ Thank you.`;
 
                       <div className="card">
                         <div className="pad">
-                          {p.available.map((puppy) => (
-                            <div
-                              key={puppy.id}
-                              style={{
-                                display: "flex",
-                                justifyContent: "space-between",
-                                alignItems: "center",
-                                gap: 12,
-                                padding: "14px 16px",
-                                marginBottom: 10,
-                                borderRadius: 14,
-                                background: "#0f1720",
-                                border:
-                                  "1px solid rgba(255,255,255,.08)",
-                              }}
-                            >
-                              <div>
-                                <div
-                                  style={{
-                                    fontWeight: 800,
-                                    fontSize: 16,
-                                  }}
-                                >
-                                  {puppy.sex}
-                                </div>
+                          {p.available.map((puppy) => {
+                            const puppyStatus = String(
+                              puppy.status || ""
+                            ).toLowerCase();
 
-                                <div
-                                  style={{
-                                    marginTop: 6,
-                                    display: "inline-block",
-                                    padding: "4px 9px",
-                                    borderRadius: 999,
-                                    fontSize: 12,
-                                    fontWeight: 800,
-                                    background:
-                                      puppy.status?.toLowerCase() === "sold"
-                                        ? "#4b1f1f"
-                                        : puppy.status?.toLowerCase() ===
-                                          "reserved"
-                                        ? "#4a3a12"
-                                        : "#173d2a",
-                                    color:
-                                      puppy.status?.toLowerCase() === "sold"
-                                        ? "#ffb4b4"
-                                        : puppy.status?.toLowerCase() ===
-                                          "reserved"
-                                        ? "#ffe08a"
-                                        : "#9ff0be",
-                                    border:
-                                      "1px solid rgba(255,255,255,.08)",
-                                  }}
-                                >
-                                  {puppy.status}
-                                </div>
-                              </div>
+                            const statusBackground =
+                              puppyStatus === "sold"
+                                ? "#4b1f1f"
+                                : puppyStatus === "reserved"
+                                ? "#4a3a12"
+                                : "#173d2a";
 
+                            const statusColor =
+                              puppyStatus === "sold"
+                                ? "#ffb4b4"
+                                : puppyStatus === "reserved"
+                                ? "#ffe08a"
+                                : "#9ff0be";
+
+                            return (
                               <div
+                                key={puppy.id}
                                 style={{
-                                  textAlign: "right",
-                                  fontWeight: 900,
-                                  fontSize: 17,
+                                  display: "flex",
+                                  justifyContent: "space-between",
+                                  alignItems: "center",
+                                  gap: 12,
+                                  padding: "14px 16px",
+                                  marginBottom: 10,
+                                  borderRadius: 14,
+                                  background: "#0f1720",
+                                  border:
+                                    "1px solid rgba(255,255,255,.08)",
                                 }}
                               >
-                                {puppy.price}
+                                <div>
+                                  <div
+                                    style={{
+                                      fontWeight: 800,
+                                      fontSize: 16,
+                                    }}
+                                  >
+                                    {puppy.sex}
+                                  </div>
+
+                                  <div
+                                    style={{
+                                      marginTop: 6,
+                                      display: "inline-block",
+                                      padding: "4px 9px",
+                                      borderRadius: 999,
+                                      fontSize: 12,
+                                      fontWeight: 800,
+                                      background: statusBackground,
+                                      color: statusColor,
+                                      border:
+                                        "1px solid rgba(255,255,255,.08)",
+                                    }}
+                                  >
+                                    {puppy.status}
+                                  </div>
+                                </div>
+
+                                <div
+                                  style={{
+                                    textAlign: "right",
+                                    fontWeight: 900,
+                                    fontSize: 17,
+                                  }}
+                                >
+                                  {puppy.price}
+                                </div>
                               </div>
-                            </div>
-                          ))}
+                            );
+                          })}
                         </div>
                       </div>
                     </div>
@@ -395,3 +444,4 @@ Thank you.`;
     </div>
   );
 }
+
