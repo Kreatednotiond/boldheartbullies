@@ -140,14 +140,30 @@ Thank you.`;
               </div>
 
               <div
-                style={{
-                  marginTop: 4,
-                  fontSize: 13,
-                  color: "var(--muted)",
-                }}
-              >
-                {puppy.status}
-              </div>
+  style={{
+    marginTop: 6,
+    display: "inline-block",
+    padding: "4px 9px",
+    borderRadius: 999,
+    fontSize: 12,
+    fontWeight: 800,
+    background:
+      puppy.status?.toLowerCase() === "sold"
+        ? "#4b1f1f"
+        : puppy.status?.toLowerCase() === "reserved"
+        ? "#4a3a12"
+        : "#173d2a",
+    color:
+      puppy.status?.toLowerCase() === "sold"
+        ? "#ffb4b4"
+        : puppy.status?.toLowerCase() === "reserved"
+        ? "#ffe08a"
+        : "#9ff0be",
+    border: "1px solid rgba(255,255,255,.08)",
+  }}
+>
+  {puppy.status}
+</div>
             </div>
 
             <div
