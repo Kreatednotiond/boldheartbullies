@@ -88,22 +88,72 @@ Thank you.`;
             ) : null}
 
             <div className="pad">
-              <p
-                style={{
-                  color: "var(--muted)",
-                  lineHeight: 1.7,
-                  marginTop: 0,
-                }}
-              >
-                {p.price ? (
-                  <>
-                    <b style={{ color: "var(--text)" }}>Pricing:</b> {p.price}
-                    <br />
-                  </>
-                ) : null}
+              <div
+  style={{
+    display: "grid",
+    gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+    gap: 10,
+    marginTop: 4,
+  }}
+>
+  <div
+    style={{
+      padding: "12px 14px",
+      borderRadius: 12,
+      background: "#0f1720",
+      border: "1px solid rgba(255,255,255,.08)",
+    }}
+  >
+    <div
+      style={{
+        fontSize: 12,
+        color: "var(--muted)",
+        marginBottom: 4,
+      }}
+    >
+      Litter
+    </div>
 
-                {p.description}
-              </p>
+    <div style={{ fontWeight: 800 }}>
+      {p.status}
+    </div>
+  </div>
+
+  <div
+    style={{
+      padding: "12px 14px",
+      borderRadius: 12,
+      background: "#0f1720",
+      border: "1px solid rgba(255,255,255,.08)",
+    }}
+  >
+    <div
+      style={{
+        fontSize: 12,
+        color: "var(--muted)",
+        marginBottom: 4,
+      }}
+    >
+      Pricing
+    </div>
+
+    <div style={{ fontWeight: 800 }}>
+      {p.price || "Contact for pricing"}
+    </div>
+  </div>
+</div>
+
+{p.description ? (
+  <p
+    style={{
+      color: "var(--muted)",
+      lineHeight: 1.7,
+      marginTop: 14,
+    }}
+  >
+    {p.description}
+  </p>
+) : null}
 
               {/* AVAILABLE PUPPIES */}
 {p.available?.length ? (
