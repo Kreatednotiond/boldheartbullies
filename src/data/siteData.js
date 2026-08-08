@@ -226,7 +226,7 @@ export const SITE_DATA = {
       price: "Males $3,000 - Females $3,500",
       description: "Born June 23, 2026. Now accepting deposits and reservations for available puppies.",
 
-      featuredImagine:
+      featuredImage:
       "/assets/available_puppies/aja_hank/pedigree1.jpg",
 
       gallery: [
@@ -265,7 +265,7 @@ export const SITE_DATA = {
       description: "Born July 16, 2026. Now accepting deposits and reservations for available puppies.",
       
       featuredImage:"/assets/available_puppies/chyna_rango/1.jpg",
-      
+
       gallery: [
         "/assets/available_puppies/chyna_rango/1.jpg",
       "/assets/available_puppies/chyna_rango/2.jpg",
