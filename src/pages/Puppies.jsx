@@ -106,38 +106,65 @@ Thank you.`;
               </p>
 
               {/* AVAILABLE PUPPIES */}
-              {p.available?.length ? (
-                <div style={{ marginTop: 16 }}>
-                  <div className="badge" style={{ marginBottom: 10 }}>
-                    Available Puppies
-                  </div>
+{p.available?.length ? (
+  <div style={{ marginTop: 16 }}>
+    <div className="badge" style={{ marginBottom: 10 }}>
+      Available Puppies
+    </div>
 
-                  <div className="card">
-                    <div className="pad">
-                      {p.available.map((puppy) => (
-                        <div
-                          key={puppy.id}
-                          style={{
-                            display: "flex",
-                            justifyContent: "space-between",
-                            alignItems: "center",
-                            gap: 12,
-                            padding: "11px 0",
-                            borderBottom:
-                              "1px solid rgba(255,255,255,.10)",
-                          }}
-                        >
-                          <span>
-                            {puppy.sex} — {puppy.status}
-                          </span>
+    <div className="card">
+      <div className="pad">
+        {p.available.map((puppy) => (
+          <div
+            key={puppy.id}
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              gap: 12,
+              padding: "14px 16px",
+              marginBottom: 10,
+              borderRadius: 14,
+              background: "#0f1720",
+              border: "1px solid rgba(255,255,255,.08)",
+            }}
+          >
+            <div>
+              <div
+                style={{
+                  fontWeight: 800,
+                  fontSize: 16,
+                }}
+              >
+                {puppy.sex}
+              </div>
 
-                          <strong>{puppy.price}</strong>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              ) : null}
+              <div
+                style={{
+                  marginTop: 4,
+                  fontSize: 13,
+                  color: "var(--muted)",
+                }}
+              >
+                {puppy.status}
+              </div>
+            </div>
+
+            <div
+              style={{
+                textAlign: "right",
+                fontWeight: 900,
+                fontSize: 17,
+              }}
+            >
+              {puppy.price}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+) : null}
 
               {/* RESERVE BUTTON */}
               {p.depositNote ? (
