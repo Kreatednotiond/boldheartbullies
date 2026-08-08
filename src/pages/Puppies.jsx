@@ -18,6 +18,8 @@ export default function Puppies({ onImage }) {
       </div>
 
       {pups.map((p) => {
+        const featuredImage = p.featuredImage || p.gallery?.[0];
+
         const reserveSubject =
           p.reserveSubject || `Reserve a Puppy - ${p.title}`;
 
@@ -30,121 +32,82 @@ Please let me know which puppies are currently available and how to submit a dep
 Thank you.`;
 
         return (
-          <div className="card" key={p.id} style={{ marginTop: 14 }}>
-            <div className="pad">
-              <div style={{ fontWeight: 900, fontSize: 22 }}>
-                {p.title}
-              </div>
+          <div className="card" key={p.id} style={{ marginTop: 18 }}>
+            {/* FEATURED VISUAL */}
+            {featuredImage ? (
+              <div
+                style={{
+                  position: "relative",
+                  overflow: "hidden",
+                }}
+              >
+                <img
+                  src={featuredImage}
+                  alt={`${p.title} featured`}
+                  style={{
+                    width: "100%",
+                    height: 380,
+                    objectFit: "cover",
+                    display: "block",
+                    cursor: "pointer",
+                  }}
+                  onClick={() => onImage?.(featuredImage)}
+                />
 
+                <div
+                  style={{
+                    position: "absolute",
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    padding: "70px 22px 20px",
+                    background:
+                      "linear-gradient(to top, rgba(0,0,0,.95), rgba(0,0,0,0))",
+                  }}
+                >
+                  <div
+                    style={{
+                      fontSize: 27,
+                      fontWeight: 900,
+                      color: "#fff",
+                    }}
+                  >
+                    {p.title}
+                  </div>
+
+                  <div
+                    style={{
+                      marginTop: 5,
+                      color: "rgba(255,255,255,.82)",
+                    }}
+                  >
+                    {p.status}
+                  </div>
+                </div>
+              </div>
+            ) : null}
+
+            <div className="pad">
               <p
                 style={{
                   color: "var(--muted)",
                   lineHeight: 1.7,
-                  marginTop: 6,
+                  marginTop: 0,
                 }}
               >
-                Status: {p.status}
-
                 {p.price ? (
                   <>
-                    {" "}
-                    · Price: {p.price}
+                    <b style={{ color: "var(--text)" }}>Pricing:</b> {p.price}
+                    <br />
                   </>
                 ) : null}
 
-                <br />
                 {p.description}
               </p>
 
-              {/* Puppy gallery */}
-              {p.gallery?.length ? (
-  <>
-    <div
-      style={{
-        position: "relative",
-        marginTop: 14,
-        borderRadius: 16,
-        overflow: "hidden",
-      }}
-    >
-      <img
-        src={p.gallery[0]}
-        alt={p.title}
-        style={{
-          width: "100%",
-          height: 380,
-          objectFit: "cover",
-          display: "block",
-          cursor: "pointer",
-        }}
-        onClick={() => onImage?.(p.gallery[0])}
-      />
-
-      <div
-        style={{
-          position: "absolute",
-          left: 0,
-          right: 0,
-          bottom: 0,
-          padding: "50px 20px 18px",
-          background:
-            "linear-gradient(to top, rgba(0,0,0,.92), rgba(0,0,0,0))",
-        }}
-      >
-        <div
-          style={{
-            fontSize: 25,
-            fontWeight: 900,
-            color: "#fff",
-          }}
-        >
-          {p.title}
-        </div>
-
-        <div
-          style={{
-            marginTop: 4,
-            color: "rgba(255,255,255,.80)",
-          }}
-        >
-          {p.status}
-        </div>
-      </div>
-    </div>
-
-    {/* Additional puppy photos */}
-    {p.gallery.length > 1 ? (
-      <div style={{ marginTop: 14 }}>
-        <div className="badge" style={{ marginBottom: 10 }}>
-          Puppy Gallery
-        </div>
-
-        <ImageGrid
-          items={p.gallery.slice(1)}
-          onImage={onImage}
-        />
-      </div>
-    ) : null}
-  </>
-) : null}
-
-{/* Pedigree photos */}
-{p.pedigree?.photos?.length ? (
-  <div style={{ marginTop: 18 }}>
-    <div className="badge" style={{ marginBottom: 10 }}>
-      {p.pedigree.name || "Pedigree"}
-    </div>
-
-    <ImageGrid
-      items={p.pedigree.photos}
-      onImage={onImage}
-    />
-  </div>
-) : null}
-
-              {/* Available puppies and pricing */}
+              {/* AVAILABLE PUPPIES */}
               {p.available?.length ? (
-                <div style={{ marginTop: 14 }}>
+                <div style={{ marginTop: 16 }}>
                   <div className="badge" style={{ marginBottom: 10 }}>
                     Available Puppies
                   </div>
@@ -159,9 +122,9 @@ Thank you.`;
                             justifyContent: "space-between",
                             alignItems: "center",
                             gap: 12,
-                            padding: "10px 0",
+                            padding: "11px 0",
                             borderBottom:
-                              "1px solid rgba(255,255,255,.12)",
+                              "1px solid rgba(255,255,255,.10)",
                           }}
                         >
                           <span>
@@ -176,13 +139,13 @@ Thank you.`;
                 </div>
               ) : null}
 
-              {/* Deposit information */}
+              {/* RESERVE BUTTON */}
               {p.depositNote ? (
                 <p
                   style={{
                     color: "var(--muted)",
                     lineHeight: 1.7,
-                    marginTop: 14,
+                    marginTop: 16,
                   }}
                 >
                   <b style={{ color: "var(--text)" }}>
@@ -191,9 +154,7 @@ Thank you.`;
                   {p.depositNote}
                 </p>
               ) : null}
-
-              {/* Reserve button */}
-              <button
+<button
                 className="btn primary"
                 style={{ marginTop: 10 }}
                 onClick={() => {
@@ -207,9 +168,34 @@ Thank you.`;
                 Reserve a Puppy
               </button>
 
-              {/* Parents */}
+              {/* PUPPY GALLERY */}
+              {p.gallery?.length ? (
+                <div style={{ marginTop: 20 }}>
+                  <div className="badge" style={{ marginBottom: 10 }}>
+                    Puppy Gallery
+                  </div>
+
+                  <ImageGrid items={p.gallery} onImage={onImage} />
+                </div>
+              ) : null}
+
+              {/* PEDIGREE */}
+              {p.pedigree?.photos?.length ? (
+                <div style={{ marginTop: 20 }}>
+                  <div className="badge" style={{ marginBottom: 10 }}>
+                    {p.pedigree.name || "Pedigree"}
+                  </div>
+
+                  <ImageGrid
+                    items={p.pedigree.photos}
+                    onImage={onImage}
+                  />
+                </div>
+              ) : null}
+
+              {/* PARENTS */}
               {p.parents ? (
-                <div style={{ marginTop: 18 }}>
+                <div style={{ marginTop: 20 }}>
                   <div className="badge" style={{ marginBottom: 10 }}>
                     Parents
                   </div>
@@ -271,37 +257,12 @@ Thank you.`;
                       </div>
                     ) : null}
                   </div>
-
-                  {p.dna?.hero ? (
-                    <div style={{ marginTop: 12 }}>
-                      <div
-                        style={{
-                          fontWeight: 700,
-                          marginBottom: 6,
-                        }}
-                      >
-                        {p.dna.name || "DNA"}
-                      </div>
-
-                      <img
-                        src={p.dna.hero}
-                        alt={p.dna.name || "DNA"}
-                        style={{
-                          width: "100%",
-                          maxWidth: 520,
-                          borderRadius: 14,
-                          cursor: "pointer",
-                        }}
-                        onClick={() => onImage?.(p.dna.hero)}
-                      />
-                    </div>
-                  ) : null}
-                </div>
+</div>
               ) : null}
             </div>
           </div>
         );
       })}
     </div>
-  );
+);
 }
