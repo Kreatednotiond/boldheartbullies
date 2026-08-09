@@ -8,7 +8,7 @@ export default function Studs({ onImage }) {
   return (
     <div className="container">
       <div className="section">
-        <h2>Studs (Owned)</h2>
+        <h2>Studs </h2>
 
         {!studs.length ? (
           <p style={{ color: "var(--muted)" }}>
