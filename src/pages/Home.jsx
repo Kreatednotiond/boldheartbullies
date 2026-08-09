@@ -33,7 +33,7 @@ export default function Home({ go, onImage }) {
               Dams
             </button>
             <button className="btn" onClick={() => go("/studs")}>
-              Studs (Owned)
+              Studs
             </button>
             <button className="btn" onClick={() => go("/contact")}>
               Contact
