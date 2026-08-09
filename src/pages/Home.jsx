@@ -44,7 +44,7 @@ export default function Home({ go, onImage }) {
 
       {featuredStud ? (
         <div className="section">
-          <h2>Featured Stud</h2>
+          <h2>Bold Heart Studs</h2>
           <div className="grid">
             <div style={{ gridColumn: "span 12" }}>
               <DogCard
@@ -69,7 +69,7 @@ export default function Home({ go, onImage }) {
       )}
 
       <div className="section">
-        <h2>Featured Dams</h2>
+        <h2>Bold Heart Dams</h2>
         <div className="grid">
           {featuredDams.map((d) => (
             <div key={d.id} style={{ gridColumn: "span 4" }}>
