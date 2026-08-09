@@ -471,20 +471,42 @@ hr{
 }
 
 /* =========================================
-   GLOBAL BOLD TIMES NEW ROMAN
+   GLOBAL BOLD TIMES NEW ROMAN
 ========================================= */
 
 *,
 *::before,
 *::after {
-  font-family: "Times New Roman", Times, serif !important;
-  font-weight: 700;
+font-family: "Times New Roman", Times, serif !important;
 }
 
+body,
 button,
 input,
 textarea,
 select {
-  font-family: "Times New Roman", Times, serif !important;
-  font-weight: 700;
+font-family: "Times New Roman", Times, serif !important;
+font-weight: 700;
+}
+
+/* =========================================
+   SECTION HEADER TABS
+========================================= */
+
+.section h2 {
+display: inline-block;
+margin: 0 0 14px 0;
+padding: 9px 16px;
+
+background: #171411;
+border: 1px solid rgba(255,255,255,0.22);
+border-radius: 999px;
+
+color: #ffffff;
+font-family: "Times New Roman", Times, serif !important;
+font-weight: 700;
+font-size: 28px;
+line-height: 1.1;
+
+box-shadow: 0 6px 18px rgba(0,0,0,0.30);
 }
