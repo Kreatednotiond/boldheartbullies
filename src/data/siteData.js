@@ -228,7 +228,7 @@ export const SITE_DATA = {
       description: "Born June 23, 2026. Now accepting deposits and reservations for available puppies.",
 
       featuredImage:
-      "/assets/available_puppies/aja_hank/pedigree1.jpg",
+      "/assets/dogs/dams/Aja/hero.jpg",
 
       
       parents: {
@@ -261,7 +261,7 @@ export const SITE_DATA = {
       price: "Males $3,000 - Females $3,500",
       description: "Born July 16, 2026. Now accepting deposits and reservations for available puppies.",
       
-      featuredImage:"/assets/available_puppies/chyna_rango/1.jpg",
+      featuredImage:"/assets/dogs/dams/Chyna/hero.PNG",
 
 
       parents: {
