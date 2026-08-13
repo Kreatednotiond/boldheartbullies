@@ -46,7 +46,7 @@ export default function Home({ go, onImage }) {
         <div className="section">
           <h2>Bold Heart Studs</h2>
           <div className="grid">
-            <div style={{ gridColumn: "span 12" }}>
+            <div style={{ gridColumn: "span 4" }}>
               <DogCard
                 dog={featuredStud}
                 onOpen={() => go(`/studs/${featuredStud.id}`)}
