@@ -269,9 +269,9 @@ export const SITE_DATA = {
         dam:  { name: "Chyna", hero: "/assets/dogs/dams/Chyna/hero.PNG" },
       },
       available: [
-      { id: "male3", sex: "Male", status: "Available", price: "$3000", photo: "/assets/available_puppies/chyna_rango/1.jpg",},
-        { id: "male4", sex: "Male", status: "Available", price: "$3000", photo: "/assets/available_puppies/chyna_rango/2.jpg",},
-        { id: "female1", sex: "Female", status: "Available", price: "$3500", photo: "/assets/available_puppies/chyna_rango/3.jpg",},
+      { id: "male3", sex: "Male", status: "Available", price: "$3000", photo: "/assets/available_puppies/chyna_rango/1.png",},
+        { id: "male4", sex: "Male", status: "Available", price: "$3000", photo: "/assets/available_puppies/chyna_rango/2.png",},
+        { id: "female1", sex: "Female", status: "Available", price: "$3500", photo: "/assets/available_puppies/chyna_rango/3.png",},
       ],
 
       reserveSubject: "Reserve a Puppy - Chyna x Rango",
