@@ -43,9 +43,9 @@ export const SITE_DATA = {
       dna: "/assets/dogs/dams/dolla/dna.png",
       gallery: ["/assets/dogs/dams/dolla/hero.jpg"],
       plannedBreeding: {
-        stud: "Hokie (Outside stud — owned by Oceanside Bullies)",
+        stud: "Rambo (Outside stud — owned by UpOne Bullys)",
         timing: "Late 2026, Early 2027",
-        studHero: "/assets/dogs/outside/Hokie/hero.jpg",
+        studHero: "/assets/dogs/outside/rambo/hero.JPG",
         note: "Planned pairing. No stud page (outside stud).",
       },
 
@@ -124,9 +124,9 @@ export const SITE_DATA = {
       note: "Espie has not had any previous litters.",
       gallery: ["/assets/dogs/dams/espie/hero.jpg"],
       plannedBreeding: {
-        stud: "Rambo (Outside stud — owned by UpOne Bullys)",
+        stud: "Hokie (Outside stud — owned by Oceanside Bullies)",
         timing: "Late 2026, Early 2027",
-        studHero: "/assets/dogs/outside/rambo/hero.JPG",
+        studHero: "/assets/dogs/outside/Hokie/hero.jpg",
         note: "Planned pairing. No stud page (outside stud).",
       },
   },
