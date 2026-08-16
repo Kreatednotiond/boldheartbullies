@@ -42,6 +42,12 @@ export const SITE_DATA = {
       hero: "/assets/dogs/dams/dolla/hero.jpg",
       dna: "/assets/dogs/dams/dolla/dna.png",
       gallery: ["/assets/dogs/dams/dolla/hero.jpg"],
+      plannedBreeding: {
+        stud: "Rambo (Outside stud — owned by UpOne Bullys)",
+        timing: "Late 2026, Early 2027",
+        studHero: "/assets/dogs/outside/rambo/hero.JPG",
+        note: "Planned pairing. No stud page (outside stud).",
+      },
 
       // ✅ UPDATED: BOTH Dolla + Geronimo images here
       pastLitter: {
