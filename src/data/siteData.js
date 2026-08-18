@@ -249,8 +249,8 @@ export const SITE_DATA = {
     },
       available: [
         { id: "male1", sex: "Male", status: "Sold", price: "SOLD" },
-      { id: "male3", sex: "Male", status: "Available", price: "$3000", photo: "/assets/available_puppies/aja_hank/1.jpg",},
-        { id: "male4", sex: "Male", status: "Available", price: "$3000", photo: "/assets/available_puppies/aja_hank/2.jpg",},
+      { id: "male3", sex: "Male", status: "Sold", price: "$SOLD" },
+        { id: "male4", sex: "Male", status: "Available", price: "$SOLD" },
         { id: "female1", sex: "Female", status: "Available", price: "$3500", photo: "/assets/available_puppies/aja_hank/5.jpg",},
         { id: "female2", sex: "Female", status: "Available", price: "$3500", photo: "/assets/available_puppies/aja_hank/6.jpg",},
       ],
