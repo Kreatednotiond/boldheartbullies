@@ -3,37 +3,48 @@ import { SITE_DATA } from "../data/siteData.js";
 import ImageGrid from "../components/ImageGrid.jsx";
 
 function getPuppyAge(birthDate) {
-  if (!birthDate) return "";
+  if (!birthDate) return "";
 
-  const birth = new Date(`${birthDate}T00:00:00`);
-  const today = new Date();
+  const birth = new Date(`${birthDate}T00:00:00`);
+  const today = new Date();
 
-  if (Number.isNaN(birth.getTime())) return "";
+  if (Number.isNaN(birth.getTime())) return "";
 
-  const diffMs = today.getTime() - birth.getTime();
-  const totalDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+  const diffMs = today.getTime() - birth.getTime();
+  const totalDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
 
-  if (totalDays < 0) return "Coming Soon";
+  if (totalDays < 0) return "Coming Soon";
 
-  if (totalDays === 0) return "Born Today";
+  if (totalDays === 0) return "Born Today";
 
-  if (totalDays < 7) {
-    return `${totalDays} day${totalDays === 1 ? "" : "s"} old`;
-  }
+  if (totalDays < 7) {
+    return `${totalDays} day${totalDays === 1 ? "" : "s"} old`;
+  }
 
-  const weeks = Math.floor(totalDays / 7);
+  const weeks = Math.floor(totalDays / 7);
 
-  if (weeks < 12) {
-    return `${weeks} week${weeks === 1 ? "" : "s"} old`;
-  }
+  if (weeks < 12) {
+    return `${weeks} week${weeks === 1 ? "" : "s"} old`;
+  }
 
-  const months = Math.floor(totalDays / 30.44);
+  const months = Math.floor(totalDays / 30.44);
 
-  return `${months} month${months === 1 ? "" : "s"} old`;
+  return `${months} month${months === 1 ? "" : "s"} old`;
 }
+
 export default function Puppies({ onImage }) {
-  const pups = SITE_DATA.puppies || [];
+  const allPups = SITE_DATA.puppies || [];
   const [openLitters, setOpenLitters] = useState({});
+
+  /*
+    Only show litters that still have at least one puppy
+    that is not marked SOLD.
+  */
+  const pups = allPups.filter((litter) =>
+    litter.available?.some(
+      (puppy) => String(puppy.status || "").toLowerCase() !== "sold"
+    )
+  );
 
   const toggleLitter = (id) => {
     setOpenLitters((current) => ({
@@ -47,17 +58,92 @@ export default function Puppies({ onImage }) {
       <div className="section">
         <h2>Available Puppies</h2>
 
+        {/* NO PUPPIES AVAILABLE */}
         {!pups.length ? (
-          <p style={{ color: "var(--muted)" }}>
-            No puppies listed as available right now.
-          </p>
+          <div
+            className="card"
+            style={{
+              marginTop: 10,
+              textAlign: "center",
+            }}
+          >
+            <div
+              className="pad"
+              style={{
+                padding: "34px 22px",
+              }}
+            >
+              <div
+                className="badge"
+                style={{
+                  marginBottom: 14,
+                }}
+              >
+                Current Availability
+              </div>
+
+              <div
+                style={{
+                  fontSize: 28,
+                  fontWeight: 900,
+                  marginBottom: 12,
+                }}
+              >
+                No Puppies Currently Available
+              </div>
+
+              <p
+                style={{
+                  color: "var(--muted)",
+                  lineHeight: 1.7,
+                  maxWidth: 650,
+                  margin: "0 auto",
+                }}
+              >
+                Our current puppies have all found their homes! We do not have
+                any puppies available at this time. Please check back soon for
+                upcoming litters and future availability from Bold Heart
+                Bullies.
+              </p>
+
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  flexWrap: "wrap",
+                  gap: 12,
+                  marginTop: 22,
+                }}
+              >
+                <a
+                  href="/breedings"
+                  className="btn primary"
+                  style={{
+                    textDecoration: "none",
+                  }}
+                >
+                  View Upcoming Breedings
+                </a>
+
+                <a
+                  href="/contact"
+                  className="btn"
+                  style={{
+                    textDecoration: "none",
+                  }}
+                >
+                  Contact Bold Heart Bullies
+                </a>
+              </div>
+            </div>
+          </div>
         ) : null}
       </div>
 
       {pups.map((p) => {
-        const featuredImage = p.featuredImage || p.gallery?.[0];
+        const featuredImage = p.featuredImage;
         const isOpen = !!openLitters[p.id];
-const age = getPuppyAge (p.birthDate);
+        const age = getPuppyAge(p.birthDate);
 
         const reserveSubject =
           p.reserveSubject || `Reserve a Puppy - ${p.title}`;
@@ -177,6 +263,7 @@ Thank you.`;
                   marginTop: 4,
                 }}
               >
+                {/* LITTER */}
                 <div
                   style={{
                     padding: "12px 14px",
@@ -198,6 +285,7 @@ Thank you.`;
                   <div style={{ fontWeight: 800 }}>{p.status}</div>
                 </div>
 
+                {/* PRICING */}
                 <div
                   style={{
                     padding: "12px 14px",
@@ -217,36 +305,34 @@ Thank you.`;
                   </div>
 
                   <div style={{ fontWeight: 800 }}>
-  {p.price || "Contact for pricing"}
-</div>
-</div>
+                    {p.price || "Contact for pricing"}
+                  </div>
+                </div>
 
-{/* AGE */}
-<div
-  style={{
-    padding: "12px 14px",
-    borderRadius: 12,
-    background: "#0f1720",
-    border: "1px solid rgba(255,255,255,.08)",
-  }}
->
-  <div
-    style={{
-      fontSize: 12,
-      color: "var(--muted)",
-      marginBottom: 4,
-    }}
-  >
-    Age
-  </div>
+                {/* AGE */}
+                <div
+                  style={{
+                    padding: "12px 14px",
+                    borderRadius: 12,
+                    background: "#0f1720",
+                    border: "1px solid rgba(255,255,255,.08)",
+                  }}
+                >
+                  <div
+                    style={{
+                      fontSize: 12,
+                      color: "var(--muted)",
+                      marginBottom: 4,
+                    }}
+                  >
+                    Age
+                  </div>
 
-  <div style={{ fontWeight: 800 }}>
-    {age || "—"}
-  </div>
-</div>
+                  <div style={{ fontWeight: 800 }}>{age || "—"}</div>
+                </div>
+              </div>
 
-</div>
-
+              {/* DESCRIPTION */}
               {p.description ? (
                 <p
                   style={{
@@ -272,137 +358,144 @@ Thank you.`;
                 }}
                 onClick={() => toggleLitter(p.id)}
               >
-                <span>{isOpen ? "Hide Litter Details" : "View Litter"}</span>
+                <span>
+                  {isOpen ? "Hide Litter Details" : "View Litter"}
+                </span>
+
                 <span>{isOpen ? "↑" : "→"}</span>
               </button>
 
-              {/* COLLAPSIBLE LITTER DETAILS */}
+              {/* COLLAPSIBLE DETAILS */}
               {isOpen ? (
                 <div style={{ marginTop: 18 }}>
                   {/* AVAILABLE PUPPIES */}
-{p.available?.length ? (
-  <div>
-    <div className="badge" style={{ marginBottom: 10 }}>
-      Available Puppies
-    </div>
+                  {p.available?.length ? (
+                    <div>
+                      <div className="badge" style={{ marginBottom: 10 }}>
+                        Puppy Availability
+                      </div>
 
-    <div className="card">
-      <div className="pad">
-        {p.available.map((puppy) => {
-          const puppyStatus = String(
-            puppy.status || ""
-          ).toLowerCase();
+                      <div className="card">
+                        <div className="pad">
+                          {p.available.map((puppy) => {
+                            const puppyStatus = String(
+                              puppy.status || ""
+                            ).toLowerCase();
 
-          const statusBackground =
-            puppyStatus === "sold"
-              ? "#4b1f1f"
-              : puppyStatus === "reserved"
-              ? "#4a3a12"
-              : "#173d2a";
+                            const statusBackground =
+                              puppyStatus === "sold"
+                                ? "#4b1f1f"
+                                : puppyStatus === "reserved"
+                                ? "#4a3a12"
+                                : "#173d2a";
 
-          const statusColor =
-            puppyStatus === "sold"
-              ? "#ffb4b4"
-              : puppyStatus === "reserved"
-              ? "#ffe08a"
-              : "#9ff0be";
+                            const statusColor =
+                              puppyStatus === "sold"
+                                ? "#ffb4b4"
+                                : puppyStatus === "reserved"
+                                ? "#ffe08a"
+                                : "#9ff0be";
 
-          return (
-            <div
-              key={puppy.id}
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                gap: 14,
-                padding: "14px",
-                marginBottom: 12,
-                borderRadius: 14,
-                background: "#0f1720",
-                border: "1px solid rgba(255,255,255,.08)",
-              }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 12,
-                  minWidth: 0,
-                }}
-              >
-                {puppy.photo ? (
-                  <img
-                    src={puppy.photo}
-                    alt={puppy.name || puppy.sex}
-                    style={{
-                      width: 82,
-                      height: 82,
-                      objectFit: "cover",
-                      borderRadius: 12,
-                      flexShrink: 0,
-                      cursor: "pointer",
-                    }}
-                    onClick={() => onImage?.(puppy.photo)}
-                  />
-                ) : null}
+                            return (
+                              <div
+                                key={puppy.id}
+                                style={{
+                                  display: "flex",
+                                  justifyContent: "space-between",
+                                  alignItems: "center",
+                                  gap: 14,
+                                  padding: "14px",
+                                  marginBottom: 12,
+                                  borderRadius: 14,
+                                  background: "#0f1720",
+                                  border:
+                                    "1px solid rgba(255,255,255,.08)",
+                                }}
+                              >
+                                <div
+                                  style={{
+                                    display: "flex",
+                                    alignItems: "center",
+                                    gap: 12,
+                                    minWidth: 0,
+                                  }}
+                                >
+                                  {puppy.photo ? (
+                                    <img
+                                      src={puppy.photo}
+                                      alt={puppy.name || puppy.sex}
+                                      style={{
+                                        width: 82,
+                                        height: 82,
+                                        objectFit: "cover",
+                                        borderRadius: 12,
+                                        flexShrink: 0,
+                                        cursor: "pointer",
+                                      }}
+                                      onClick={() =>
+                                        onImage?.(puppy.photo)
+                                      }
+                                    />
+                                  ) : null}
 
-                <div>
-                  <div
-                    style={{
-                      fontWeight: 800,
-                      fontSize: 16,
-                    }}
-                  >
-                    {puppy.name || puppy.sex}
-                  </div>
+                                  <div>
+                                    <div
+                                      style={{
+                                        fontWeight: 800,
+                                        fontSize: 16,
+                                      }}
+                                    >
+                                      {puppy.name || puppy.sex}
+                                    </div>
 
-                  <div
-                    style={{
-                      fontSize: 13,
-                      color: "var(--muted)",
-                      marginTop: 2,
-                    }}
-                  >
-                    {puppy.sex}
-                  </div>
+                                    <div
+                                      style={{
+                                        fontSize: 13,
+                                        color: "var(--muted)",
+                                        marginTop: 2,
+                                      }}
+                                    >
+                                      {puppy.sex}
+                                    </div>
 
-                  <div
-                    style={{
-                      marginTop: 6,
-                      display: "inline-block",
-                      padding: "4px 9px",
-                      borderRadius: 999,
-                      fontSize: 12,
-                      fontWeight: 800,
-                      background: statusBackground,
-                      color: statusColor,
-                      border: "1px solid rgba(255,255,255,.08)",
-                    }}
-                  >
-                    {puppy.status}
-                  </div>
-                </div>
-              </div>
+                                    <div
+                                      style={{
+                                        marginTop: 6,
+                                        display: "inline-block",
+                                        padding: "4px 9px",
+                                        borderRadius: 999,
+                                        fontSize: 12,
+                                        fontWeight: 800,
+                                        background: statusBackground,
+                                        color: statusColor,
+                                        border:
+                                          "1px solid rgba(255,255,255,.08)",
+                                      }}
+                                    >
+                                      {puppy.status}
+                                    </div>
+                                  </div>
+                                </div>
 
-              <div
-                style={{
-                  textAlign: "right",
-                  fontWeight: 900,
-                  fontSize: 17,
-                  flexShrink: 0,
-                }}
-              >
-                {puppy.price}
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  </div>
-) : null}
+                                <div
+                                  style={{
+                                    textAlign: "right",
+                                    fontWeight: 900,
+                                    fontSize: 17,
+                                    flexShrink: 0,
+                                  }}
+                                >
+                                  {puppy.price}
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    </div>
+                  ) : null}
 
-                  {/* DEPOSIT INFO */}
+                  {/* DEPOSIT INFORMATION */}
                   {p.depositNote ? (
                     <p
                       style={{
@@ -432,10 +525,7 @@ Thank you.`;
                   >
                     Reserve a Puppy
                   </button>
-
-
-
-                  {/* PEDIGREE */}
+{/* PEDIGREE */}
                   {p.pedigree?.photos?.length ? (
                     <div style={{ marginTop: 20 }}>
                       <div className="badge" style={{ marginBottom: 10 }}>
@@ -457,6 +547,7 @@ Thank you.`;
                       </div>
 
                       <div className="row" style={{ gap: 12 }}>
+                        {/* SIRE */}
                         {p.parents.sire?.hero ? (
                           <div style={{ flex: 1 }}>
                             <div
@@ -485,6 +576,7 @@ Thank you.`;
                           </div>
                         ) : null}
 
+                        {/* DAM */}
                         {p.parents.dam?.hero ? (
                           <div style={{ flex: 1 }}>
                             <div

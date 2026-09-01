@@ -130,55 +130,7 @@ export const SITE_DATA = {
         note: "Planned pairing. No stud page (outside stud).",
       },
   },
-
-    { 
-      id: "aja",
-      name: "BHB Aja",
-      breed: "American Bully",
-      class: "Pocket",
-      reigstry: "ABKC",
-      dob: "2024-07-28",
-      color: "Chocolate Tri",
-      owner: "Bold Heart Bullies",
-      status: "Proven Producer",
-      hero: "/assets/dogs/dams/Aja/hero.jpg",
-      dna: "/assets/dogs/dams/dolla/dna.png",
-      gallery: ["/assets/dogs/dams/Aja/hero.jpg"],
-      confirmedBreeding: {
-        stud: "Hank (Outside Stud — owned by StayFresh Bullyz)",
-        method: "AI",
-        dueDates: ["2026-06-23"],
-        status: "Birthed 4 boys and 2 girls",
-        picks: "Available picks: 2nd through 6th picks available",
-        depositNote: "Deposits are required to reserve a pick. Please contact Bold Heart Bullies to confirm availability before sending payment.",
-        reserveSubject: "Reserve a Pick - Aja x Hank",
-        studHero: "/assets/dogs/outside/hank/hero.JPEG",
-      },
-    },
-
-    {
-      id: "chyna",
-      name: "Chyna",
-      breed: "French Bulldog",
-      registry: "AKC",
-      dob: "2024-06-26",
-      owner: "Bold Heart Bullies",
-      status: "Proven Dam",
-      hero: "/assets/dogs/dams/Chyna/hero.PNG",
-      gallery: ["/assets/dogs/dams/Chyna/hero.PNG"],
-      confirmedBreeding: {
-        stud: "Rango (Outside Stud — owned by Crabbs IncrediBulls)",
-        method: "AI",
-        dueDates: ["2026-07-15"],
-        status: "Birthed 2 boys and 1 girls",
-        picks: "Available picks: All Picks available.",
-        depositNote: "Deposites are required to resrve a pick. Please contact Bold Heart Bullies before submitting a deposit.",
-        reserveSubject: "Reserve a Pick - Chyna x Rango",
-        studHero: "/assets/dogs/outside/rango/hero.jpg",
-      },
-    },
-
-    { 
+  { 
       id: "lotty",
       name: "BHB Lotty",
       breed: "French Bulldog",
@@ -224,66 +176,7 @@ export const SITE_DATA = {
     },
   ],
 
-  puppies: [
-    {
-      id: "aja-hank-2026",
-      title: "Aja x Hank",
-      status: "Litter of 6",
-      birthDate: "2026-06-23",
-      price: "Males $3,000 - Females $3,500",
-      description: "Born June 23, 2026. Now accepting deposits and reservations for available puppies.",
-
-      featuredImage:
-      "/assets/dogs/dams/Aja/hero.jpg",
-
-      
-      parents: {
-        sire: { name: "Hank", hero: "/assets/dogs/outside/hank/hero.JPEG" },
-        dam:  { name: "Aja", hero: "/assets/dogs/dams/Aja/hero.jpg" },
-      },
-    pedigree: {
-      name: "Pedigree",
-      photos: [
-        "/assets/available_puppies/aja_hank/pedigree1.jpg",
-      ],
-    },
-      available: [
-        { id: "male1", sex: "Male", status: "Sold", price: "SOLD" },
-      { id: "male3", sex: "Male", status: "Sold", price: "SOLD" },
-        { id: "male4", sex: "Male", status: "Sold", price: "SOLD" },
-        { id: "female1", sex: "Female", status: "Available", price: "$3500", photo: "/assets/available_puppies/aja_hank/5.jpg",},
-        { id: "female2", sex: "Female", status: "Available", price: "$3500", photo: "/assets/available_puppies/aja_hank/6.jpg",},
-      ],
-
-      reserveSubject: "Reserve a Puppy - Aja x Hank",
-      depositNote: "A deposit is required to reservean available puppy. Please contact Bold Heart Bullies to confirm availablility before submitting payment.",
-    },
-
-    {
-        id: "Chyna-Rango-2026",
-      title: "Chyna x Rango",
-      status: "Litter of 3", 
-      birthDate: "2026-07-16",
-      price: "Males $3,000 - Females $3,500",
-      description: "Born July 16, 2026. Now accepting deposits and reservations for available puppies.",
-      
-      featuredImage:"/assets/dogs/dams/Chyna/hero.PNG",
-
-
-      parents: {
-        sire: { name: "Rango", hero: "/assets/dogs/outside/rango/hero.jpg" },
-        dam:  { name: "Chyna", hero: "/assets/dogs/dams/Chyna/hero.PNG" },
-      },
-      available: [
-      { id: "male3", sex: "Male", status: "Available", price: "$3000", photo: "/assets/available_puppies/chyna_rango/1.png",},
-        { id: "male4", sex: "Male", status: "Available", price: "$3000", photo: "/assets/available_puppies/chyna_rango/2.png",},
-        { id: "female1", sex: "Female", status: "Available", price: "$3500", photo: "/assets/available_puppies/chyna_rango/3.png",},
-      ],
-
-      reserveSubject: "Reserve a Puppy - Chyna x Rango",
-      depositNote: "A deposit is required to reservean available puppy. Please contact Bold Heart Bullies to confirm availablility before submitting payment.",
-    },
-  ],
+  puppies: [],
   contracts: [],
 
 contractsImportant: [
