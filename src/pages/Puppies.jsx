@@ -32,7 +32,7 @@ function getPuppyAge(birthDate) {
   return `${months} month${months === 1 ? "" : "s"} old`;
 }
 
-export default function Puppies({ onImage }) {
+export default function Puppies({ onImage, go }) {
   const allPups = SITE_DATA.puppies || [];
   const [openLitters, setOpenLitters] = useState({});
 
@@ -115,25 +115,19 @@ export default function Puppies({ onImage }) {
                   marginTop: 22,
                 }}
               >
-                <a
-                  href="/breedings"
-                  className="btn primary"
-                  style={{
-                    textDecoration: "none",
-                  }}
+                <button
+                className="btn primary"
+                onClick={() => go("/breedings")}
                 >
                   View Upcoming Breedings
-                </a>
-
-                <a
-                  href="/contact"
+                  </button>
+                  
+                  <button
                   className="btn"
-                  style={{
-                    textDecoration: "none",
-                  }}
-                >
-                  Contact Bold Heart Bullies
-                </a>
+                  onClick={() => go("/contact")}
+                  >
+                    Contact Bold Heart Bullies
+                    </button>
               </div>
             </div>
           </div>
