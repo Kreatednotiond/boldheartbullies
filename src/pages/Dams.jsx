@@ -40,7 +40,7 @@ export default function Dams({ route, go, onImage }) {
 
     return (
       <div className="container">
-        <div className="grid">
+        <div className="grid dams-grid">
           {/* LEFT HERO CARD */}
           <div style={{ gridColumn: "span 5" }}>
             <div className="card">
@@ -275,9 +275,9 @@ export default function Dams({ route, go, onImage }) {
       <div className="section">
         <h2>American Bully Dams</h2>
       </div>
-      <div className="grid">
+      <div className="grid dams-grid">
         {bullies.map((d) => (
-          <div key={d.id} style={{ gridColumn: "span 4" }}>
+          <div key={d.id}>
             <DogCard dog={d} onOpen={() => go(`/dams/${d.id}`)} onImage={onImage} />
           </div>
         ))}
@@ -286,9 +286,9 @@ export default function Dams({ route, go, onImage }) {
       <div className="section">
         <h2>French Bulldog Dams</h2>
       </div>
-      <div className="grid">
+      <div className="grid dams-grid">
         {frenchies.map((d) => (
-          <div key={d.id} style={{ gridColumn: "span 4" }}>
+          <div key={d.id}>
             <DogCard dog={d} onOpen={() => go(`/dams/${d.id}`)} onImage={onImage} />
           </div>
         ))}

@@ -524,3 +524,13 @@ box-shadow: 0 6px 18px rgba(0,0,0,0.30);
     grid-column: 1 / -1;
   }
 }
+@media (max-width: 900px) {
+  .dams-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .dams-grid > div {
+    grid-column: 1 / -1 !important;
+    width: 100%;
+  }
+}
