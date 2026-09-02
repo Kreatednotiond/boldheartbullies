@@ -181,6 +181,12 @@ export const SITE_DATA = {
         "/assets/dogs/dams/stromi/6.jpg",
 
       ],
+      plannedBreeding: {
+        stud: "Yogi Da Bear (Outside stud — owned by Top Shelf Frenchies)",
+        timing: "Late 2026, Early 2027",
+        studHero: "/assets/dogs/outside/yogi/hero.PNG",
+        note: "Planned pairing. No stud page (outside stud).",
+      },
     },
   ],
 
