@@ -46,7 +46,7 @@ export default function Home({ go, onImage }) {
         <div className="section">
           <h2>Bold Heart Studs</h2>
           <div className="grid">
-            <div style={{ gridColumn: "span 4" }}>
+            <div className="home-dog-card">
               <DogCard
                 dog={featuredStud}
                 onOpen={() => go(`/studs/${featuredStud.id}`)}
@@ -72,7 +72,7 @@ export default function Home({ go, onImage }) {
         <h2>Bold Heart Dams</h2>
         <div className="grid">
           {featuredDams.map((d) => (
-            <div key={d.id} style={{ gridColumn: "span 4" }}>
+            <div key={d.id} className="home-dog-card">
               <DogCard dog={d} onOpen={() => go(`/dams/${d.id}`)} onImage={onImage} />
             </div>
           ))}

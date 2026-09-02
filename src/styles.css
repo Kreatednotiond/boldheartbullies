@@ -510,3 +510,17 @@ line-height: 1.1;
 
 box-shadow: 0 6px 18px rgba(0,0,0,0.30);
 }
+/* =========================================
+   HOME DOG CARD LAYOUT
+========================================= */
+
+.home-dog-card {
+  grid-column: span 4;
+}
+
+/* Mobile: one dog per row */
+@media (max-width: 900px) {
+  .home-dog-card {
+    grid-column: 1 / -1;
+  }
+}
