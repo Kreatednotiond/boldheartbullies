@@ -172,7 +172,15 @@ export const SITE_DATA = {
       owner: "Bold Heart Bullies",
       status: "Young Prospect",
       hero: "/assets/dogs/dams/stromi/hero.jpg",
-      gallery: ["/assets/dogs/dams/stromi/hero.jpg"]["/assets/dogs/dams/stromi/hero.png"],
+      gallery: [
+        "/assets/dogs/dams/stromi/1.jpg", 
+        "/assets/dogs/dams/stromi/2.jpg",
+        "/assets/dogs/dams/stromi/3.jpg",
+        "/assets/dogs/dams/stromi/4.jpg",
+        "/assets/dogs/dams/stromi/5.jpg",
+        "/assets/dogs/dams/stromi/6.jpg",
+
+      ],
     },
   ],
 
