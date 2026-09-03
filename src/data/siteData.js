@@ -23,7 +23,9 @@ export const SITE_DATA = {
       status: "Owned and Standing Stud",
       hero: "/assets/dogs/studs/melo/hero.jpg",
       dna: "/assets/dogs/dams/espie/dna.png",
-      glallery: ["/assets/dogs/studs/melo/hero.jpg", "/assets/dogs/studs/melo/1.jpg",
+      glallery: 
+      ["/assets/dogs/studs/melo/hero.jpg", 
+       "/assets/dogs/studs/melo/1.jpg",
       ]
     }
   ],
