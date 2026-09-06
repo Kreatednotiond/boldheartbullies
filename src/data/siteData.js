@@ -124,7 +124,9 @@ export const SITE_DATA = {
       hero: "/assets/dogs/dams/espie/hero.jpg",
       dna: "/assets/dogs/dams/espie/dna.png",
       note: "Espie has not had any previous litters.",
-      gallery: ["/assets/dogs/dams/espie/hero.jpg"],
+      gallery: ["/assets/dogs/dams/espie/1.jpg",
+        "/assets/dogs/dams/espie/2.jpg",
+      ],
       plannedBreeding: {
         stud: "Hokie (Outside stud — owned by Oceanside Bullies)",
         timing: "Late 2026, Early 2027",
