@@ -533,4 +533,27 @@ box-shadow: 0 6px 18px rgba(0,0,0,0.30);
     grid-column: 1 / -1 !important;
     width: 100%;
   }
+  /* =========================================
+   DAM PAGE CARD LAYOUT
+========================================= */
+
+.dam-card-item {
+  grid-column: span 6;
+}
+
+/* Full-width card on phones */
+@media (max-width: 900px) {
+  .dam-card-item {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Dam page photos */
+.dam-card-item .thumb {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  background: #171411;
+}
 }
