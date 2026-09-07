@@ -533,27 +533,54 @@ box-shadow: 0 6px 18px rgba(0,0,0,0.30);
     grid-column: 1 / -1 !important;
     width: 100%;
   }
-  /* =========================================
-   DAM PAGE CARD LAYOUT
+/* =========================================
+   DAMS PAGE CARD LAYOUT
+   Desktop = 2 dogs per row
+   Mobile = 1 dog per row
 ========================================= */
 
-.dam-card-item {
-  grid-column: span 6;
+.dams-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
 }
 
-/* Full-width card on phones */
-@media (max-width: 900px) {
-  .dam-card-item {
-    grid-column: 1 / -1;
-  }
-}
-
-/* Dam page photos */
-.dam-card-item .thumb {
+.dams-grid .dam-list-item {
+  grid-column: auto !important;
   width: 100%;
-  height: auto;
-  max-height: none;
-  object-fit: contain;
+  min-width: 0;
+}
+
+.dams-grid .dam-list-item .card {
+  width: 100%;
+  height: 100%;
+}
+
+/* Show the full dog photo */
+.dams-grid .dam-list-item .thumb {
+  width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  display: block;
   background: #171411;
+}
+
+/* MOBILE - one dog per row */
+@media (max-width: 900px) {
+  .dams-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .dams-grid .dam-list-item {
+    width: 100%;
+  }
+
+  .dams-grid .dam-list-item .thumb {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
 }
 }

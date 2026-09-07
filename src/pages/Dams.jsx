@@ -272,26 +272,36 @@ export default function Dams({ route, go, onImage }) {
         <p style={{ color: "var(--muted)" }}>American Bullies and French Bulldogs.</p>
       </div>
 
-      <div className="section">
+           <div className="section">
         <h2>American Bully Dams</h2>
-      </div>
-      <div className="grid dams-grid">
-        {bullies.map((d) => (
-          <div key={d.id} className="dam-list-item">
-            <DogCard dog={d} onOpen={() => go(`/dams/${d.id}`)} onImage={onImage} />
-          </div>
-        ))}
+
+        <div className="grid dams-grid">
+          {bullies.map((d) => (
+            <div key={d.id} className="dam-list-item">
+              <DogCard
+                dog={d}
+                onOpen={() => go(`/dams/${d.id}`)}
+                onImage={onImage}
+              />
+            </div>
+          ))}
+        </div>
       </div>
 
       <div className="section">
         <h2>French Bulldog Dams</h2>
-      </div>
-      <div className="grid dams-grid">
-        {frenchies.map((d) => (
-          <div key={d.id} className="dam-list-item">
-            <DogCard dog={d} onOpen={() => go(`/dams/${d.id}`)} onImage={onImage} />
-          </div>
-        ))}
+
+        <div className="grid dams-grid">
+          {frenchies.map((d) => (
+            <div key={d.id} className="dam-list-item">
+              <DogCard
+                dog={d}
+                onOpen={() => go(`/dams/${d.id}`)}
+                onImage={onImage}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
