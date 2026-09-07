@@ -534,53 +534,60 @@ box-shadow: 0 6px 18px rgba(0,0,0,0.30);
     width: 100%;
   }
 /* =========================================
-   DAMS PAGE CARD LAYOUT
-   Desktop = 2 dogs per row
-   Mobile = 1 dog per row
+   DAMS PAGE - FINAL LAYOUT FIX
 ========================================= */
 
-.dams-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
-}
-
-.dams-grid .dam-list-item {
-  grid-column: auto !important;
-  width: 100%;
-  min-width: 0;
-}
-
-.dams-grid .dam-list-item .card {
-  width: 100%;
-  height: 100%;
-}
-
-/* Show the full dog photo */
-.dams-grid .dam-list-item .thumb {
-  width: 100% !important;
-  height: auto !important;
-  max-height: none !important;
-  object-fit: contain !important;
-  display: block;
-  background: #171411;
-}
-
-/* MOBILE - one dog per row */
-@media (max-width: 900px) {
-  .dams-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
+/* DESKTOP - 2 dogs across */
+@media (min-width: 901px) {
+  .grid.dams-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 20px !important;
   }
 
-  .dams-grid .dam-list-item {
-    width: 100%;
+  .grid.dams-grid > .dam-list-item {
+    grid-column: auto !important;
+    width: 100% !important;
+    min-width: 0 !important;
   }
 
-  .dams-grid .dam-list-item .thumb {
+  .grid.dams-grid > .dam-list-item .card {
+    width: 100% !important;
+  }
+
+  .grid.dams-grid > .dam-list-item .thumb {
     width: 100% !important;
     height: auto !important;
+    max-height: none !important;
     object-fit: contain !important;
+    display: block !important;
+  }
+}
+
+/* MOBILE - 1 dog per row */
+@media (max-width: 900px) {
+  .grid.dams-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  .grid.dams-grid > .dam-list-item {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .grid.dams-grid > .dam-list-item .card {
+    width: 100% !important;
+  }
+
+  .grid.dams-grid > .dam-list-item .thumb {
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    display: block !important;
   }
 }
 }
