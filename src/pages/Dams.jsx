@@ -147,6 +147,27 @@ export default function Dams({ route, go, onImage }) {
                             </>
                           ) : null}
 
+                          {breeding.matingSimulator ? (
+                            <>
+                            <div className="badge" style={{ marginTop: 14 }}>
+                              Mating Simulator
+                            </div>
+                            <div className="card" style={{ msrginTop: 10 }}>
+                              <img
+                                src={breeding.matingSimulator}
+                                alt={'${dog.name} mating simulator'}
+                                style={{
+                                  width: "100%",
+                                  height: "auto",
+                                  display: "black",
+                                  cursor: "pointer",
+                                }}
+                                onClick={() => onImage?.(breeding.matingSimulator)}
+                              />
+                            </div>
+                          </>
+                          ) : null}
+
                 {/* PLANNED BREEDING */}
                 {dog.plannedBreeding ? (
                   <>

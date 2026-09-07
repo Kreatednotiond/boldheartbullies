@@ -48,6 +48,7 @@ export const SITE_DATA = {
         stud: "Rambo (Outside stud — owned by UpOne Bullys)",
         timing: "Late 2026, Early 2027",
         studHero: "/assets/dogs/outside/rambo/hero.JPG",
+        matingSimulator: "/assets/breedings/dolla_rambo/simulator.png",
         note: "Planned pairing. No stud page (outside stud).",
       },
 
@@ -91,6 +92,7 @@ export const SITE_DATA = {
         stud: "PBK Ghost (Outside stud — owned by Production Bully Kennels)",
         timing: "Late 2026, Early 2027",
         studHero: "/assets/dogs/outside/ghost/hero.jpeg",
+        matingSimulator: "/assets/breedings/remi_ghost/simulator.png",
         note: "Planned pairing. No stud page (outside stud).",
       },
     },
@@ -131,6 +133,7 @@ export const SITE_DATA = {
         stud: "Hokie (Outside stud — owned by Oceanside Bullies)",
         timing: "Late 2026, Early 2027",
         studHero: "/assets/dogs/outside/Hokie/hero.jpg",
+        matingSimulator: "/assets/breedings/espie_hokie/simulator.png",
         note: "Planned pairing. No stud page (outside stud).",
       },
   },
