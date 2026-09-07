@@ -261,48 +261,79 @@ export default function Dams({ route, go, onImage }) {
     );
   }
 
-  // ---------- LIST VIEW ----------
-  const bullies = dams.filter((d) => d.breed === "American Bully");
-  const frenchies = dams.filter((d) => d.breed === "French Bulldog");
+ // ---------- LIST VIEW ----------
+const bullies = dams.filter((d) => d.breed === "American Bully");
+const frenchies = dams.filter((d) => d.breed === "French Bulldog");
 
-  return (
-    <div className="container">
-      <div className="section">
-        <h2>Dams</h2>
-        <p style={{ color: "var(--muted)" }}>American Bullies and French Bulldogs.</p>
-      </div>
+return (
+  <div className="container">
+    <div className="section">
+      <h2>Dams</h2>
 
-           <div className="section">
-        <h2>American Bully Dams</h2>
-
-        <div className="grid dams-grid">
-          {bullies.map((d) => (
-            <div key={d.id} className="dam-list-item">
-              <DogCard
-                dog={d}
-                onOpen={() => go(`/dams/${d.id}`)}
-                onImage={onImage}
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="section">
-        <h2>French Bulldog Dams</h2>
-
-        <div className="grid dams-grid">
-          {frenchies.map((d) => (
-            <div key={d.id} className="dam-list-item">
-              <DogCard
-                dog={d}
-                onOpen={() => go(`/dams/${d.id}`)}
-                onImage={onImage}
-              />
-            </div>
-          ))}
-        </div>
-      </div>
+      <p style={{ color: "var(--muted)" }}>
+        American Bullies and French Bulldogs.
+      </p>
     </div>
-  );
+
+    {/* AMERICAN BULLY DAMS */}
+    <div className="section">
+      <h2>American Bully Dams</h2>
+    </div>
+
+    <div
+      className="dams-grid"
+      style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+        gap: 20,
+      }}
+    >
+      {bullies.map((d) => (
+        <div
+          key={d.id}
+          style={{
+            minWidth: 0,
+            width: "100%",
+          }}
+        >
+          <DogCard
+            dog={d}
+            onOpen={() => go(`/dams/${d.id}`)}
+            onImage={onImage}
+          />
+        </div>
+      ))}
+    </div>
+
+    {/* FRENCH BULLDOG DAMS */}
+    <div className="section">
+      <h2>French Bulldog Dams</h2>
+    </div>
+
+    <div
+      className="dams-grid"
+      style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+        gap: 20,
+      }}
+    >
+      {frenchies.map((d) => (
+        <div
+          key={d.id}
+          style={{
+            minWidth: 0,
+            width: "100%",
+          }}
+        >
+          <DogCard
+            dog={d}
+            onOpen={() => go(`/dams/${d.id}`)}
+            onImage={onImage}
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+);
 }
