@@ -277,7 +277,7 @@ export default function Dams({ route, go, onImage }) {
       </div>
       <div className="grid dams-grid">
         {bullies.map((d) => (
-          <div key={d.id}>
+          <div key={d.id} className="dam-list-item">
             <DogCard dog={d} onOpen={() => go(`/dams/${d.id}`)} onImage={onImage} />
           </div>
         ))}
@@ -288,7 +288,7 @@ export default function Dams({ route, go, onImage }) {
       </div>
       <div className="grid dams-grid">
         {frenchies.map((d) => (
-          <div key={d.id}>
+          <div key={d.id} className="dam-list-item">
             <DogCard dog={d} onOpen={() => go(`/dams/${d.id}`)} onImage={onImage} />
           </div>
         ))}
