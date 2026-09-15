@@ -87,7 +87,7 @@ export const SITE_DATA = {
       status: "Young Prospect",
       hero: "/assets/dogs/dams/remi/hero.jpg",
       dna: "/assets/dogs/dams/remi/dna.png",
-      gallery: ["/assets/dogs/dams/remi/1.jpg", "/assets/dogs/dams/remi/2.jpg", "/assets/dogs/dams/remi/3.jpg"],
+      gallery: ["/assets/dogs/dams/remi/4.jpg", "/assets/dogs/dams/remi/2.jpg", "/assets/dogs/dams/remi/3.jpg", "assets/dogs/dams/remi/4.jpg"],
       plannedBreeding: {
         stud: "PBK Ghost (Outside stud — owned by Production Bully Kennels)",
         timing: "Late 2026, Early 2027",
@@ -191,7 +191,7 @@ export const SITE_DATA = {
       plannedBreeding: {
         stud: "Yogi Da Bear (Outside stud — owned by Top Shelf Frenchies)",
         timing: "Late 2026, Early 2027",
-        studHero: "/assets/dogs/outside/yogi/hero.PNG",
+        studHero: "/assets/dogs/outside/yogi/hero.JPG",
         note: "Planned pairing. No stud page (outside stud).",
       },
     },
