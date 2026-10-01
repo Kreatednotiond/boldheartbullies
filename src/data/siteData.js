@@ -130,9 +130,9 @@ export const SITE_DATA = {
         "/assets/dogs/dams/espie/2.jpg",
       ],
       plannedBreeding: {
-        stud: "Hokie (Outside stud — owned by Oceanside Bullies)",
+        stud: "Shooter (Outside stud — owned by Indian Creek Kennels)",
         timing: "Late 2026, Early 2027",
-        studHero: "/assets/dogs/outside/Hokie/hero.jpg",
+        studHero: "/assets/dogs/outside/shooter/hero.jpeg",
         matingSimulator: "/assets/breedings/espie_hokie/simulator.png",
         note: "Planned pairing. No stud page (outside stud).",
       },
@@ -189,9 +189,9 @@ export const SITE_DATA = {
 
       ],
       plannedBreeding: {
-        stud: "Yogi Da Bear (Outside stud — owned by Top Shelf Frenchies)",
+        stud: "Gizmo (Outside stud — owned by Central Frenchie Haven)",
         timing: "Late 2026, Early 2027",
-        studHero: "/assets/dogs/outside/yogi/hero.JPG",
+        studHero: "/assets/dogs/outside/gizmo/hero.png",
         note: "Planned pairing. No stud page (outside stud).",
       },
     },
