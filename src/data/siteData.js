@@ -132,7 +132,7 @@ export const SITE_DATA = {
       plannedBreeding: {
         stud: "Shooter (Outside stud — owned by Indian Creek Kennels)",
         timing: "Late 2026, Early 2027",
-        studHero: "/assets/dogs/outside/shooter/hero.jpeg",
+        studHero: "/assets/dogs/outside/shooter/1.jpg",
         matingSimulator: "/assets/breedings/espie_shooter/1.png",
         note: "Planned pairing. No stud page (outside stud).",
       },
