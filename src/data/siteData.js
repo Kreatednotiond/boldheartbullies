@@ -182,10 +182,9 @@ export const SITE_DATA = {
       gallery: [
         "/assets/dogs/dams/stromi/1.jpg", 
         "/assets/dogs/dams/stromi/2.jpg",
-        "/assets/dogs/dams/stromi/3.jpg",
-        "/assets/dogs/dams/stromi/4.jpg",
+        
         "/assets/dogs/dams/stromi/5.jpg",
-        "/assets/dogs/dams/stromi/6.jpg",
+
 
       ],
       plannedBreeding: {
