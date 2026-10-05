@@ -85,9 +85,9 @@ export const SITE_DATA = {
       color: "Blue Tri",
       owner: "Bold Heart Bullies",
       status: "Young Prospect",
-      hero: "/assets/dogs/dams/remi/hero.JPG",
+      hero: "/assets/dogs/dams/remi/hero.jpg",
       dna: "/assets/dogs/dams/remi/dna.png",
-      gallery: ["/assets/dogs/dams/remi/4.jpg", "/assets/dogs/dams/remi/2.JPG", "/assets/dogs/dams/remi/3.jpg", "assets/dogs/dams/remi/1.JPG"],
+      gallery: ["/assets/dogs/dams/remi/4.jpg", "/assets/dogs/dams/remi/2.jpg", "/assets/dogs/dams/remi/3.jpg", "assets/dogs/dams/remi/1.jpg"],
       plannedBreeding: {
         stud: "PBK Ghost (Outside stud — owned by Production Bully Kennels)",
         timing: "Late 2026, Early 2027",
