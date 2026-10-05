@@ -85,7 +85,7 @@ export const SITE_DATA = {
       color: "Blue Tri",
       owner: "Bold Heart Bullies",
       status: "Young Prospect",
-      hero: "/assets/dogs/dams/remi/hero.jpg",
+      hero: "/assets/dogs/dams/remi/hero.JPG",
       dna: "/assets/dogs/dams/remi/dna.png",
       gallery: ["/assets/dogs/dams/remi/4.jpg", "/assets/dogs/dams/remi/2.JPG", "/assets/dogs/dams/remi/3.jpg", "assets/dogs/dams/remi/1.JPG"],
       plannedBreeding: {
