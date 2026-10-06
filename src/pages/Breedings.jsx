@@ -150,51 +150,109 @@ Thank you.`;
       </div>
     );
   };
+return (
+    <div className="container">
+    <div className="section">
+        <h2>Breedings</h2>
 
-  return (
-    <div className="container">
-      <div className="section">
-        <h2>Breedings</h2>
-        <p style={{ color: "var(--muted)" }}>
-          Pending, confirmed, and planned breedings.
-        </p>
-      </div>
+      <div className="card" style={{ marginTop: 14 }}>
+        <div className="pad">
+          <p
+            style={{
+              color: "var(--muted)",
+              margin: 0,
+              lineHeight: 1.7,
+            }}
+          >
+            Pending, confirmed, and planned breedings.
+          </p>
+        </div>
+      </div>
+    </div>
 
-      <div className="section">
-        <h2>Confirmed</h2>
-        {!confirmed.length ? (
-          <p style={{ color: "var(--muted)" }}>
-            No confirmed breedings listed yet.
-          </p>
-        ) : null}
-        {confirmed.map((dam) => (
-          <BreedingCard key={dam.id} dam={dam} type="confirmed" />
-        ))}
-      </div>
+    <div className="section">
+      <h2>Confirmed</h2>
 
-      <div className="section">
-        <h2>Pending</h2>
-        {!pending.length ? (
-          <p style={{ color: "var(--muted)" }}>
-            No pending breedings listed right now.
-          </p>
-        ) : null}
-        {pending.map((dam) => (
-          <BreedingCard key={dam.id} dam={dam} type="pending" />
-        ))}
-      </div>
+      {!confirmed.length ? (
+        <div className="card" style={{ marginTop: 14 }}>
+          <div className="pad">
+            <p
+              style={{
+                color: "var(--muted)",
+                margin: 0,
+                lineHeight: 1.7,
+              }}
+            >
+              No confirmed breedings listed yet.
+            </p>
+          </div>
+        </div>
+      ) : null}
 
-      <div className="section">
-        <h2>Planned</h2>
-        {!planned.length ? (
-          <p style={{ color: "var(--muted)" }}>
-            No planned breedings listed right now.
-          </p>
-        ) : null}
-        {planned.map((dam) => (
-          <BreedingCard key={dam.id} dam={dam} type="planned" />
-        ))}
-      </div>
-    </div>
-  );
+      {confirmed.map((dam) => (
+        <BreedingCard
+          key={dam.id}
+          dam={dam}
+          type="confirmed"
+        />
+      ))}
+    </div>
+
+    <div className="section">
+      <h2>Pending</h2>
+
+      {!pending.length ? (
+        <div className="card" style={{ marginTop: 14 }}>
+          <div className="pad">
+            <p
+              style={{
+                color: "var(--muted)",
+                margin: 0,
+                lineHeight: 1.7,
+              }}
+            >
+              No pending breedings listed right now.
+            </p>
+          </div>
+        </div>
+      ) : null}
+
+      {pending.map((dam) => (
+        <BreedingCard
+          key={dam.id}
+          dam={dam}
+          type="pending"
+        />
+      ))}
+    </div>
+
+    <div className="section">
+      <h2>Planned</h2>
+
+      {!planned.length ? (
+        <div className="card" style={{ marginTop: 14 }}>
+          <div className="pad">
+            <p
+              style={{
+                color: "var(--muted)",
+                margin: 0,
+                lineHeight: 1.7,
+              }}
+            >
+              No planned breedings listed right now.
+            </p>
+          </div>
+        </div>
+      ) : null}
+
+      {planned.map((dam) => (
+        <BreedingCard
+          key={dam.id}
+          dam={dam}
+          type="planned"
+        />
+      ))}
+    </div>
+  </div>
+);
 }
