@@ -174,20 +174,16 @@ return (
       <h2>Confirmed</h2>
 
       {!confirmed.length ? (
-        <div className="card" style={{ marginTop: 14 }}>
-          <div className="pad">
-            <p
-              style={{
-                color: "var(--muted)",
-                margin: 0,
-                lineHeight: 1.7,
-              }}
-            >
-              No confirmed breedings listed yet.
-            </p>
-          </div>
-        </div>
-      ) : null}
+        <div
+    className="badge"
+    style={{
+      marginTop: 14,
+      width: "fit-content",
+    }}
+  >
+    No confirmed breedings listed yet.
+  </div>
+) : null}
 
       {confirmed.map((dam) => (
         <BreedingCard
@@ -202,20 +198,16 @@ return (
       <h2>Pending</h2>
 
       {!pending.length ? (
-        <div className="card" style={{ marginTop: 14 }}>
-          <div className="pad">
-            <p
-              style={{
-                color: "var(--muted)",
-                margin: 0,
-                lineHeight: 1.7,
-              }}
-            >
-              No pending breedings listed right now.
-            </p>
-          </div>
-        </div>
-      ) : null}
+        <div
+    className="badge"
+    style={{
+      marginTop: 14,
+      width: "fit-content",
+    }}
+  >
+    No pending breedings listed right now.
+  </div>
+) : null}
 
       {pending.map((dam) => (
         <BreedingCard
@@ -230,20 +222,16 @@ return (
       <h2>Planned</h2>
 
       {!planned.length ? (
-        <div className="card" style={{ marginTop: 14 }}>
-          <div className="pad">
-            <p
-              style={{
-                color: "var(--muted)",
-                margin: 0,
-                lineHeight: 1.7,
-              }}
-            >
-              No planned breedings listed right now.
-            </p>
-          </div>
-        </div>
-      ) : null}
+          <div
+    className="badge"
+    style={{
+      marginTop: 14,
+      width: "fit-content",
+    }}
+  >
+    No planned breedings listed right now.
+  </div>
+) : null}
 
       {planned.map((dam) => (
         <BreedingCard
