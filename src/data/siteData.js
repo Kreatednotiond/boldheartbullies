@@ -111,6 +111,13 @@ export const SITE_DATA = {
       dna: "/assets/dogs/dams/brookie/dna.PNG",
       note: "Brookie has not had any previous litters.",
       gallery: ["/assets/dogs/dams/brookie/hero.jpg"],
+      plannedBreeding: {
+        stud: "Outlaw (Outside stud — owned by Cel's Legacy Bullies)",
+        timing: "Late 2026, Early 2027",
+        studHero: "/assets/dogs/outside/outlaw/hero.JPEG",
+        matingSimulator: "/assets/breedings/brookie_outlaw/simulator.png",
+        note: "Planned pairing. No stud page (outside stud).",
+      },
 },
 
     {
