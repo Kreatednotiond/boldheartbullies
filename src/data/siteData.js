@@ -132,7 +132,7 @@ export const SITE_DATA = {
       plannedBreeding: {
         stud: "Shooter (Outside stud — owned by Indian Creek Kennels)",
         timing: "Late 2026, Early 2027",
-        studHero: "/assets/dogs/outside/shooter/1.jpg",
+        studHero: "/assets/dogs/outside/shooter/hero.JPEG",
         matingSimulator: "/assets/breedings/espie_shooter/1.png",
         note: "Planned pairing. No stud page (outside stud).",
       },
@@ -190,7 +190,7 @@ export const SITE_DATA = {
       plannedBreeding: {
         stud: "Gizmo (Outside stud — owned by Central Frenchie Haven)",
         timing: "Late 2026, Early 2027",
-        studHero: "/assets/dogs/outside/gizmo/hero.png",
+        studHero: "/assets/dogs/outside/gizmo/hero.JPEG",
         note: "Planned pairing. No stud page (outside stud).",
       },
     },
