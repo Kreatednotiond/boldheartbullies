@@ -129,13 +129,14 @@ export const SITE_DATA = {
       gallery: ["/assets/dogs/dams/espie/1.jpg",
         "/assets/dogs/dams/espie/2.jpg",
       ],
-      plannedBreeding: {
+      pendingBreeding: {
         stud: "Shooter (Outside stud — owned by Indian Creek Kennels)",
-        timing: "Late 2026, Early 2027",
+        method: "Artificial Insemination (AI)",
+        dates: ["2026-10-07", "2026-10-08"],
+        status: "Pregnancy confirmation pending",
         studHero: "/assets/dogs/outside/shooter/hero.jpeg",
         matingSimulator: "/assets/breedings/espie_shooter/1.png",
-        note: "Planned pairing. No stud page (outside stud).",
-      },
+    },
   },
   { 
       id: "lotty",
@@ -187,11 +188,12 @@ export const SITE_DATA = {
 
 
       ],
-      plannedBreeding: {
+      pendingBreeding: {
         stud: "Gizmo (Outside stud — owned by Central Frenchie Haven)",
-        timing: "Late 2026, Early 2027",
+        method: "Artificail Insemination (AI)",
+        dates: ["2026-10-06", "2026-10-07"],
+        status: "Pregnancy confirmation pending",
         studHero: "/assets/dogs/outside/gizmo/hero.JPEG",
-        note: "Planned pairing. No stud page (outside stud).",
       },
     },
   ],
