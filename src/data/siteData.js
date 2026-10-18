@@ -168,7 +168,7 @@ export const SITE_DATA = {
         method: "Artificial Insemination (AI)",
         dates: ["2026-10-13", "2026-10-14"],
         status: "Pregnancy confirmation pending",
-        studHero: "/assets/dogs/outside/hank/hero.jpeg",
+        studHero: "/assets/dogs/outside/hank/hero.JPEG",
     },
   },
   { 
