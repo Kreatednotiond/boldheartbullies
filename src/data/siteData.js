@@ -111,12 +111,14 @@ export const SITE_DATA = {
       dna: "/assets/dogs/dams/brookie/dna.PNG",
       note: "Brookie has not had any previous litters.",
       gallery: ["/assets/dogs/dams/brookie/hero.jpg"],
-      plannedBreeding: {
+      pendingBreeding: {
         stud: "Outlaw (Outside stud — owned by Cel's Legacy Bullies)",
-        timing: "Late 2026, Early 2027",
+        method: "Artificial Insemination (AI)",
+        dates: ["2026-10-13", "2026-10-14"],
+        status: "Pregnancy confirmation pending",
         studHero: "/assets/dogs/outside/outlaw/hero.JPEG",
         matingSimulator: "/assets/breedings/brookie_outlaw/simulator.png",
-        note: "Planned pairing. No stud page (outside stud).",
+      
       },
 },
 
@@ -130,7 +132,7 @@ export const SITE_DATA = {
       color: "Blue Tri",
       owner: "Bold Heart Bullies",
       status: "Young Prospect",
-      hero: "/assets/dogs/dams/espie/hero.jpg",
+      hero: "/assets/dogs/dams/espie/hero..jpg",
       dna: "/assets/dogs/dams/espie/dna.png",
       note: "Espie has not had any previous litters.",
       gallery: ["/assets/dogs/dams/espie/1.jpg",
