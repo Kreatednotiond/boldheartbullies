@@ -158,7 +158,7 @@ export const SITE_DATA = {
       color: "Black Tri Pied",
       owner: "Bold Heart Bullies",
       status: "Young Prospect",
-      hero: "/assets/dogs/dams/millie/hero..jpg",
+      hero: "/assets/dogs/dams/millie/hero.jpg",
       dna: "/assets/dogs/dams/espie/dna.png",
       note: "Millie has not had any previous litters.",
       gallery: ["/assets/dogs/dams/millie/hero.jpg",
