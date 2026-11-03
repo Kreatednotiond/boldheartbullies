@@ -91,7 +91,7 @@ export const SITE_DATA = {
       plannedBreeding: {
         stud: "Ch Fire Line Aegon (Outside stud — owned by Fire Line)",
         timing: "Late 2026, Early 2027",
-        studHero: "/assets/dogs/outside/aegon/herojpeg",
+        studHero: "/assets/dogs/outside/aegon/hero.jpeg",
         matingSimulator: "/assets/breedings/remi_aegon/simulator.png",
         note: "Planned pairing. No stud page (outside stud).",
       },
