@@ -45,10 +45,10 @@ export const SITE_DATA = {
       dna: "/assets/dogs/dams/dolla/dna.png",
       gallery: ["/assets/dogs/dams/dolla/hero.jpg"],
       plannedBreeding: {
-        stud: "Rambo (Outside stud — owned by UpOne Bullys)",
+        stud: "Ch PBK Ghost (Outside stud — owned by Production Bully Kennels)",
         timing: "Late 2026, Early 2027",
-        studHero: "/assets/dogs/outside/rambo/hero.JPG",
-        matingSimulator: "/assets/breedings/dolla_rambo/simulator.png",
+        studHero: "/assets/dogs/outside/ghost/1.JPG",
+        matingSimulator: "/assets/breedings/remi_ghost/simulator.png",
         note: "Planned pairing. No stud page (outside stud).",
       },
 
@@ -89,7 +89,7 @@ export const SITE_DATA = {
       dna: "/assets/dogs/dams/remi/dna.png",
       gallery: ["/assets/dogs/dams/remi/hero.jpg", "/assets/dogs/dams/remi/2.jpg", "/assets/dogs/dams/remi/3.jpg", "assets/dogs/dams/remi/1.jpg"],
       plannedBreeding: {
-        stud: "PBK Ghost (Outside stud — owned by Production Bully Kennels)",
+        stud: "Ch PBK Ghost (Outside stud — owned by Production Bully Kennels)",
         timing: "Late 2026, Early 2027",
         studHero: "/assets/dogs/outside/ghost/1.JPG",
         matingSimulator: "/assets/breedings/remi_ghost/simulator.png",
