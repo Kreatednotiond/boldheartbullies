@@ -89,10 +89,10 @@ export const SITE_DATA = {
       dna: "/assets/dogs/dams/remi/dna.png",
       gallery: ["/assets/dogs/dams/remi/hero.jpg", "/assets/dogs/dams/remi/2.jpg", "/assets/dogs/dams/remi/3.jpg", "assets/dogs/dams/remi/1.jpg"],
       plannedBreeding: {
-        stud: "Ch PBK Ghost (Outside stud — owned by Production Bully Kennels)",
+        stud: "Ch Fire Line Aegon (Outside stud — owned by Fire Line)",
         timing: "Late 2026, Early 2027",
-        studHero: "/assets/dogs/outside/ghost/1.JPG",
-        matingSimulator: "/assets/breedings/remi_ghost/simulator.png",
+        studHero: "/assets/dogs/outside/aegon/herojpeg",
+        matingSimulator: "/assets/breedings/remi_aegon/simulator.png",
         note: "Planned pairing. No stud page (outside stud).",
       },
     },
