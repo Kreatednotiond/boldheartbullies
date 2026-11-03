@@ -48,7 +48,7 @@ export const SITE_DATA = {
         stud: "Ch PBK Ghost (Outside stud — owned by Production Bully Kennels)",
         timing: "Late 2026, Early 2027",
         studHero: "/assets/dogs/outside/ghost/1.JPG",
-        matingSimulator: "/assets/breedings/remi_ghost/simulator.png",
+        matingSimulator: "/assets/breedings/dolla_ghost/simulator.png",
         note: "Planned pairing. No stud page (outside stud).",
       },
 
