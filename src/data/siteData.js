@@ -231,7 +231,7 @@ export const SITE_DATA = {
         dates: ["2026-10-06", "2026-10-07"],
         dueDates: "2026-12-07",
         status: "Pregnancy confirmed",
-        picks: "1st Pick Available | 3rd pick Available | 5th pick Available",
+        picks: "2nd Pick Available | 3rd pick Available | 4th pick Available",
         depositNote: "$500 no-refundable deposit required to reserve a pick. Remaining balance due before puppy pickup.",
         studHero: "/assets/dogs/outside/gizmo/hero.JPEG",
         reserveSubject: "Puppy Reservation Inquiry",
