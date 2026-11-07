@@ -138,13 +138,17 @@ export const SITE_DATA = {
       gallery: ["/assets/dogs/dams/espie/1.jpg",
         "/assets/dogs/dams/espie/2.jpg",
       ],
-      pendingBreeding: {
+      confirmedBreeding: {
         stud: "Shooter (Outside stud — owned by Indian Creek Kennels)",
         method: "Artificial Insemination (AI)",
         dates: ["2026-10-07", "2026-10-08"],
-        status: "Pregnancy confirmation pending",
+        dueDates: "2026-12-08",
+        status: "Pregnancy confirmed",
+        picks: "1st Pick Available | 3rd pick Available | 5th pick Available | 7th pick Available",
+        depositNote: "$500 no-refundable deposit required to reserve a pick. Remaining balance due before puppy pickup.",
         studHero: "/assets/dogs/outside/shooter/hero.jpeg",
         matingSimulator: "/assets/breedings/espie_shooter/1.png",
+        reserveSubjest: "Puppy Reservation Inquiry",
     },
   },
 
@@ -221,12 +225,16 @@ export const SITE_DATA = {
 
 
       ],
-      pendingBreeding: {
+      confirmedBreeding: {
         stud: "Gizmo (Outside stud — owned by Central Frenchie Haven)",
-        method: "Artificail Insemination (AI)",
+        method: "Artificial Insemination (AI)",
         dates: ["2026-10-06", "2026-10-07"],
-        status: "Pregnancy confirmation pending",
+        dueDates: "2026-12-07",
+        status: "Pregnancy confirmed",
+        picks: "1st Pick Available | 3rd pick Available | 5th pick Available",
+        depositNote: "$500 no-refundable deposit required to reserve a pick. Remaining balance due before puppy pickup.",
         studHero: "/assets/dogs/outside/gizmo/hero.JPEG",
+        reserveSubject: "Puppy Reservation Inquiry",
       },
     },
   ],
