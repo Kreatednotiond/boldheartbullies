@@ -167,12 +167,17 @@ export const SITE_DATA = {
       note: "Millie has not had any previous litters.",
       gallery: ["/assets/dogs/dams/millie/hero.jpg",
       ],
-      pendingBreeding: {
+      confirmedBreeding: {
         stud: "Hank (Outside stud — owned by Stay Fresh Bullyz)",
         method: "Artificial Insemination (AI)",
         dates: ["2026-10-13", "2026-10-14"],
-        status: "Pregnancy confirmation pending",
+        dueDates: ["2026-12-14"],
+        status: "Pregnancy confirmed",
+        picks: "1st Pick Available | 3rd pick Available",
+        depositNote: "$500 no-refundable deposit required to reserve a pick. Remaining balance due before puppy pickup.",
         studHero: "/assets/dogs/outside/hank/hank.jpg",
+        matingSimulator: "/assets/breedings/espie_shooter/1.png",
+        reserveSubjest: "Puppy Reservation Inquiry",
     },
   },
   { 
