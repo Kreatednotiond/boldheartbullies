@@ -171,7 +171,10 @@ export const SITE_DATA = {
         picks: "1st Pick Available | 3rd pick Available",
         depositNote: "$500 non-refundable deposit required to reserve a pick. Remaining balance due before puppy pickup.",
         studHero: "/assets/dogs/outside/hank/hank.jpg",
-        matingSimulator: "/assets/breedings/millie_hank/simulator.png",
+        matingSimulator: [
+          "/assets/breedings/millie_hank/simulator.png",
+          "/assets/breedings/millie_hank/1.jpg",
+        ],
         reserveSubjest: "Puppy Reservation Inquiry",
     },
   },
