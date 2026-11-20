@@ -59,6 +59,23 @@ export default function Breedings({ onImage }) {
               {b.studHero ? <div style={{ marginTop: 10 }} className="badge">Outside stud — not owned by BHB</div> : null}
             </>
           ) : null}
+          {/* MATING SIMULATOR - MULTIPLE PHOTOS */}
+          {b.matingSimulator ? (
+            <>
+            <div className="badge" style={{ marginTop: 18 }}>
+              Mating Simulator
+              </div>
+              
+              <ImageGrid
+                items={
+                  Array.isArray(b.matingSimulator)
+                    ? b.matingSimulator
+                    : [b.matingSimulator]
+                  }
+              onImage={onImage}
+    />
+  </>
+) : null}
         </div>
       </div>
     );

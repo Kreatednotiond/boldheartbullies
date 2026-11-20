@@ -138,7 +138,11 @@ export const SITE_DATA = {
         picks: "1st Pick Available | 3rd pick Available | 5th pick Available | 7th pick Available",
         depositNote: "$500 non-refundable deposit required to reserve a pick. Remaining balance due before puppy pickup.",
         studHero: "/assets/dogs/outside/shooter/hero.jpeg",
-        matingSimulator: "/assets/breedings/espie_shooter/1.png",
+        matingSimulator: [
+          "/assets/breedings/espie_shooter/1.png",
+          "/assets/breedings/espie_shooter/2.JPEG",
+        ],
+
         reserveSubjest: "Puppy Reservation Inquiry",
     },
   },
