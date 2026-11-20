@@ -60,20 +60,49 @@ export default function Breedings({ onImage }) {
             </>
           ) : null}
           {/* MATING SIMULATOR - MULTIPLE PHOTOS */}
-          {b.matingSimulator ? (
-            <>
-            <div className="badge" style={{ marginTop: 18 }}>
-              Mating Simulator
-              </div>
-              
-              <ImageGrid
-                items={
-                  Array.isArray(b.matingSimulator)
-                    ? b.matingSimulator
-                    : [b.matingSimulator]
-                  }
-              onImage={onImage}
-    />
+{b.matingSimulator &&
+(Array.isArray(b.matingSimulator)
+  ? b.matingSimulator
+  : [b.matingSimulator]
+).filter(Boolean).length > 0 ? (
+  <>
+    <div className="badge" style={{ marginTop: 18 }}>
+      Mating Simulator
+    </div>
+
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit, minmax(140px, 220px))",
+        gap: 12,
+        marginTop: 12,
+      }}
+    >
+      {(Array.isArray(b.matingSimulator)
+        ? b.matingSimulator
+        : [b.matingSimulator]
+      )
+        .filter(Boolean)
+        .map((photo, index) => (
+          <img
+            key={index}
+            src={photo}
+            alt={`${dam.name} mating simulator ${index + 1}`}
+            onClick={() => onImage?.(photo)}
+            onError={() =>
+              console.error("Simulator image failed to load:", photo)
+            }
+            style={{
+              width: "100%",
+              aspectRatio: "1 / 1",
+              objectFit: "contain",
+              borderRadius: 12,
+              background: "#171717",
+              cursor: "pointer",
+            }}
+          />
+        ))}
+    </div>
   </>
 ) : null}
         </div>
