@@ -328,52 +328,19 @@ export default function Dams({ route, go, onImage }) {
                           ) : null}
 
 
-                          {/* MATING SIMULATOR */}
+                          {/* MATING SIMULATOR — SINGLE OR MULTIPLE PHOTOS */}
                           {breeding.matingSimulator ? (
                             <>
-                              <div
-                                className="badge"
-                                style={{
-                                  marginTop: 18,
-                                }}
-                              >
+                              <div className="badge" style={{ marginTop: 18 }}>
                                 Mating Simulator
                               </div>
-
-                              <div
-                                className="card"
-                                style={{
-                                  marginTop: 10,
-                                  overflow:
-                                    "hidden",
-                                }}
-                              >
-                                <img
-                                  src={
-                                    breeding.matingSimulator
-                                  }
-                                  alt={`${dog.name} mating simulator`}
-                                  style={{
-                                    width: "100%",
-                                    height: "auto",
-                                    display:
-                                      "block",
-                                    cursor:
-                                      "pointer",
-                                  }}
-                                  onClick={() =>
-                                    onImage?.(
-                                      breeding.matingSimulator
-                                    )
-                                  }
-                                  onError={() =>
-                                    console.warn(
-                                      "Mating simulator failed:",
-                                      breeding.matingSimulator
-                                    )
-                                  }
-                                />
-                              </div>
+                              <ImageGrid
+                                items={(Array.isArray(breeding.matingSimulator)
+                                  ? breeding.matingSimulator
+                                  : [breeding.matingSimulator]
+                                ).filter(Boolean)}
+                                onImage={onImage}
+                              />
                             </>
                           ) : null}
                         </>
@@ -500,57 +467,19 @@ export default function Dams({ route, go, onImage }) {
                     ) : null}
 
 
-                    {/* MATING SIMULATOR */}
-                    {dog.plannedBreeding
-                      .matingSimulator ? (
+                    {/* MATING SIMULATOR — SINGLE OR MULTIPLE PHOTOS */}
+                    {dog.plannedBreeding.matingSimulator ? (
                       <>
-                        <div
-                          className="badge"
-                          style={{
-                            marginTop: 18,
-                          }}
-                        >
+                        <div className="badge" style={{ marginTop: 18 }}>
                           Mating Simulator
                         </div>
-
-                        <div
-                          className="card"
-                          style={{
-                            marginTop: 10,
-                            overflow: "hidden",
-                          }}
-                        >
-                          <img
-                            src={
-                              dog
-                                .plannedBreeding
-                                .matingSimulator
-                            }
-                            alt={`${dog.name} planned mating simulator`}
-                            style={{
-                              width: "100%",
-                              height: "auto",
-                              display: "block",
-                              cursor:
-                                "pointer",
-                            }}
-                            onClick={() =>
-                              onImage?.(
-                                dog
-                                  .plannedBreeding
-                                  .matingSimulator
-                              )
-                            }
-                            onError={() =>
-                              console.warn(
-                                "Planned mating simulator failed:",
-                                dog
-                                  .plannedBreeding
-                                  .matingSimulator
-                              )
-                            }
-                          />
-                        </div>
+                        <ImageGrid
+                          items={(Array.isArray(dog.plannedBreeding.matingSimulator)
+                            ? dog.plannedBreeding.matingSimulator
+                            : [dog.plannedBreeding.matingSimulator]
+                          ).filter(Boolean)}
+                          onImage={onImage}
+                        />
                       </>
                     ) : null}
                   </>
