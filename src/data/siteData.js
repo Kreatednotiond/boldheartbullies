@@ -111,15 +111,6 @@ export const SITE_DATA = {
       dna: "/assets/dogs/dams/brookie/dna.PNG",
       note: "Brookie has not had any previous litters.",
       gallery: ["/assets/dogs/dams/brookie/hero.jpg"],
-      pendingBreeding: {
-        stud: "Outlaw (Outside stud — owned by Cel's Legacy Bullies)",
-        method: "Artificial Insemination (AI)",
-        dates: ["2026-10-13", "2026-10-14"],
-        status: "Pregnancy confirmation pending",
-        studHero: "/assets/dogs/outside/outlaw/hero.JPEG",
-        matingSimulator: "/assets/breedings/brookie_outlaw/simulator.png",
-      
-      },
 },
 
     {
@@ -145,7 +136,7 @@ export const SITE_DATA = {
         dueDates: ["2026-12-08"],
         status: "Pregnancy confirmed",
         picks: "1st Pick Available | 3rd pick Available | 5th pick Available | 7th pick Available",
-        depositNote: "$500 no-refundable deposit required to reserve a pick. Remaining balance due before puppy pickup.",
+        depositNote: "$500 non-refundable deposit required to reserve a pick. Remaining balance due before puppy pickup.",
         studHero: "/assets/dogs/outside/shooter/hero.jpeg",
         matingSimulator: "/assets/breedings/espie_shooter/1.png",
         reserveSubjest: "Puppy Reservation Inquiry",
@@ -174,7 +165,7 @@ export const SITE_DATA = {
         dueDates: ["2026-12-14"],
         status: "Pregnancy confirmed",
         picks: "1st Pick Available | 3rd pick Available",
-        depositNote: "$500 no-refundable deposit required to reserve a pick. Remaining balance due before puppy pickup.",
+        depositNote: "$500 non-refundable deposit required to reserve a pick. Remaining balance due before puppy pickup.",
         studHero: "/assets/dogs/outside/hank/hank.jpg",
         matingSimulator: "/assets/breedings/millie_hank/simulator.png",
         reserveSubjest: "Puppy Reservation Inquiry",
@@ -237,7 +228,7 @@ export const SITE_DATA = {
         dueDates: ["2026-12-07"],
         status: "Pregnancy confirmed",
         picks: "2nd Pick Available | 3rd pick Available | 4th pick Available",
-        depositNote: "$500 no-refundable deposit required to reserve a pick. Remaining balance due before puppy pickup.",
+        depositNote: "$500 non-refundable deposit required to reserve a pick. Remaining balance due before puppy pickup.",
         studHero: "/assets/dogs/outside/gizmo/hero.JPEG",
         reserveSubject: "Puppy Reservation Inquiry",
       },
