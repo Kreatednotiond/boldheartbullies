@@ -132,7 +132,7 @@ export const SITE_DATA = {
       confirmedBreeding: {
         stud: "Shooter (Outside stud — owned by Indian Creek Kennels)",
         method: "Artificial Insemination (AI)",
-        dates: ["2026-12-07"],
+        dates: ["2026-12-08"],
         dueDates: ["2026-12-08"],
         status: "Pregnancy confirmed",
         picks: "1st Pick Available | 3rd pick Available | 5th pick Available | 7th pick Available",
@@ -165,7 +165,7 @@ export const SITE_DATA = {
       confirmedBreeding: {
         stud: "Hank (Outside stud — owned by Stay Fresh Bullyz)",
         method: "Artificial Insemination (AI)",
-        dates: ["2026-12-13"],
+        dates: ["2026-12-14"],
         dueDates: ["2026-12-14"],
         status: "Pregnancy confirmed",
         picks: "1st Pick Available | 3rd pick Available",
@@ -228,7 +228,7 @@ export const SITE_DATA = {
       confirmedBreeding: {
         stud: "Gizmo (Outside stud — owned by Central Frenchie Haven)",
         method: "Artificial Insemination (AI)",
-        dates: ["2026-12-06"],
+        dates: ["2026-12-07"],
         dueDates: ["2026-12-07"],
         status: "Pregnancy confirmed",
         picks: "2nd Pick Available | 3rd pick Available | 4th pick Available",
